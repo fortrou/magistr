@@ -109,6 +109,44 @@
 	</div>
 </div>
 
+<div class="menu-mobile">
+	<div class="content">
+
+		<ul class="menu-elements">
+
+			<li data-rel-section="1">
+				<div class="menu-mobile-btn--hover"><img src="tpl_img/house_main_big.png" alt=""></div>
+				<div class="menu-mobile-btn"><img src="tpl_img/house_main_small.png" alt=""></div>
+				
+			</li>
+
+			<li data-rel-section="2">
+				
+				<div class="menu-mobile-btn--hover"><img src="tpl_img/how_to_start_big.png" alt=""></div>
+				<div class="menu-mobile-btn"><img src="tpl_img/how_to_start_small.png" alt=""></div>
+				
+			</li>
+
+			<li data-rel-section="3">
+				
+				<div class="menu-mobile-btn--hover"><img src="tpl_img/how_to_learn_big.png" alt=""></div>
+				<div class="menu-mobile-btn"><img src="tpl_img/how_to_learn_small.png" alt=""></div>
+			
+			</li>
+
+			<li data-rel-section="4">
+				
+				<div class="menu-mobile-btn--hover"><img src="tpl_img/advantages_big.png" alt=""></div>
+				<div class="menu-mobile-btn"><img src="tpl_img/advantages_small.png" alt=""></div>
+				
+
+		</ul>
+
+		<div class="clear"></div>
+
+	</div>
+</div>
+
 </div>
 
 </div>
@@ -406,7 +444,7 @@
 		</div>
 
 		
-		<div class="element-wrap--question element-wrap ">
+		<div class="inline-block-display element-wrap--question element-wrap ">
 
 
 			<div class="inline-block-display subject-title element-width-300">
@@ -420,6 +458,20 @@
 			</div>
 
 		</div>
+
+		<div class="inline-block-display">
+
+
+			<a href="" 
+
+			class="inline-block-display button-full-white element-width-200 ">
+
+			ДЕТАЛЬНІШЕ
+
+		</a>
+
+
+	</div>
 
 	</div>
 

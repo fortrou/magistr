@@ -215,6 +215,14 @@ a {
     font-size: 20px;
 }
 
+.header .menu-mobile {
+    display: none;
+    height: 80px;
+    background: rgba(65, 139, 219, 1);
+
+}
+
+
 .menu-elements {
     display: flex;
     flex-flow: row nowrap;
@@ -830,6 +838,28 @@ margin-right: 45px;
 
         width: 400px;
     }
+
+.menu {
+    display: none;
+}
+
+.header .menu-mobile {
+    display: block;
+}
+
+.menu-mobile-btn--hover {
+    display: none;
+}
+
+.menu-mobile-btn--hover: active {
+    display: block;
+}
+
+.menu-mobile-btn: click {
+    display: none;
+}
+
+
 }
 
 @media only screen and (max-width: 479px) {
