@@ -131,6 +131,7 @@ a {
 }
 
 .header-begin-info-btns {
+    float: right;
 
     display: inline-flex;
     flex-direction: row;
@@ -218,8 +219,6 @@ a {
 .header .menu-mobile {
     display: none;
     height: 80px;
-    background: rgba(65, 139, 219, 1);
-
 }
 
 
@@ -257,6 +256,8 @@ a {
 
 .logo {
     margin-top: 25px;
+    max-width: 100%;
+    float: left;
 }
 
 .header-info {
@@ -764,6 +765,8 @@ margin-right: 45px;
 
 @media only screen and (max-width: 768px) {
 
+
+    
     .hide-768 {
         display: none;
     }
@@ -783,6 +786,10 @@ margin-right: 45px;
 
     .how-to-start .element-wrap-list .element-wrap {
         width: 200px;
+    }
+
+     .how-to-start .element-wrap-list .element-wrap img{
+        margin-bottom: 20px;
     }
 
     .how-to-learn .sub-section-element .element-wrap-list-arrowed .element-wrap {
@@ -806,8 +813,6 @@ margin-right: 45px;
         width: 240px;
     }
 
-   
-
 
     .element-width-200 {
         margin: auto;
@@ -824,6 +829,28 @@ margin-right: 45px;
 
 @media only screen and (max-width: 600px) {
 
+    .header-info span.fa {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+
+    .logo {
+        float: none;
+        margin: auto;
+        margin-top: 25px;
+    }
+
+    .header-begin-info-btns { 
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    float: none;
+    margin: auto;
+    }
+
     .elements-block {
 
         justify-content: center;
@@ -839,34 +866,126 @@ margin-right: 45px;
         width: 400px;
     }
 
-.menu {
+    .how-to-start .element-wrap-list .element-wrap {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .how-to-start .element-wrap-list .element-width-300 {
+        width: 100%;
+        margin-top: 0;
+    }
+
+.menu-desktop {
     display: none;
 }
 
 .header .menu-mobile {
     display: block;
+    margin-top: 20px;
 }
 
-.menu-mobile-btn--hover {
+.header .menu-mobile > .menu {
+    background: rgb(66, 139, 220);
+}
+
+
+.header .menu-mobile .menu-elements li {
+    padding-top: 0px;
+}
+
+.header .menu-mobile .menu-elements li a: click{
     display: none;
 }
 
-.menu-mobile-btn--hover: active {
-    display: block;
+.menu-mobile-btn-main {
+    height: 100%;
+    background: url(../tpl_img/house_main_small.png) center no-repeat;
 }
 
-.menu-mobile-btn: click {
+.menu-mobile-btn-main--active {
+    height: 100%;
+    background: url(../tpl_img/house_main_big.png) center no-repeat;
+}
+
+.menu-mobile-btn-start {
+    height: 100%;
+    background: url(../tpl_img/how_to_start_small.png) center no-repeat;
+}
+
+.menu-mobile-btn-start--active {
+    height: 100%;
+    background: url(../tpl_img/how_to_start_big.png) center no-repeat;
+}
+
+.menu-mobile-btn-learn {
+    height: 100%;
+    background: url(../tpl_img/how_to_learn_small.png) center no-repeat;
+}
+
+.menu-mobile-btn-learn--active {
+    height: 100%;
+    background: url(../tpl_img/how_to_learn_big.png) center no-repeat;
+}
+
+.menu-mobile-btn-adv {
+    height: 100%;
+    background: url(../tpl_img/advantages_small.png) center no-repeat;
+}
+
+.menu-mobile-btn-adv--active {
+    height: 100%;
+    background: url(../tpl_img/advantages_big.png) center no-repeat;
+}
+
+.menu-mobile-btn--click {
     display: none;
 }
 
+
+.hide-480 {
+        display: none;
+    }
+
+.header-info .element-width-160 {
+    width: 120px;
+}
+
+.footer-columns {
+    flex-direction: column;
+}
+
+
+.element-wrap-list .element-wrap {
+    width: 100%;
+}
+
+.how-to-learn .sub-section-element .element-wrap-list-arrowed .element-wrap {
+    width: 200px;
+}
+
+.how-to-learn .sub-section-element .element-wrap-list-arrowed .main-image--progress{
+    top: -50px;
+}
+
+.element-wrap-list-arrowed .element-wrap .main-image {
+    bottom: 0;
+}
+
+.element-wrap-list-arrowed .element-wrap .main-arrow {
+    bottom: 0;
+    left: 170px;
+}
+
+.footer-list-block li, .subject-title--orange, .sub-footer .sub-footer-text {
+    text-align: center;
+}
 
 }
 
 @media only screen and (max-width: 479px) {
 
-    .hide-480 {
-        display: none;
-    }
+    
 
     .element-wrap-list-arrowed .element-wrap .twin-arrow {
 

@@ -19,6 +19,7 @@
 	<script type="text/javascript" src="tpl_js/jquery.min.js"></script>
 
 	<script type="text/javascript" src="tpl_js/main-js.js"></script>
+	<script type="text/javascript" src="tpl_js/mobile-menu.js"></script>
 
 </head>
 
@@ -68,10 +69,10 @@
 
 				<div class="col-md-12">
 
-					<img src="/tpl_img/logo.png" alt="" class="block-display float-left-block logo">
+					<img src="/tpl_img/logo.png" alt="" class="block-display logo">
 
 
-				<div class="header-begin-info-btns float-right-block">
+				<div class="header-begin-info-btns">
 					<a href="" 
 					class="block-display button-border-blue element-width-240 element-border-radius-5 ">
 					СПРОБУВАТИ БЕЗКОШТОВНО
@@ -89,6 +90,7 @@
 
 <div class="clear"></div>
 
+<div class="menu-desktop">
 <div class="menu">
 	<div class="content">
 
@@ -108,36 +110,34 @@
 
 	</div>
 </div>
+</div>
 
 <div class="menu-mobile">
+<div class="menu">
 	<div class="content">
 
 		<ul class="menu-elements">
 
 			<li data-rel-section="1">
-				<div class="menu-mobile-btn--hover"><img src="tpl_img/house_main_big.png" alt=""></div>
-				<div class="menu-mobile-btn"><img src="tpl_img/house_main_small.png" alt=""></div>
-				
+				<div id="m-btn-main" class="menu-mobile-btn-main"></a>
 			</li>
 
 			<li data-rel-section="2">
+
+				<div id="m-btn-start" class="menu-mobile-btn-start"></a>
 				
-				<div class="menu-mobile-btn--hover"><img src="tpl_img/how_to_start_big.png" alt=""></div>
-				<div class="menu-mobile-btn"><img src="tpl_img/how_to_start_small.png" alt=""></div>
 				
 			</li>
 
 			<li data-rel-section="3">
 				
-				<div class="menu-mobile-btn--hover"><img src="tpl_img/how_to_learn_big.png" alt=""></div>
-				<div class="menu-mobile-btn"><img src="tpl_img/how_to_learn_small.png" alt=""></div>
+				<div id="m-btn-learn" class="menu-mobile-btn-learn"></a>
 			
 			</li>
 
 			<li data-rel-section="4">
 				
-				<div class="menu-mobile-btn--hover"><img src="tpl_img/advantages_big.png" alt=""></div>
-				<div class="menu-mobile-btn"><img src="tpl_img/advantages_small.png" alt=""></div>
+				<div id="m-btn-adv" class="menu-mobile-btn-adv"></a>
 				
 
 		</ul>
@@ -145,6 +145,8 @@
 		<div class="clear"></div>
 
 	</div>
+</div>
+
 </div>
 
 </div>
@@ -434,7 +436,7 @@
 
 				<div class="step-element">
 
-					<img src="/tpl_img/progress.png" class="main-image" alt="">
+					<img src="/tpl_img/progress.png" class="main-image main-image--progress" alt="">
 
 				</div>
 

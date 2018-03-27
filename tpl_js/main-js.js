@@ -58,3 +58,15 @@ $(document).ready(function(){
 		swap_main.click_block();
 	});
 })
+
+$(document).ready(function(){
+	var swap_main = new initalize_swap('sub-section', 7000, '.menu-mobile .menu-elements li', 767);
+	swap_main.run();
+
+	$(".menu-mobile .menu-elements li").click(function(){
+		swap_main.clearIntervalMethod();
+		swap_main.unsetSelectedBlockClass();
+		swap_main.setBlockNum($(this).attr('data-rel-section'));
+		swap_main.click_block();
+	});
+})
