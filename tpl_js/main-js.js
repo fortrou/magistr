@@ -48,6 +48,8 @@ function initalize_swap(class_toggle, slide_time, twin_selector, max_resolution_
 	}
 }
 $(document).ready(function(){
+
+	//HEADER-MENU
 	var swap_main = new initalize_swap('sub-section', 7000, '.menu .menu-elements li', 767);
 	swap_main.run();
 
@@ -57,4 +59,13 @@ $(document).ready(function(){
 		swap_main.setBlockNum($(this).attr('data-rel-section'));
 		swap_main.click_block();
 	});
+
+
+	//FOOTER-MENU
+	$(".subject-title--orange").click(function () {
+			$(this).next(".footer-list-block").toggle(300);
+	})
+
 })
+
+
