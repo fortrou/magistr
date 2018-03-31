@@ -186,6 +186,36 @@ a {
 	margin-right: 10px;
 	color: rgb(255, 180, 73);
 }
+
+.auth-form {
+	/*display: none;*/
+		position: absolute;
+		top: 50px;
+		right: 200px;
+		z-index: 10;
+		width: 260px;
+		background: rgb(255,255,255);
+		border: 1px solid rgb(207,207,207);
+		border-radius: 5px;
+		padding: 20px;
+	}
+
+	.auth-form .auth-form-item {
+		text-align: center;
+		margin: 10px 0;
+	}
+
+	.auth-form .auth-form-item input{
+		border: 1px solid rgb(207,207,207);
+		padding: 8px;
+		border-radius: 5px;
+		outline: none;
+	}
+
+	.auth-form .lost-pass-text {
+		font-weight: 600;
+	}
+
 .main-wrapper {
 	min-height: 550px;
 }
@@ -411,6 +441,11 @@ a {
 .element-width-70 {
 	width: 70px;
 }
+
+.element-width-90 {
+	width: 90px;
+}
+
 .element-width-100 {
 	width: 100px;
 }
@@ -506,6 +541,11 @@ a {
 	.why-us .element-wrap {
 		margin-bottom: 40px;
 	}
+
+	.why-us .element-wrap p.subject-title--blue{
+		margin-bottom: 20px;
+	}
+
 	.element-wrap-list .element-wrap {
 		width: 300px;
 	}
@@ -714,6 +754,8 @@ a {
 	}
 
 
+
+
 }
 @media only screen and (max-width: 479px) {
 
@@ -728,3 +770,45 @@ a {
 		/*width: 100% !important;*/
 	}
 }
+
+@media only screen and (max-width: 320px) {
+	.header-begin-info-btns .button-border-blue, .header-begin-info-btns .button-full-blue {
+		line-height: 1.5;
+
+	}
+
+	.menu-mobile-btn-main--active:after { 
+	left: 50px;
+	}
+
+	 .menu-mobile-btn-start--active:after{
+	left: 40px;
+	 }
+
+	
+	.menu-mobile-btn-learn--active:after {
+	left: 50px;
+	}
+
+	.menu-mobile-btn-learn--active:before {
+	right: 55px;
+	}
+
+	.menu-mobile-btn-start--active:before, .menu-mobile-btn-adv--active:before {
+	right: 45px;
+	}
+
+	.how-to-learn .element-wrap .step-element .main-image {
+		position: relative;
+	}
+
+	.how-to-learn .element-wrap .step-element .main-image--progress {
+		top: 0;
+	}
+
+	.how-to-learn .element-wrap .step-element .twin-arrow {
+		position: relative;
+		top: 20px;
+	}
+
+	}

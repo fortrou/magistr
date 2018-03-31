@@ -31,6 +31,17 @@
 					</a>
 				</div>
 			</div>
+				<div class="auth-form">
+					<form action="">
+					<div class="auth-form-item"><input type="email" placeholder="Ваш логін"></div>
+					<div class="auth-form-item"><input type="password" placeholder="Ваш пароль"></div>
+					
+					<div class="auth-form-item"><a href=""><span class="lost-pass-text">Забули пароль?</span></a>
+					<a href="" class="inline-block-display button-full-blue element-width-90 element-border-radius-5">УВІЙТИ</a></div>
+					</form>
+				</div>
+		
+
 		</div>
 		<div class="header-begin-info">
 			<div class="content">
