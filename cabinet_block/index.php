@@ -1,6 +1,6 @@
 <?php
 	require_once("../config.php");
-	require_once("/local_config.php");
+	require_once("local_config.php");
 	require_once("../tpl_php/autoload.php");
 	session_start();
 
