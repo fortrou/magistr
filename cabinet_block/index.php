@@ -1,20 +1,28 @@
 <?php
 	require_once("../config.php");
+	require_once("/local_config.php");
 	require_once("../tpl_php/autoload.php");
 	session_start();
 
-	var_dump(ROOT);
-	echo "<br>";
-	var_dump(DOC_ROOT);
-	echo "<br>";
-	var_dump(REQUEST_URI);
-	echo "<br>";
-	var_dump(REFERER_URI);
-	/*$db = Database::getInstance();
-	$mysqli = $db->getConnection();*/
+	$db = Database::getInstance();
+	$mysqli = $db->getConnection();
+
 	$routes = array();
 	$routes = require_once("routes.php");
-	echo "<pre>";
-	print_r($routes);
-	echo "</pre>";
+	if(empty($routes)) {
+		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");
+	}
+	$address = trim($_SERVER["REQUEST_URI"],"/");
+	$result = preg_grep("~$address~", array_keys($routes));
+	$result = array_values($result);
+	if(!empty($routes[$result[0]])) {
+		$data = explode('/', $routes[$address]);
+		$controller = $data[0];
+		$method 	= $data[1];
+		if(file_exists(sprintf(CONTROLLER . "%sController.php", $controller))) {
+			require_once(sprintf(CONTROLLER . "%sController.php", $controller));
+			$controller::$method();
+		}
+	}
+
 ?>

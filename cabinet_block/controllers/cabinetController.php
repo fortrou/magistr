@@ -1,5 +1,5 @@
 <?php 
-	require_once('../models/cabinetModel.php');
+	require_once(MODEL . 'cabinetModel.php');
 	class cabinet {
 		private $userData = array();
 		function __construct( $user_data = array() ) {
@@ -9,6 +9,9 @@
 			if(!empty($this->userData)) {
 				cabinetModel::get_MainForSession($this->userData);
 			}
+		}
+		public static function get_registrationForm() {
+			require_once(VIEW . "sessionfree/registration_form.php");
 		}
 	}
 ?>
