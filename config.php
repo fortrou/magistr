@@ -1,7 +1,7 @@
 <?php
 	define('ROOT',dirname(__FILE__));
 	define('PROTOCOL', "http://");
-	define('SITE_NAME', "magistr-zno.com.ua/");
+	define('SITE_NAME', "magistr.test/");
 	define('DOC_ROOT', $_SERVER['DOCUMENT_ROOT']);
 	define('REQUEST_URI', $_SERVER['REQUEST_URI']);
 	if(!empty($_SERVER['HTTP_REFERER'])) $referer = $_SERVER['HTTP_REFERER'];
