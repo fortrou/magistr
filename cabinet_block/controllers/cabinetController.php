@@ -13,5 +13,8 @@
 		public static function get_registrationForm() {
 			require_once(VIEW . "sessionfree/registration_form.php");
 		}
+		public static function get_authorizationForm() {
+			require_once(VIEW . "sessionfree/authorization_form.php");
+		}
 	}
 ?>
