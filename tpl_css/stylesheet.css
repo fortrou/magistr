@@ -188,7 +188,7 @@ a {
 }
 
 .auth-form {
-	/*display: none;*/
+	display: none;
 		position: absolute;
 		top: 50px;
 		right: 200px;
@@ -408,6 +408,71 @@ a {
 	justify-content: space-evenly;
 	align-items: center;
 }
+
+/*registration form classes*/
+.registration-form {
+	width: 480px;
+	margin: 0 auto;
+	font-weight: 600;
+}
+.registration-form-block {
+	margin-top: 35px;
+}
+.registration-form-block-title {
+	font-size: 16px;
+	color: rgb(65, 139, 219);
+	text-decoration: underline;
+	margin-bottom: 15px;
+}
+.form-item {
+	margin-top: 10px;
+}
+.form-item input{
+	width: 100%;
+	border: 1px solid rgb(80,80,80);
+	border-radius: 5px;
+	outline: none;
+	padding: 7px;
+}
+.form-item textarea {
+	width: 100%;
+	border: 1px solid rgb(80,80,80);
+	border-radius: 5px;
+	outline: none;
+	padding: 7px;
+}
+.form-item label {
+	cursor: pointer;
+}
+.form-item.form-item--photo input{
+	width: 150px;
+	height: 150px;
+}
+.form-item-title {
+	display: inline-block;
+	font-size: 14px;
+}
+.form-item-tooltip { 
+	float: right;
+	position: relative;
+	top: -40px;
+	left: 1px;
+	width: 60%;
+	height: 40px;
+	border: 1px solid rgb(237,237,237);
+	border-radius: 5px;
+	font-size: 12px;
+	background: rgba(237,237,237,1);
+	padding-left: 5px;
+}
+.form-item--photo .form-item-tooltip {
+	top: 0;
+}
+.form-item--textarea .form-item-tooltip {
+	top: -70px;
+}
+/*end of registration form classes*/
+
 .no-display {
 	display: none;
 }
@@ -500,6 +565,8 @@ a {
 .clear {
 	clear: both;
 }
+
+
 @media only screen and (max-width: 960px) {
 	.hide-960 {
 		display: none;
@@ -562,6 +629,7 @@ a {
 	.sub-section-btns {
 		text-align: center;
 	}
+
 }
 @media only screen and (max-width: 600px) {
 	.header-info span.fa {
