@@ -66,6 +66,11 @@ $(document).ready(function(){
 			$(this).next(".footer-list-block").toggle(300);
 	})
 
+	//AUTH-FORM-POPUP
+	$(".js-auth-form").click(function () {
+			$(".auth-form").toggle(300);
+	})
+
 })
 
 

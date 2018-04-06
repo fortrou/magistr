@@ -13,7 +13,7 @@
 						<a href=""><span class="fa fa-envelope"></span><span class="contacts-text hide-768">magistr.zno@gmail.com</span></a>
 						<a href="" class="hide-960"><span class="fa fa-calendar"></span><span class="contacts-text ">ПН-ПТ: 11.00 - 19.00</span></a>
 						<a href=""
-						class="block-display float-right-block button-full-yellow element-width-70 element-border-radius-5 element-margin-left-10">
+						class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
 						ВХІД
 						</a>
 						<a href=""
