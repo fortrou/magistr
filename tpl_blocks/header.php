@@ -16,7 +16,7 @@
 						class="block-display float-right-block button-full-yellow element-width-70 element-border-radius-5 element-margin-left-10">
 						ВХІД
 						</a>
-						<a href=""
+						<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
 						class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
 						РЕЄСТРАЦІЯ
 						</a>
