@@ -6,7 +6,6 @@
 *.bak
 *.swp
 *.log
-config.php
 */local_config.php
 
 # Found in the root of pod-1009
