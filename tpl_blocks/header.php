@@ -12,10 +12,30 @@
 						<a href="tel: +380996545428"><span class="fa fa-phone"></span><span class="contacts-text hide-480">(099) 654-54-28</span></a>
 						<a href=""><span class="fa fa-envelope"></span><span class="contacts-text hide-768">magistr.zno@gmail.com</span></a>
 						<a href="" class="hide-960"><span class="fa fa-calendar"></span><span class="contacts-text ">ПН-ПТ: 11.00 - 19.00</span></a>
+<<<<<<< HEAD
 						<div class="header-info-buttons">
 							<a href=""
 							class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
 							ВХІД
+=======
+						<a href=""
+						class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
+						ВХІД
+						</a>
+						<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
+						class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
+						РЕЄСТРАЦІЯ
+						</a>
+					</div>
+				</div>
+				<div class="auth-form">
+					<form action="">
+						<div class="auth-form-item"><input type="email" placeholder="Ваш логін"></div>
+						<div class="auth-form-item"><input type="password" placeholder="Ваш пароль"></div>
+						<div class="auth-form-item">
+							<a href="">
+								<span class="lost-pass-text">Забули пароль?</span>
+>>>>>>> 4dcbd784faffc7cc4a1c2c32402ac39ad1734506
 							</a>
 							<a href=""
 								class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5">
