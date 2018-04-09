@@ -60,17 +60,20 @@ $(document).ready(function(){
 		swap_main.click_block();
 	});
 
-
 	//FOOTER-MENU
 	$(".subject-title--orange").click(function () {
 			$(this).next(".footer-list-block").toggle(300);
 	})
 
 	//AUTH-FORM-POPUP
-	$(".js-auth-form").click(function () {
+	$(".js-auth-form").click(function (event) {
 			$(".auth-form").toggle(300);
+			event.preventDefault();
 	})
 
+	$(".close-form").click(function () {
+				$(".auth-form").hide(300);
+		})
 })
 
 
