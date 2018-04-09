@@ -152,5 +152,25 @@
 				setcookie("ip_trigger",$amount,time()+60);
 			}
 		}
-	}	
+	}
+	function get_header() {
+		global $first_level_slug, $second_level_slug, $third_level_slug;
+		if($third_level_slug != '') {
+			if(file_exists(ROOT . "/tpl_blocks/header-{$second_level_slug}-{$third_level_slug}.php")){
+				require_once(ROOT . "/tpl_blocks/header-{$second_level_slug}-{$third_level_slug}.php");
+			} else if(file_exists(ROOT . "/tpl_blocks/header-{$second_level_slug}.php")) {
+				require_once(ROOT . "/tpl_blocks/header-{$second_level_slug}.php");
+			} else {
+				require_once(ROOT . "/tpl_blocks/header.php");
+			}
+		} else if($second_level_slug != '') {
+			if(file_exists(ROOT . "/tpl_blocks/header-{$second_level_slug}.php")){
+				require_once(ROOT . "/tpl_blocks/header-{$second_level_slug}.php");
+			} else {
+				require_once(ROOT . "/tpl_blocks/header.php");
+			}
+		} else {
+			require_once(ROOT . "/tpl_blocks/header.php");
+		}
+	}
 ?>

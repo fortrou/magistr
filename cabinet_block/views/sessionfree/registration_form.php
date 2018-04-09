@@ -1,4 +1,4 @@
-<?php require_once(BLOCK_FOLDER . "/header.php"); ?>
+<?php get_header(); ?>
 	<div class="container">
 		<div class="row">
 			<div class="registration-form">

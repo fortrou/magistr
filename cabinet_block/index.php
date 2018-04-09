@@ -9,6 +9,9 @@
 	$mysqli = $db->getConnection();*/
 
 	$routes = array();
+	$first_level_slug  = '';
+	$second_level_slug = '';
+	$third_level_slug  = '';
 	$routes = require_once("routes.php");
 	if(empty($routes)) {
 		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");
@@ -18,6 +21,9 @@
 	$result = array_values($result);
 	if(!empty($routes[$result[0]])) {
 		$data = explode('/', $routes[$address]);
+		$first_level_slug = $data[0];
+		if(count($data) > 1) $second_level_slug = $data[1];
+		if(count($data) > 2) $third_level_slug = $data[2];
 		$controller = $data[0];
 		$method 	= $data[1];
 		if(file_exists(sprintf(CONTROLLER . "%sController.php", $controller))) {
