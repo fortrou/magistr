@@ -1,14 +1,15 @@
 <?php
-	class cookieManager {
+	class CookieManager {
 		private $cookie_data = array();
 		//конструктор-парсер куки
 		function __construct($cookie_name, $decode_method) {
-			if(isset($_COOKIE[$cookie_name])) {
+			if(isset($_COOKIE[$cookie_name]) && !empty($_COOKIE[$cookie_name])) {
 				$this->cookie_data = $decode_method($_COOKIE[$cookie_name]);
 			}
 		}
 		//установка кук
-		public function set_cookie($name, $value, $time) {
+		public function set_user_cookie($name, $value, $time = 0) {
+			if(empty($name) || empty($value) || $time < 1) return false;
 
 		}
 		//удаление кук
@@ -24,6 +25,13 @@
 				}
 			}
 			return false;
+		}
+		public static function get_cookie($name, $decode_method) {
+			if(isset($_COOKIE[$cookie_name]) && !empty($_COOKIE[$cookie_name])) {
+				return $decode_method($_COOKIE[$cookie_name]);
+			} else {
+				return array();
+			}
 		}
 	}
 ?>
