@@ -420,9 +420,10 @@ a {
 /*-----------AUTH-FORM-END---------*/
 
 /*-----REGISTRATION-FORM-START-----*/
-.registration-form {
+.form {
 	width: 480px;
 	margin: 0 auto;
+	margin-bottom: 30px;
 	font-weight: 600;
 }
 .registration-form-block {
@@ -460,6 +461,9 @@ a {
 	width: 150px;
 	height: 150px;
 }
+.form-item--send .button-full-blue{
+margin: 0 auto;
+}
 .form-item-title {
 	display: block;
 	font-size: 14px;
@@ -482,8 +486,16 @@ a {
 	display: block;
 }
 
-
+.form-item-footer {
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
 /*-----REGISTRATION-FORM-END-----*/
+
+.auth-form-page {
+	margin: 30px auto;
+}
 
 .no-display {
 	display: none;
@@ -868,7 +880,7 @@ a {
 	.element-wrap-list-arrowed .element-wrap {
 		height: 230px !important;
 	}
-	.registration-form {
+	.form {
 		width: 90%;
 	}
 	.form-item-tooltip {

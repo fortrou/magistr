@@ -13,15 +13,15 @@
 						<a href=""><span class="fa fa-envelope"></span><span class="contacts-text hide-768">magistr.zno@gmail.com</span></a>
 						<a href="" class="hide-960"><span class="fa fa-calendar"></span><span class="contacts-text ">ПН-ПТ: 11.00 - 19.00</span></a>
 						<div class="header-info-buttons">
-						<a href=""
-						class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
-						ВХІД
-						</a>
-						<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
-						class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
-						РЕЄСТРАЦІЯ
-						</a>
-						<div class="auth-form">
+							<a href=""
+							class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
+							ВХІД
+							</a>
+							<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
+							class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
+							РЕЄСТРАЦІЯ
+							</a>
+							<div class="auth-form">
 								<form action="">
 									<div class="auth-form-item auth-form-item--head">
 										<i class="fa fa-times-circle close-form" aria-hidden="true"></i>
@@ -46,9 +46,8 @@
 							</div>
 					</div>
 				</div>
-							
-							</div>
-							</div>
+			</div>
+		</div>
 			<div class="header-begin-info">
 				<div class="content">
 					<div class="col-md-12">
@@ -80,28 +79,25 @@
 					</div>
 				</div>
 			</div>
-<div class="menu-mobile">
-	<div class="menu">
-		<div class="content">
-			<ul class="menu-elements">
-				<li data-rel-section="1">
-					<div id="m-btn-main" class="menu-mobile-btn-main"></a>
-					</li>
-					<li data-rel-section="2">
-						<div id="m-btn-start" class="menu-mobile-btn-start"></a>
-						</li>
-						<li data-rel-section="3">
-
-							<div id="m-btn-learn" class="menu-mobile-btn-learn"></a>
-
+			<div class="menu-mobile">
+				<div class="menu">
+					<div class="content">
+						<ul class="menu-elements">
+							<li data-rel-section="1">
+								<div id="m-btn-main" class="menu-mobile-btn-main"></div>
+							</li>
+							<li data-rel-section="2">
+								<div id="m-btn-start" class="menu-mobile-btn-start"></div>
+							</li>
+							<li data-rel-section="3">
+								<div id="m-btn-learn" class="menu-mobile-btn-learn"></div>
 							</li>
 							<li data-rel-section="4">
-
-								<div id="m-btn-adv" class="menu-mobile-btn-adv"></a>
-
-								</ul>
-								<div class="clear"></div>
-							</div>
+								<div id="m-btn-adv" class="menu-mobile-btn-adv"></div>
+							</li>
+						</ul>
+						<div class="clear"></div>
+					</div>
 						</div>
 					</div>
 				</div>

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 	<div class="container">
 		<div class="row">
-			<div class="registration-form">
+			<div class="form">
 				<form action="" method="post">
 					<div class="registration-form-block">
 						<div class="registration-form-block-title">
@@ -108,23 +108,27 @@
   							</form>
   							<div class="form-item-tooltip ">
 									Завантажте фото об'ємом до 5МБ. Підтримуються формати .jpeg, .jpg, .png, .bmp
-							</div>
+								</div>
 						</div>
 						<div class="form-item form-item--textarea">
 							<label for="info" class="form-item-title">
 									Звідки ви дізналися про "МагістрЗНО"? *
 							</label>
-							<textarea id="info" name="info" id="" cols="" rows="" required />
+							<textarea id="info" name="info" id="" cols="" rows="" required >
 							</textarea>
 							<div class="form-item-tooltip">
 									Вкажіть, будь ласка, джерело, з якого ви дізналися про наш сайт
 							</div>
-						</div>
-					</div>
-						<div class="form-item-title">
+							<div class="form-item-title">
 									* Поля, відмічені зірочками, заповнюються обов'язково.
+							</div>
 						</div>
-					<!--<input type="button" value="ЗАРЕЄСТРУВАТИСЯ">-->
+					<div class="form-item form-item--send">
+					<a href=""
+						class="block-display button-full-blue element-border-radius-5 element-width-200">
+						ЗАРЕЄСТРУВАТИСЯ
+					</a>
+					</div>
 				</form>
 			</div>
 		</div>
