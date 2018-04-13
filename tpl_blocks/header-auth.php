@@ -28,6 +28,10 @@
 						</div>	
 						<div class="header-begin-info-btns">
 							<a href="" 
+							class="block-display button-full-blue element-width-160 element-border-radius-5 element-margin-left-10">
+								РЕЄСТРАЦІЯ
+							</a>
+							<a href="" 
 							class="block-display button-border-blue element-width-240 element-border-radius-5 ">
 								СПРОБУВАТИ БЕЗКОШТОВНО
 							</a>
@@ -37,7 +41,7 @@
 			</div>
 			<div class="clear"></div>
 			<div class="form-page-title">
-				РЕЄСТРАЦІЯ НОВОГО КОРИСТУВАЧА
+				ВХІД В КАБІНЕТ
 			</div>
 
 				</div>

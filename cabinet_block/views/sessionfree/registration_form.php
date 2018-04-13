@@ -125,7 +125,7 @@
 						</div>
 					<div class="form-item form-item--send">
 					<a href=""
-						class="block-display button-full-blue element-border-radius-5 element-width-200">
+						class="block-display button-full-blue element-border-radius-5 element-width-400">
 						ЗАРЕЄСТРУВАТИСЯ
 					</a>
 					</div>

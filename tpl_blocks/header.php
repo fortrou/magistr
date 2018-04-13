@@ -48,10 +48,12 @@
 				</div>
 			</div>
 		</div>
-			<div class="header-begin-info">
+			
 				<div class="content">
-					<div class="col-md-12">
-						<img src="/tpl_img/logo.png" alt="" class="block-display logo">
+					<div class="header-begin-info col-md-12">
+						<div class="logo">
+							<img src="/tpl_img/logo.png" alt="logo" >	
+						</div>						
 						<div class="header-begin-info-btns">
 							<a href="" 
 							class="block-display button-border-blue element-width-240 element-border-radius-5 ">
@@ -64,7 +66,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			
 			<div class="clear"></div>
 			<div class="menu-desktop">
 				<div class="menu">

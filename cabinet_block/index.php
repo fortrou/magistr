@@ -21,9 +21,10 @@
 	$result = array_values($result);
 	if(!empty($routes[$result[0]])) {
 		$data = explode('/', $routes[$address]);
-		$first_level_slug = $data[0];
-		if(count($data) > 1) $second_level_slug = $data[1];
-		if(count($data) > 2) $third_level_slug = $data[2];
+		$slug_data = explode('/', $address);
+		$first_level_slug = $slug_data[0];
+		if(count($slug_data) > 1) $second_level_slug = $slug_data[1];
+		if(count($slug_data) > 2) $third_level_slug = $slug_data[2];
 		$controller = $data[0];
 		$method 	= $data[1];
 		if(file_exists(sprintf(CONTROLLER . "%sController.php", $controller))) {

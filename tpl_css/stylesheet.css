@@ -67,7 +67,6 @@ a {
 	background: rgba(80, 80, 80, 1);
 }
 .header-begin-info-btns {
-	float: right;
 	display: inline-flex;
 	flex-direction: row;
 	justify-content: space-between; 
@@ -161,16 +160,22 @@ a {
 	transition: .7s;
 }
 .header-begin-info {
-	height: 120px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	margin: 25px 0;
+	overflow: hidden;
 }
-.header-begin-info a {
-	margin-top: 40px;
-}
+
 .logo {
-	margin-top: 25px;
 	max-width: 100%;
-	float: left;
 }
+.logo img{
+	width: 100%;
+}
+
+
 .header-info {
 	height: 40px;
 }
@@ -419,7 +424,44 @@ a {
 }
 /*-----------AUTH-FORM-END---------*/
 
+/*-----------FORM-PAGE-STYLE----------*/
+.form-page-title {
+	background: rgba(60, 139, 219, 1);
+	color: rgb(255, 255, 255);
+	font-weight: 600;
+	font-size: 34px;
+	padding: 20px;
+	text-align: center;
+}
+
+.form-page-header {
+	background: rgb(80,80,80);
+	padding: 2px;
+}
+.form-page-menu {
+	text-align: center;
+}
+
+.form-page-menu ul {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 10px 0 ;
+}
+
+.form-page-menu ul li{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.form-page-menu ul li a{
+	color: rgb(255,255,255);
+	font-size: 14px;
+	font-weight: 600;
+}
+
+
 /*-----REGISTRATION-FORM-START-----*/
+
 .form {
 	width: 480px;
 	margin: 0 auto;
@@ -592,12 +634,13 @@ align-items: center;
 	.hide-960 {
 		display: none;
 	}
-	.header-begin-info a {
-		margin-top: 15px;
+	.header-begin-info {
+		flex-direction: column;
 	}
 	.header-begin-info-btns {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: center; 
+		margin-top: 25px;
 	}
 }
 @media only screen and (max-width: 768px) {
@@ -654,18 +697,9 @@ align-items: center;
 		font-size: 20px;
 		margin-top: 10px;
 	}
-	.logo {
-		float: none;
-		margin: auto;
-		margin-top: 25px;
-	}
+
 	.header-begin-info-btns { 
-		width: 100%;
-		display: inline-flex;
-		flex-direction: row;
 		justify-content: space-evenly;
-		float: none;
-		margin: auto;
 	}
 	.elements-block {
 		justify-content: center;
@@ -891,51 +925,49 @@ align-items: center;
 		height: 100%;
 		margin-top: 5px;
 	}
-
 	.auth-form-item .button-full-blue{
 		float: none;
+	}
+	.form-page-menu ul {
+		flex-direction: column;
 	}
 
 }
 
 @media only screen and (max-width: 320px) {
-	.header-begin-info-btns .button-border-blue, .header-begin-info-btns .button-full-blue {
-		line-height: 1.5;
 
+	.header-begin-info-btns {
+		flex-direction: column;
 	}
-
+	.header-begin-info-btns a { 
+		margin-top: 15px;
+	}
 	.menu-mobile-btn-main--active:after { 
 		left: 50px;
 	}
-
 	.menu-mobile-btn-start--active:after{
 		left: 40px;
 	}
-
-	
 	.menu-mobile-btn-learn--active:after {
 		left: 50px;
 	}
-
 	.menu-mobile-btn-learn--active:before {
 		right: 55px;
 	}
-
 	.menu-mobile-btn-start--active:before, .menu-mobile-btn-adv--active:before {
 		right: 45px;
 	}
-
 	.how-to-learn .element-wrap .step-element .main-image {
 		position: relative;
 	}
-
 	.how-to-learn .element-wrap .step-element .main-image--progress {
 		top: 0;
 	}
-
 	.how-to-learn .element-wrap .step-element .twin-arrow {
 		position: relative;
 		top: 20px;
 	}
+
+
 
 }
