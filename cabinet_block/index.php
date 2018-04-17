@@ -5,8 +5,8 @@
 	require_once("../tpl_php/functions.php");
 	session_start();
 
-	/*$db = Database::getInstance();
-	$mysqli = $db->getConnection();*/
+	$db = Database::getInstance();
+	$mysqli = $db->getConnection();
 
 	$routes = array();
 	$first_level_slug  = '';

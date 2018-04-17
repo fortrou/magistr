@@ -74,6 +74,11 @@ $(document).ready(function(){
 	$(".close-form").click(function () {
 				$(".auth-form").hide(300);
 		})
+	$("a.submitter").click(function(evt) {
+		evt.preventDefault();
+		var form = $(this).attr("data-form");
+		$('#' + form).submit();
+	})
 })
 
 

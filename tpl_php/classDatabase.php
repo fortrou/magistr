@@ -18,7 +18,7 @@ class Database
 	private function __construct() {
 		// $this->connection = new mysqli( 'localhost' , 'root' , 'qq', 'os' );
 		//$this->connection = new mysqli( 'localhost' , 'sozonen_skola' , 'sozonen_skola' , 'sozonen_skola');
-		$this->connection = new mysqli( 'localhost' , 'root' , '' , 'magistr_db');
+		$this->connection = new mysqli( 'localhost' , DB_USER , DB_PASSWORD , DATABASE);
 		// $this->connection->query("SET NAMES 'cp1251'");
 		$this->connection->query("SET NAMES 'utf8';"); 
 		$this->connection->query("SET CHARACTER SET 'utf8';"); 
