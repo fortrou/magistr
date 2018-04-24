@@ -59,7 +59,7 @@
 				<ul class="tabs-links">
 					<li class="active">
 						<a href="">
-							Особиста інформація
+							Персональна інформація
 						</a>
 					</li>
 					<li>
@@ -200,10 +200,89 @@
 						</div>
 					</div>
 					<div class="tabs-content">
-						Content1
+						<div class="form profile-form profile-form-email-post">
+							<div class="profile-title">
+								Налаштування розсилок
+							</div>
+							<form action="" method="post" id="">
+								<div class="form-item">
+									<input id="check-all" name="check-all" type="checkbox" class="checkbox">
+									<label for="check-all" class="checkbox-title">
+										Обрати все
+									</label>
+								</div>
+								<div class="form-item">
+									<input id="check-lesson" name="check-lesson" type="checkbox" class="checkbox">
+									<label for="check-lesson" class="checkbox-title">
+										Перенос онлайн-урока
+									</label>
+								</div>
+								<div class="form-item">
+									<input id="check-message" name="check-message" type="checkbox" class="checkbox">
+									<label for="check-message" class="checkbox-title">
+										Нове повідомлення в чаті
+									</label>
+								</div>
+								<div class="form-item">
+									<input id="check-news" name="check-news" type="checkbox" class="checkbox">
+									<label for="check-news" class="checkbox-title">
+										Новини
+									</label>
+								</div>
+								<div class="form-item">
+									<input id="check-mark" name="check-mark" type="checkbox" class="checkbox">
+									<label for="check-mark" class="checkbox-title">
+										Оцінка за ДЗ
+									</label>
+								</div>
+								<div class="form-item form-item--btn">
+									<a href=""
+										class="submitter block-display button-full-blue element-border-radius-5 element-width-200"
+										data-form="profile_form_user">
+										ЗБЕРЕГТИ
+									</a>
+								</div>
+							</form>
+						</div>
 					</div>
 					<div class="tabs-content">
-						Content2
+						<div class="form profile-form profile-form-pay">
+							<div class="profile-title">
+								Формування платежів
+							</div>
+							<div class="form-item">	
+								Інформація щодо сплати <i class="fa fa-question-circle" aria-hidden="true"></i>
+							</div>
+							<div class="form-item">	
+								<div class="course-block payed-course">	
+									<div class="course-element course-element--name">
+										Курс: 
+										<span class="course-name-title"></span>
+									</div>
+									<div class="course-element course-element--price">
+										Сума: 
+										<span class="course-price-summ"></span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											СПЛАТИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										Термін оплати: 
+										<span class="course-term-days"></span>
+									</div>
+								</div>
+							</div>
+							<div class="form-item">	
+								Сплатити через банк (натисніть на кнопку 'Сгенерувати платiжку', щоб отримати реквізити для Сплати у банку)
+							</div>
+							<div class="form-item">	
+								Щоб вiдправити копію чека про сплату квитанції, сфотографуйте її або вiдскануйте,натисніть на кнопку "Прикріпити файл", виберіть файл, i коли вiн загрузиться,натисніть на кнопку "Вiдправити квитанцію" и вiдправте її нам. Завантажити дозволяється файли формату: .png,.jpeg,.jpg
+							</div>
+						</div>
+						
+
 					</div>
 				
 			</div>
