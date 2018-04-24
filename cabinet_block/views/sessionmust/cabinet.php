@@ -9,37 +9,44 @@
 			<div class="menu">
 				<div class="content">
 					<ul class="menu-elements">
-						<li>
-							<a href="#">
-								<img src="/tpl_img/logo-mini.png" alt="mini-logo">
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="/tpl_img/calendar.png" alt="calendar">
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="/tpl_img/homework.png" alt="homework">
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img src="/tpl_img/messages.png" alt="messages">
-							</a>
-						</li>
-						<li>
-							<a href="">
-								Курс
-							</a>
-						</li>
-						<li>
-							<a href="">
-								Профіль
-							</a>
-							<img src="/tpl_img/sort_down.png" alt="">
-						</li>
+						<div class="menu-cabinet-elements-block-left">
+							<li class="menu-cabinet-logo">
+								<a href="/index.php" target="_blank">
+									<img src="/tpl_img/logo-mini.png" alt="mini-logo">
+								</a>
+							</li>
+							<li class="menu-cabinet-elements">
+								<a href="">
+									<img src="/tpl_img/calendar.png" alt="calendar">
+								</a>
+							</li>
+							<li class="menu-cabinet-elements">
+								<a href="">
+									<img src="/tpl_img/homework.png" alt="homework">
+								</a>
+							</li>
+							<li class="menu-cabinet-elements">
+								<a href="">
+									<img src="/tpl_img/messages.png" alt="messages">
+								</a>
+							</li>
+						</div>
+						<div class="menu-cabinet-elements-block-right">
+							<li>
+								<a href="">
+									Курс
+								</a>
+							</li>
+							<li class="menu-profile-element">
+								<a href="">
+									Профіль
+								</a>
+								<div class="menu-profile-photo">
+									<img src="/tpl_img/logo-mini.png" alt="profile-photo" class="">
+								</div>
+								<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
+							</li>
+						</div>
 					</ul>
 					<div class="clear"></div>
 				</div>
