@@ -9,23 +9,40 @@
 			<div class="header-info">
 				<div class="content">
 					<div class="col-md-12">
-						<a href="tel: +380996545428"><span class="fa fa-phone"></span><span class="contacts-text hide-480">(099) 654-54-28</span></a>
-						<a href=""><span class="fa fa-envelope"></span><span class="contacts-text hide-768">magistr.zno@gmail.com</span></a>
-						<a href="" class="hide-960"><span class="fa fa-calendar"></span><span class="contacts-text ">ПН-ПТ: 11.00 - 19.00</span></a>
+						<a href="tel: +380996545428">
+							<span class="fa fa-phone"></span>
+							<span class="contacts-text hide-480">
+								(099) 654-54-
+							</span>
+						</a>
+						<a href="">
+							<span class="fa fa-envelope"></span>
+							<span class="contacts-text hide-768">
+								magistr.zno@gmail.com
+							</span>
+						</a>
+						<a href="" class="hide-960">
+							<span class="fa fa-calendar"></span>
+							<span class="contacts-text ">
+								ПН-ПТ: 11.00 - 19.00
+							</span>
+						</a>
 						<div class="header-info-buttons">
 							<a href=""
-							class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
-							ВХІД
+								class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
+								ВХІД
 							</a>
 							<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
-							class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
-							РЕЄСТРАЦІЯ
+								class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
+								РЕЄСТРАЦІЯ
 							</a>
 							<div class="auth-form">
 								<form action="">
 									<div class="auth-form-item auth-form-item--head">
 										<i class="fa fa-times-circle close-form" aria-hidden="true"></i>
-										<span class="auth-form-item--head-title">Увійти в особистий кабінет</span>
+										<span class="auth-form-item--head-title">
+											Увійти в особистий кабінет
+										</span>
 									</div>
 									<div class="auth-form-item">
 										<input type="email" placeholder="Ваш логін">
@@ -35,7 +52,9 @@
 									</div>
 									<div class="auth-form-item">
 										<a href="">
-											<span class="lost-pass-text">Забули пароль?</span>
+											<span class="lost-pass-text">
+												Забули пароль?
+											</span>
 										</a>
 										<a href=""
 											class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
@@ -44,29 +63,27 @@
 									</div>
 								</form>
 							</div>
-					</div>
-				</div>
-			</div>
-		</div>
-			
-				<div class="content">
-					<div class="header-begin-info col-md-12">
-						<div class="logo">
-							<img src="/tpl_img/logo.png" alt="logo" >	
-						</div>						
-						<div class="header-begin-info-btns">
-							<a href="" 
-							class="block-display button-border-blue element-width-240 element-border-radius-5 ">
-								СПРОБУВАТИ БЕЗКОШТОВНО
-							</a>
-							<a href="" 
-							class="block-display button-full-blue element-width-160 element-border-radius-5 element-margin-left-10">
-								ПОЧАТИ НАВЧАННЯ
-							</a>
 						</div>
 					</div>
 				</div>
-			
+			</div>
+			<div class="content">
+				<div class="header-begin-info col-md-12">
+					<div class="logo">
+						<img src="/tpl_img/logo.png" alt="logo" >	
+					</div>						
+					<div class="header-begin-info-btns">
+						<a href="" 
+							class="block-display button-border-blue element-width-240 element-border-radius-5">
+							СПРОБУВАТИ БЕЗКОШТОВНО
+						</a>
+						<a href="" 
+							class="block-display button-full-blue element-width-160 element-border-radius-5 element-margin-left-10">
+							ПОЧАТИ НАВЧАННЯ
+						</a>
+					</div>
+				</div>
+			</div>
 			<div class="clear"></div>
 			<div class="menu-desktop">
 				<div class="menu">
@@ -100,8 +117,8 @@
 						</ul>
 						<div class="clear"></div>
 					</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+</div>
