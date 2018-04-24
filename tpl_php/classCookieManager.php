@@ -8,9 +8,13 @@
 			}
 		}
 		//установка кук
-		public function set_user_cookie($name, $value, $time = 0) {
+		public static function set_user_cookie($name, $value, $time = 0) {
 			if(empty($name) || empty($value) || $time < 1) return false;
+			if(is_array($value)) {
+				$new_value = serialize($value);
+			}
 
+			setcookie($name, $value, $time);
 		}
 		//удаление кук
 		public function unset_cookie($cookie_name = '') {
