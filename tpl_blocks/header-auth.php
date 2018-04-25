@@ -28,11 +28,11 @@
 						</div>	
 						<div class="header-begin-info-btns">
 							<a href="" 
-							class="block-display button-full-blue element-width-160 element-border-radius-5 element-margin-left-10">
+							class="block-display button-full-blue element-width-160 element-border-radius-5 ">
 								РЕЄСТРАЦІЯ
 							</a>
 							<a href="" 
-							class="block-display button-border-blue element-width-240 element-border-radius-5 ">
+							class="block-display button-border-blue element-width-240 element-border-radius-5 element-margin-left-10">
 								СПРОБУВАТИ БЕЗКОШТОВНО
 							</a>
 						</div>
@@ -44,6 +44,6 @@
 				ВХІД В КАБІНЕТ
 			</div>
 
-				</div>
-			</div>
 		</div>
+	</div>
+</div>

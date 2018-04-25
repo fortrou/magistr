@@ -62,23 +62,67 @@ $(document).ready(function(){
 
 	//FOOTER-MENU
 	$(".subject-title--orange").click(function () {
-			$(this).next(".footer-list-block").toggle(300);
-	})
+		$(this).next(".footer-list-block").toggle(300);
+	});
 
 	//AUTH-FORM-POPUP
 	$(".js-auth-form").click(function (event) {
-			$(".auth-form").toggle(300);
-			event.preventDefault();
-	})
+		$(".auth-form").toggle(300);
+		event.preventDefault();
+	});
 
 	$(".close-form").click(function () {
-				$(".auth-form").hide(300);
-		})
+		$(".auth-form").hide(300);
+	});
+
+	//TABS 
+	  $(function() {
+    	$("ul.tabs-links").on("click", "li:not(.active)", function(e) {
+      		$(this)
+	        .addClass("active")
+	        .siblings()
+	        .removeClass("active")
+	        .closest("div.tabs")
+	        .find("div.tabs-content")
+	        .removeClass("active")
+	        .eq($(this).index())
+	        .addClass("active");
+	        e.preventDefault();
+   		 });
+ 	 });
+
+	//FORM PHOTO PREVIEW
 	$("a.submitter").click(function(evt) {
 		evt.preventDefault();
 		var form = $(this).attr("data-form");
 		$('#' + form).submit();
-	})
+	});
+	if($("input[name = user_avatar]").length) {
+		$('input[name = user_avatar]').on('change', function (evt) {
+        if (!this.files.length || !window.FileReader) {
+            return;
+        } else {
+            var countfiles = $('input[name = user_avatar]').length;
+            for (var i = 0; i < this.files.length; i++) {
+                if (/^image/.test(this.files[i].type)) {
+                    if (countfiles == 0 ) { var numb = i }else{ var numb = countfiles + 1}
+                    var that = this.files[i];
+                    var inputFields = '<input id="post_attachments_attributes_' + numb + '_name" name="post[attachments_attributes][' + numb + '][name]" type="file"  data-other="inputFile">';
+                    $('#post_attachments_attributes_' + numb + '_name').val(that.name);
+                    $('#fields').append(inputFields);
+                    var reader = new FileReader();
+                    reader.readAsDataURL(that);
+                    reader.onloadend = function () {
+						$("input[name = user_avatar]").css("height", "50px");
+                        var elements = '<img width="150" height="200" src="' + this.result +'" />';
+                        $('.form-item--photo .loaded-photo').empty().append(elements);
+                    }
+                }
+
+            }
+        }
+    });
+	}
 })
 
 
