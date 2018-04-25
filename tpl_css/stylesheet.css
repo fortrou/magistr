@@ -532,7 +532,24 @@ a {
 	font-weight: 600;
 }
 
+
+.form-group {
+	padding: 10px 25px;
+	background-color: #dadbda;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+
+.static-create {
+	margin: 20px auto;
+}
+
+.page-hat-text-admin {
+	margin: 10px 70px;
+}
+
 /*-----REGISTRATION-FORM-STYLE-START-----*/
+
 
 .form {
 	width: 480px;
@@ -814,6 +831,12 @@ a {
 }
 .element-margin-left-10 {
 	margin-left: 10px;
+}
+.element-margin-left-20 {
+	margin-left: 20px;
+}
+.element-margin-left-30 {
+	margin-left: 30px;
 }
 .element-margin-right-10 {
 	margin-right: 10px;

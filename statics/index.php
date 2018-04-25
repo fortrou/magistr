@@ -12,6 +12,9 @@
 	$first_level_slug  = '';
 	$second_level_slug = '';
 	$third_level_slug  = '';
+	$description 	   = '';
+	$keywords 		   = '';
+
 	$routes = require_once("routes.php");
 	if(empty($routes)) {
 		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");

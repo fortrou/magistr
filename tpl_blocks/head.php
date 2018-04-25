@@ -8,4 +8,5 @@
 		<script type="text/javascript" src="<?php echo PROTOCOL . SITE_NAME; ?>tpl_js/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo PROTOCOL . SITE_NAME; ?>tpl_js/main-js.js"></script>
 		<script type="text/javascript" src="<?php echo PROTOCOL . SITE_NAME; ?>tpl_js/mobile-menu.js"></script>
+		<script type="text/javascript" src="<?php echo PROTOCOL . SITE_NAME; ?>editors/ckeditor/ckeditor.js"></script>
 	</head>
