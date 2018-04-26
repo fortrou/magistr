@@ -131,7 +131,7 @@
 	function check_array_with_regular($patterns = array(), $string = '') {
 		if(empty($patterns) || $string == '') return false;
 		foreach($patterns as $key => $value) {
-			var_dump(preg_match("~$key~", $string));
+			//var_dump(preg_match("~$key~", $string));
 			if(preg_match("~$key~", $string)) {
 				return array( 0 => $key,
 							  1 => $value );

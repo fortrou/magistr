@@ -1,5 +1,5 @@
 <?php
-	return array( 'statics' => 'statics/empty_method', 
+	return array( 'statics[/]$' => 'statics/empty_method', 
 				  'statics/blog' => 'statics/get_news', 
 				  'statics/list' => 'statics/get_staticsListForAdmin', 
 				  'statics/create' => 'statics/get_staticsCreation', 

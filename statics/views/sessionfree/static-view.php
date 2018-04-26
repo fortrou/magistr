@@ -7,7 +7,7 @@
 					<div class="text">
 					%s
 					</div>'
-					, $data['static_name'], $data['static_content']);
+					, htmlspecialchars_decode($data['static_name']), htmlspecialchars_decode($data['static_content']));
 		}
 	?>
 	</div>
