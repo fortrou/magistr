@@ -122,4 +122,20 @@
 			require_once(ROOT . "/tpl_blocks/header.php");
 		}
 	}
+	/**
+	 * check_array_with_regular() - проверяет соответствие строки массиву паттернов, возвращает ключ => значение
+	 * $patterns - Массив паттернов
+	 * $string - строка на соответствие
+	 *
+	 **/
+	function check_array_with_regular($patterns = array(), $string = '') {
+		if(empty($patterns) || $string == '') return false;
+		foreach($patterns as $key => $value) {
+			var_dump(preg_match("~$key~", $string));
+			if(preg_match("~$key~", $string)) {
+				return array( 0 => $key,
+							  1 => $value );
+			}
+		}
+	}
 ?>

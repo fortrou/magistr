@@ -20,9 +20,11 @@
 		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");
 	}
 	$address = trim($_SERVER["REQUEST_URI"],"/");
-	$result = preg_grep("~$address~", array_keys($routes));
-	$result = array_values($result);
-	if(!empty($routes[$result[0]])) {
+	//$result = preg_grep("~$address~", array_keys($routes));
+	$result = check_array_with_regular($routes, $address);
+	print_r($result);
+	//$result = array_values($result);
+	if($result && !empty($routes[$result[1]])) {
 		$data = explode('/', $routes[$address]);
 		$slug_data = explode('/', $address);
 		$first_level_slug = $slug_data[0];

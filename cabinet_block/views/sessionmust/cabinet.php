@@ -74,7 +74,7 @@
 					</li>
 				</ul>
 				
-					<div class="tabs-content active">
+					<div class="tabs-content ">
 						<div class="form profile-form">
 							<div class="profile-title">
 								Налаштування облікового запису
@@ -245,16 +245,43 @@
 							</form>
 						</div>
 					</div>
-					<div class="tabs-content">
+					<div class="tabs-content active">
 						<div class="form profile-form profile-form-pay">
 							<div class="profile-title">
 								Формування платежів
 							</div>
 							<div class="form-item">	
-								Інформація щодо сплати <i class="fa fa-question-circle" aria-hidden="true"></i>
+								Інформація щодо сплати <span class="fa fa-question-circle info-tooltip" aria-hidden="true"></span>
+								<div class="info-tooltip-block">
+									<p>1) Онлайн-оплата навчання</p>
+									<p>Здійснюється за допомогою інтернет-сервісу електронних платежів 
+									 <a href="http://wwww.liqpay.com" target="_blank">LIQPAY</a>. Кошти автоматично перераховуються на рахунок Онлайн-школи з врахуванням комісії протягом 1 банківського дня.
+									</p>
+									<p>2) Оплата навчання по квитанції.</p>
+									<p>Ви можете створити квитанцію для оплати, роздрукувати її, оплатити навчання в будь-якому банку і завантажити назад нам оплачений чек, щоб ми подовжили вам доступ до навчання.</p>
+								</div>
 							</div>
-							<div class="form-item">	
+							<div class="form-item course-blocks">	
 								<div class="course-block payed-course">	
+									<div class="course-element course-element--name">
+										Курс: 
+										<span class="course-name-title"></span>
+									</div>
+									<div class="course-element course-element--price">
+										Сума: 
+										<span class="course-price-summ"></span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											ПОДОВЖИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										Термін оплати: 
+										<span class="course-term-days"></span>
+									</div>
+								</div>
+								<div class="course-block unpayed-course">	
 									<div class="course-element course-element--name">
 										Курс: 
 										<span class="course-name-title"></span>
@@ -273,12 +300,30 @@
 										<span class="course-term-days"></span>
 									</div>
 								</div>
+
 							</div>
-							<div class="form-item">	
-								Сплатити через банк (натисніть на кнопку 'Сгенерувати платiжку', щоб отримати реквізити для Сплати у банку)
+							<div class="form-item pay-block">	
+								Сплатити через банк (натисніть на кнопку 'Сгенерувати платiжку', щоб отримати реквізити для cплати у банку)
+								<div class="form-item form-item--btn">
+										<a href=""
+											class="submitter block-display button-full-blue element-border-radius-5 "
+											data-form=" ">
+											Згенерувати платіжку
+										</a>
+										<a href=""
+											class="submitter block-display button-full-blue element-border-radius-5 "
+											data-form=" ">
+											Прикріпити файл
+										</a>
+										<a href=""
+											class="submitter block-display button-full-blue element-border-radius-5 "
+											data-form=" ">
+											Відправити квитанцію
+										</a>
+								</div>
 							</div>
-							<div class="form-item">	
-								Щоб вiдправити копію чека про сплату квитанції, сфотографуйте її або вiдскануйте,натисніть на кнопку "Прикріпити файл", виберіть файл, i коли вiн загрузиться,натисніть на кнопку "Вiдправити квитанцію" и вiдправте її нам. Завантажити дозволяється файли формату: .png,.jpeg,.jpg
+							<div class="form-item pay-block">	
+								Щоб вiдправити копію чека про сплату квитанції, сфотографуйте її або вiдскануйте, натисніть на кнопку "Прикріпити файл", оберіть файл, i коли вiн завантажиться, натисніть на кнопку "Вiдправити квитанцію" і вiдправте її нам. Можна завантажити файли формату: .png, .jpeg, .jpg
 							</div>
 						</div>
 						
