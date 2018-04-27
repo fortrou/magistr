@@ -751,6 +751,15 @@ a {
 	padding: 15px;
 }
 
+.course-block .course-element .course-item {
+	font-size: 	12px;
+	font-weight: normal;
+	color: rgb(255,255,255);
+	padding: 0px 10px;
+	border-radius: 	20px;
+	background: rgb(66,139,220);	
+}
+
 /*-----PROFILE-FORM-STYLE-END-----*/
 
 /*-----TABS-STYLE-START-----*/
@@ -904,6 +913,14 @@ a {
 
 
 /*-----CHECKBOX-STYLE-END-----*/
+
+.title-static {
+	width: 100%;
+	display: block;
+	color: red;
+	font-size: 30px;
+	font-weight: 600;
+}
 
 .no-display {
 	display: none;

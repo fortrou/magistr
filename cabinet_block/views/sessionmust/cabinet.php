@@ -283,12 +283,12 @@
 								</div>
 								<div class="course-block unpayed-course">	
 									<div class="course-element course-element--name">
-										Курс: 
-										<span class="course-name-title"></span>
+										<span class="course-item">Курс:</span>
+										<span class="course-item-name">Course Name</span>
 									</div>
 									<div class="course-element course-element--price">
-										Сума: 
-										<span class="course-price-summ"></span>
+										<span class="course-item">Сума:</span>
+										<span class="course-item-summ"></span>
 									</div>
 									<div class="course-element course-element--button">
 										<a href="" class="course-pay-button">
@@ -296,8 +296,8 @@
 										</a>
 									</div>
 									<div class="course-element course-element--term">
-										Термін оплати: 
-										<span class="course-term-days"></span>
+										<span class="course-item">Термін оплати:</span> 
+										<span class="course-item-term"></span>
 									</div>
 								</div>
 

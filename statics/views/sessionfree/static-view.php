@@ -3,7 +3,7 @@
 	<div class="row">
 	<?php
 		if(!empty($data) && $data) {
-			printf('<h1>%s</h1>
+			printf('<h1 class="title-static">%s</h1>
 					<div class="text">
 					%s
 					</div>'

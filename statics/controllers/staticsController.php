@@ -19,5 +19,9 @@
 			}
 			require_once(VIEW . "sessionfree/static-view.php");
 		}
+		public static function get_staticsListForAdmin() {
+			$data = staticModel::get_staticList();
+			require_once(VIEW . "sessionmust/static-list.php");
+		}
 	}
 ?>

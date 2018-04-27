@@ -40,5 +40,8 @@
 			}
 			return false;
 		}
+		public static function redact_static($data) {
+			
+		}
 	}
 ?>
