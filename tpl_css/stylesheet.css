@@ -695,28 +695,15 @@ a {
 
 .profile-form.profile-form-pay .form-item.form-item--btn {
 	width:100%;
-	max-width: 600px;
+	max-width: 100%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 .profile-form.profile-form-pay {
 	color: rgb(80,80,80);
 	font-size: 14px;
 }
-.profile-form.profile-form-pay .course-blocks {
-	width: 100%;
-	display: inline-flex;
-}
-.profile-form.profile-form-pay .course-block { 
-	width: 49%;
-	max-width: 100%;
-	padding: 15px;
-	margin: 0 auto;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	border: 1px solid rgb(66,139,220);
 
-}
 .profile-form.profile-form-pay .form-item.form-item--btn .button-full-blue{
 	padding: 0px 15px;
 	width: auto;
@@ -751,13 +738,79 @@ a {
 	padding: 15px;
 }
 
+.course-blocks {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	align-content: flex-start;
+}
+
+.course-block { 
+	flex: 0 0 48%;
+	align-items: flex-start;
+	padding: 0px 15px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border: 1px solid rgb(66,139,220);
+}
+.course-block.unpayed-course { 
+	border: 1px solid rgb(230,230,230);
+}
+
+.course-block .course-element {
+	margin: 20px 0px;
+	display: flex;
+	justify-content: space-between;
+}
+
 .course-block .course-element .course-item {
+	flex: 0 0 37%;
+	height: 40px;
+	line-height: 20px;
 	font-size: 	12px;
 	font-weight: normal;
-	color: rgb(255,255,255);
-	padding: 0px 10px;
+	text-align: center;
+	padding: 10px;
 	border-radius: 	20px;
-	background: rgb(66,139,220);	
+	color: rgb(66,139,220);
+	background: rgb(230,230,230);
+}
+
+.course-block .course-element .course-item.course-item--value {
+	flex: 0 0 60%;
+	font-weight: 800;	
+	color: rgb(255,255,255);
+	background: rgb(66,139,220);
+}
+
+.course-block.unpayed-course .course-element .course-item.course-item--value {
+	color: rgb(66,139,220);
+	background: rgb(230,230,230);
+}
+
+.course-pay-button {
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 20px;
+	color: rgb(255,255,255);
+	text-align: center;
+	cursor: pointer;
+}
+
+.course-block.payed-course .course-element .course-pay-button {
+	background: rgb(66,139,220);
+}
+
+.course-block.unpayed-course .course-element .course-pay-button {
+	background: rgb(255,180,73);
+}
+.course-block .course-element .course-pay-button:hover {
+	opacity: 0.9;
+	color: rgb(255,255,255);
 }
 
 /*-----PROFILE-FORM-STYLE-END-----*/
@@ -779,16 +832,7 @@ a {
   position: relative;
   margin: -1px 0 0 -1px;
 }
-.tabs-links li:last-child:before {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: -2px;
-  z-index: -1;
-  height: 5px;
-  background: #7DCA86;
-}
+
 .tabs-links:after {
   content: '';
   display: table;
@@ -1108,6 +1152,14 @@ a {
 		padding: 15px 10px;
 	}
 
+	.course-blocks {
+		flex-direction: row;
+	}
+	.course-block {
+		flex: 0 0 60%;
+		margin: 5px auto;
+	}
+
 }
 @media only screen and (max-width: 600px) {
 
@@ -1325,6 +1377,15 @@ a {
 		width: 90%;
 	}
 
+	.course-block {
+		flex: 0 0 100%;
+	}
+
+	.tabs-links {
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -1361,6 +1422,19 @@ a {
 	.header-begin-info-btns a { 
 		margin-top: 15px;
 		margin-left: 0px;
+	}
+	.course-block .course-element {
+		flex-direction: column;
+	}
+	.course-block .course-element .course-item {
+		margin-bottom: 	5px;
+	}
+
+	.profile-form.profile-form-pay .form-item.form-item--btn {
+		flex-direction: column;
+	}
+	.profile-form.profile-form-pay .form-item.form-item--btn .button-full-blue {
+		margin-bottom: 	5px;
 	}
 
 }

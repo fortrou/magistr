@@ -262,33 +262,14 @@
 								</div>
 							</div>
 							<div class="form-item course-blocks">	
-								<div class="course-block payed-course">	
-									<div class="course-element course-element--name">
-										Курс: 
-										<span class="course-name-title"></span>
-									</div>
-									<div class="course-element course-element--price">
-										Сума: 
-										<span class="course-price-summ"></span>
-									</div>
-									<div class="course-element course-element--button">
-										<a href="" class="course-pay-button">
-											ПОДОВЖИТИ
-										</a>
-									</div>
-									<div class="course-element course-element--term">
-										Термін оплати: 
-										<span class="course-term-days"></span>
-									</div>
-								</div>
 								<div class="course-block unpayed-course">	
-									<div class="course-element course-element--name">
-										<span class="course-item">Курс:</span>
-										<span class="course-item-name">Course Name</span>
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
 									</div>
 									<div class="course-element course-element--price">
-										<span class="course-item">Сума:</span>
-										<span class="course-item-summ"></span>
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
 									</div>
 									<div class="course-element course-element--button">
 										<a href="" class="course-pay-button">
@@ -296,8 +277,46 @@
 										</a>
 									</div>
 									<div class="course-element course-element--term">
-										<span class="course-item">Термін оплати:</span> 
-										<span class="course-item-term"></span>
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
+									</div>
+								</div>
+								<div class="course-block payed-course">	
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
+									</div>
+									<div class="course-element course-element--price">
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											ПОДОВЖИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
+									</div>
+								</div>
+																<div class="course-block payed-course">	
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
+									</div>
+									<div class="course-element course-element--price">
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											ПОДОВЖИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
 									</div>
 								</div>
 
