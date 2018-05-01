@@ -48,7 +48,7 @@ function initalize_swap(class_toggle, slide_time, twin_selector, max_resolution_
 	}
 }
 $(document).ready(function(){
-
+		
 	//HEADER-MENU
 	var swap_main = new initalize_swap('sub-section', 7000, '.menu .menu-elements li', 767);
 	swap_main.run();
@@ -71,9 +71,15 @@ $(document).ready(function(){
 		event.preventDefault();
 	});
 
+	$("li#mobMenu").click(function (event) {
+		alert('11111111111111111');
+		$(".block-right-mobile").toggle(300);
+		event.preventDefault();
+	});
+
 	$(".close-form").click(function () {
 		$(".auth-form").hide(300);
-	});
+	});	
 
 	//TABS 
 	  $(function() {

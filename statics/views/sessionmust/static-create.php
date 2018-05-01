@@ -11,7 +11,7 @@
 ?>
 <div class="container">
 	<div class="row">
-		<h1 class="page-hat-text-admin">Создание статических страниц и новостей</h1>
+		<h1 class="form-page-title">Создание статических страниц и новостей</h1>
 		<div class="url-data">
 			<?php
 				if(!empty($url)) {

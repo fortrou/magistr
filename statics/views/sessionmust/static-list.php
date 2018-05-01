@@ -1,20 +1,23 @@
 <?php
-
 	get_header();
 ?>
 <div class="container">
 	<div class="row">
-		<h1>Список статических страниц и новостей</h1>
-		<div class="content">
-			<h2>Новости</h2>
-			<table>
+		<div class="form-page-title">
+			<h1>
+				Список статических страниц и новостей
+			</h1>
+		</div>
+		<div class="content text">
+			<h2 class="static-page-title-2">Страницы новостей</h2>
+			<table class="static-list-table">
 				<thead>
 					<tr>
-						<td>Название</td>
-						<td>Просмотр</td>
-						<td>Редактирование</td>
-						<td>Удалить</td>
-						<td>Дата</td>
+						<th>Название</th>
+						<th>Просм.</th>
+						<th>Ред.</th>
+						<th>Удалить</th>
+						<th>Дата</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -23,10 +26,10 @@
 							foreach($data['news'] as $value) {
 								printf('<tr>
 											<td title="%s">%s</td>
-											<td><a href="%s">Посмотреть</a></td>
-											<td><a href="%s">Редактировать</a></td>
-											<td></td>
-											<td>%s</td>
+											<td><a href="%s" target="_blank"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+											<td><a href="%s" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+											<td><a href=""><i class="fa fa-trash" aria-hidden="true"></i><a/></td>
+											<td class="date">%s</td>
 										</tr>', $value['static_name'], mb_substr($value['static_name'], 0, 50, "UTF-8")
 											  , PROTOCOL . SITE_NAME . 'statics/watch/' . $value['id']
 											  , PROTOCOL . SITE_NAME . 'statics/redact/' . $value['id'], $value['static_date']);
@@ -35,16 +38,16 @@
 					?>
 				</tbody>
 			</table>
-			<h2>Статические страницы</h2>
-			<table>
+			<h2 class="static-page-title-2">Статические страницы</h2>
+			<table class="static-list-table">
 				<thead>
-					<th>
-						<td>Название</td>
-						<td>Просмотр</td>
-						<td>Редактирование</td>
-						<td>Удалить</td>
-						<td>Дата</td>
-					</th>
+					<tr>
+						<th>Название</th>
+						<th>Просм.</th>
+						<th>Ред.</th>
+						<th>Удалить</th>
+						<th>Дата</th>
+					</tr>
 				</thead>
 				<tbody>
 					<?php
@@ -52,10 +55,10 @@
 							foreach($data['statics'] as $value) {
 								printf('<tr>
 											<td title="%s">%s</td>
-											<td><a href="%s">Посмотреть</a></td>
-											<td><a href="%s">Редактировать</a></td>
-											<td></td>
-											<td>%s</td>
+											<td><a href="%s" target="_blank"><i class="fa fa-search" aria-hidden="true"></i></a></td>
+											<td><a href="%s" target="_blank"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+											<td><a href=""><i class="fa fa-trash" aria-hidden="true"></i><a/></td>
+											<td class="date">%s</td>
 										</tr>', $value['static_name'], mb_substr($value['static_name'], 0, 50, "UTF-8")
 											  , PROTOCOL . SITE_NAME . 'statics/watch/' . $value['id']
 											  , PROTOCOL . SITE_NAME . 'statics/redact/' . $value['id'], $value['static_date']);

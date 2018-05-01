@@ -32,20 +32,67 @@
 							</li>
 						</div>
 						<div class="menu-cabinet-elements-block-right">
-							<li>
+							<li id="mobMenu" class="menu-cabinet-mobile-icon">
+								<a href="">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</a>	
+							</li>
+							<div class="block-right-mobile">	
+							<li class="menu-cabinet-submenu">
 								<a href="">
 									Курс
 								</a>
+								<ul>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 1
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 2
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 3
+										</a>
+									</li>
+								</ul>
 							</li>
-							<li class="menu-profile-element">
+							<li class="menu-profile-element menu-cabinet-submenu">
 								<a href="">
 									Профіль
 								</a>
+								<ul>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Персональна інформація
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Керування розсилками
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Оплата курсів
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Вихід
+										</a>
+									</li>
+								</ul>
 								<div class="menu-profile-photo">
 									<img src="/tpl_img/logo-mini.png" alt="profile-photo" class="">
 								</div>
 								<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
 							</li>
+							</div>
+							
 						</div>
 					</ul>
 					<div class="clear"></div>
