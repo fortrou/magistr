@@ -436,7 +436,7 @@ li.menu-cabinet-submenu:hover > ul {
 	color: rgb(66, 139, 220);
 	text-align: center;
 	line-height: 2.7;
-	background: white;
+	background: rgba(255,255,255,0);
 	transition: 1s;
 	height: 40px;
 }
@@ -1011,6 +1011,33 @@ li.menu-cabinet-submenu:hover > ul {
 /*-----CHECKBOX-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/
+.static-page-header {
+	background: rgb(255,255,255);
+	padding: 5px;
+
+}
+
+.static-page-menu {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.static-page-header .header-info-buttons {
+	display: flex;
+}
+
+.static-page-header .header-info-buttons .button-full-blue.button-full-blue--icon{
+	width: 40px;
+	font-size: 25px;
+	padding: 0 5px;
+	line-height: 1.3;
+}
+
+.static-page-header .header-info-buttons .button-border-blue {
+	padding: 0 20px;
+}
+
 .static-page-title-2 {
 	text-align: center;
 	color: rgb(66,139,220);
@@ -1546,7 +1573,9 @@ table.static-list-table td.date {
 		padding: 15px 0px;
 	}
 	
-
+	.static-page-header .header-info-buttons .button-border-blue {
+		line-height: 1.3;
+	}
 }
 
 @media only screen and (max-width: 320px) {

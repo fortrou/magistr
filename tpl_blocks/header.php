@@ -12,7 +12,7 @@
 						<a href="tel: +380996545428">
 							<span class="fa fa-phone"></span>
 							<span class="contacts-text hide-480">
-								(099) 654-54-
+								(099) 654-54-28
 							</span>
 						</a>
 						<a href="">
