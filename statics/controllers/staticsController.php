@@ -23,5 +23,11 @@
 			$data = staticModel::get_staticList();
 			require_once(VIEW . "sessionmust/static-list.php");
 		}
+		public static function get_staticsRedaction() {
+			global $third_level_slug;
+			if(empty($third_level_slug)) $this::empty_method();
+			$data = staticModel::get_static($third_level_slug);
+			require_once(VIEW . "sessionmust/static-redact.php");
+		}
 	}
 ?>

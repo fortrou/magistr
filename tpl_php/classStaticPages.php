@@ -41,7 +41,26 @@
 			return false;
 		}
 		public static function redact_static($data) {
-			
+			if(empty($data)) throw new Exception("Incorrect data");
+			global $mysqli;
+
+			$update_values = '';
+			foreach($data as $key => $value) {
+				if($key == 'action') continue;
+				if($key == 'id') continue;
+				
+				if(is_numeric($value))
+					$update_values .= "$key = "  . $value . ', ';
+				else
+					$update_values .= "$key = '" . htmlspecialchars($value) . "', ";
+			}
+			$update_values = rtrim($update_values, ', ');
+
+			if(empty($update_values)) throw new Exception("Sorry error in proccess");
+			$sql = sprintf("UPDATE mag_statics SET %s WHERE id = %s", $update_values, $data['id']);
+			$res = $mysqli->query($sql);
+			if($mysqli->affected_rows == 0) throw new Exception("Sorry error with redacting");
+			return true;
 		}
 	}
 ?>
