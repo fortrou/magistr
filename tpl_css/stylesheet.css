@@ -71,12 +71,25 @@ a {
 }
 .header-info span.contacts-text {
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: 800;
 	color: white;
 	line-height: 40px;
 	vertical-align: middle;
 	margin-right: 30px;
 }
+
+.header-info .contacts-phone-second > .contacts-text {
+	display: none;
+	position: absolute;
+	top: 40px;
+	padding: 10px 25px;
+	color: rgb(80,80,80);
+	font-size: 	14px;
+	font-weight: 800;
+	background: rgba(255,255,255,0.7);
+	z-index: 10;
+}
+
 .header-info span.fa {
 	margin-right: 10px;
 	color: rgb(255, 180, 73);
@@ -310,13 +323,14 @@ li.menu-cabinet-submenu:hover > ul {
 .sub-footer .sub-footer-text .link-contacts {
 	font-size: 14px;
 	text-transform: uppercase;
-	text-decoration: underline;
+	text-decoration: underline !important;
 }
 /*-----FOOTER-STYLE-END-----*/
 
 .info-block {
 	width: 100%;
 	font-size: 16px;
+	color: rgb(80,80,80);
 	padding: 10px;
 	line-height: 1.7;
 	background: rgb(237, 237, 237);
@@ -330,6 +344,10 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .info-block span.text-zno {
 	font-weight: 800;
+}
+
+.info-block span.text-semibold {
+	font-weight: 600;
 }
 
 /*-----ELEMENTS-STYLE-START-----*/
@@ -349,6 +367,7 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 16px;
 }
 .element-wrap .subject-title--blue {
+	font-weight: 600;
 	color: rgb(66, 139, 220);
 	font-size: 18px;
 }
@@ -420,7 +439,7 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .button-full-blue:hover {
 	color: rgb(66, 139, 220);
-	background: white;
+	background: rgba(255,255,255,0);
 }
 .button-full-blue--big {
 	font-size: 16px;
@@ -1605,5 +1624,6 @@ table.static-list-table td.date {
 		position: relative;
 		top: 20px;
 	}
+	
 
 }

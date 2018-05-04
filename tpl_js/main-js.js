@@ -70,16 +70,33 @@ $(document).ready(function(){
 		$(".auth-form").toggle(300);
 		event.preventDefault();
 	});
-
-	$("li#mobMenu").click(function (event) {
-		alert('11111111111111111');
-		$(".block-right-mobile").toggle(300);
-		event.preventDefault();
-	});
-
 	$(".close-form").click(function () {
 		$(".auth-form").hide(300);
 	});	
+
+
+	$(".js-second-phone").click(function (event) {
+		//alert('Hello');
+		$("a.contacts-phone-second > div.contacts-text").toggle(300);
+		$("a.contacts-phone-second > span.contacts-text").toggle(300);
+		event.preventDefault();
+		function mediaSize() { 
+		if (window.matchMedia('(max-width: 600px)').matches) {
+			$('a.contacts-phone-first').removeClass('contacts-phone-first').addClass('contacts-phone-second')
+			$('span.contacts-text.hide-480').css({'display':'block','top':'81px'});
+		} else {
+		/* Reset for CSS changes – Still need a better way to do this! */
+		}
+	};
+  	mediaSize();
+	});
+
+
+	$("li#mobMenu").click(function (event) {
+		//alert('11111111111111111');
+		$(".block-right-mobile").toggle(300);
+		event.preventDefault();
+	});
 
 	//TABS 
 	  $(function() {

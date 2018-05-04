@@ -12,7 +12,7 @@
 						<div class="menu-cabinet-elements-block-left">
 							<li class="menu-cabinet-logo">
 								<a href="/index.php" target="_blank">
-									<img src="/tpl_img/logo-mini.png" alt="mini-logo">
+									<img src="/tpl_img/logo-mini-white.png" alt="mini-logo">
 								</a>
 							</li>
 							<li class="menu-cabinet-elements">

@@ -12,7 +12,7 @@
 						<div class="static-page-menu">
 							<div class="logo">	
 								<a href="/index.php" target="_blank">
-									<img class=""src="/tpl_img/logo-mini.png" alt="mini-logo">
+									<img src="/tpl_img/logo-mini.png" alt="mini-logo">
 								</a>
 							</div>
 							<div class="header-info-buttons">

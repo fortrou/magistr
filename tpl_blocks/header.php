@@ -9,8 +9,16 @@
 			<div class="header-info">
 				<div class="content">
 					<div class="col-md-12">
-						<a href="tel: +380996545428">
-							<span class="fa fa-phone"></span>
+						
+						<a href="" class="second-tel-show js-second-phone">
+							<span class="fa fa-phone "></span>
+						</a>
+						<a href="tel: +380733226768" class="contacts-phone-second">
+							<div class="contacts-text">
+								(073) 322-67-68
+							</div>
+						</a>
+						<a href="tel: +380996545428" class="contacts-phone-first">
 							<span class="contacts-text hide-480">
 								(099) 654-54-28
 							</span>
@@ -27,6 +35,7 @@
 								ПН-ПТ: 11.00 - 19.00
 							</span>
 						</a>
+						
 						<div class="header-info-buttons">
 							<a href=""
 								class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">

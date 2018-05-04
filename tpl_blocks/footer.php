@@ -89,7 +89,7 @@
 					<div class="sub-footer-text">
 						<p> 
 							<a href="" class="link-contacts"> 
-								Контакты 
+								Контакти 
 							</a> 
 						</p>
 						<p>м. Харків, вул. Плеханівська 18, оф. 816А
@@ -111,16 +111,16 @@
 								<a href="">Email: magistr.zno@gmail.com</a>
 							</p>
 							<p>
-								<a href="">Telegram: (068) 057-29-02</a>
+								<a href="">Telegram: (073) 322-67-68</a>
 							</p>
 							<div class="social">
 								<span class="social-item">
-									<a href="http://fb.com" target="_blank">
+									<a href="https://www.facebook.com/magistr.zno" target="_blank">
 										<i class="fa fa-facebook-square" aria-hidden="true"></i>
 									</a>
 								</span>
 								<span class="social-item">
-									<a href="http://youtube.com" target="_blank">
+									<a href="https://www.youtube.com/channel/UCvXa8W2QSjs54RQauCUqkTQ" target="_blank">
 										<i class="fa fa-youtube-square" aria-hidden="true"></i>
 									</a>
 								</span>
