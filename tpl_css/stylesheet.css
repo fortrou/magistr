@@ -425,7 +425,81 @@ li.menu-cabinet-submenu:hover > ul {
 /*-----ELEMENTS-STYLE-END-----*/
 
 /*-----BTNS-STYLE-START-----*/
+.button {
+	display: inline-block;
+	border-radius: 5px;
+	font-size: 	13px;
+	font-weight: 600;
+	text-align: center;
+	transition: 1s;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+.button-border {
+	border: 2px solid rgb(0,0,0);
+	background: rgba(255,255,255,0);
+}
+.button-border:hover {
+	color: rgb(255,255,255);
+}
+.button-border--blue {
+	color: rgb(66,139,220);
+	border-color: rgb(66,139,220);
+}
+.button-border--blue:hover {
+	background: rgb(66,139,220);
+}
+.button-border--orange {
+	color:rgb(255,179,73);
+	border-color: rgb(255,179,73);
+}
+.button-border--orange:hover {
+	background: rgb(255,179,73);
+}
+.button-border--white {
+	border-color: rgb(255,255,255);
+}
+.button-border--dark {
+	color: rgb(80,80,80);
+	border-color: rgb(80,80,80);
+}
+.button-border--dark:hover {
+	background: rgb(80,80,80);
+}
 
+.button-full {
+	border: 2px solid rgb(255,255,255);
+	background: rgba(255,255,255,1);
+	color: rgb(255,255,255);
+}
+.button-full:hover {
+	background: rgba(255,255,255,0);
+}
+.button-full--blue {
+	border: 2px solid rgb(66,139,220);
+	background: rgb(66,139,220);
+}
+.button-full--blue:hover {
+	color: rgb(66,139,220);
+}
+.button-full--orange {
+	border: 2px solid rgb(255,179,73);
+	background: rgb(255,179,73);
+}
+.button-full--orange:hover {
+	color: rgb(255,179,73);
+}
+.button-full--white {
+	border: 2px solid rgb(255,255,255);
+}
+.button-full--dark {
+	border: 2px solid rgb(80,80,80);
+	background: rgb(80,80,80);
+}
+.button-full--dark:hover {
+	color: rgb(80,80,80);
+}
+/*ПЕРЕДЕЛАТЬ СТИЛИ ПОД БЭМ, УНИФИЦИРОВАТЬ РАЗМЕРЫ ОТСТУПЫ ПОУБИРАТЬ ФИКСИРОВАННУЮ ШИРИНУ В РАЗМЕТКЕ*/
 .button-full-blue {
 	font-weight: 600;
 	font-size: 13px;
@@ -477,13 +551,13 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .button-full-yellow:hover {
 	color: rgb(255, 180, 73);
-	background: rgba(80, 80, 80, 1);
+	background: rgb(80, 80, 80);
 }
 .button-border-yellow {
 	font-weight: 600;
 	font-size: 13px;
 	border: 2px solid rgb(255, 179, 73);
-	background: rgba(80, 80, 80, 1);
+	background: rgb(80, 80, 80);
 	color: rgb(255, 180, 73);
 	text-align: center;
 	line-height: 2;
@@ -514,7 +588,7 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .button-full-orange:hover {
 	color: rgb(255, 255, 255);
-	background: rgba(66, 139, 220, 1);
+	background: rgb(66, 139, 220);
 }
 .button-full-white {
 	font-weight: 600;
@@ -571,6 +645,67 @@ li.menu-cabinet-submenu:hover > ul {
 }
 
 /*-----AUTH-FORM-STYLE-END-----*/
+
+/*-----CONTACT-FORM-STYLE-START-----*/
+.support-button {
+	position: fixed;
+	top: 295px;
+	right: -55px;
+	width: 150px;
+	height: 40px;
+	transform: rotate(270deg);
+	background: rgb(80,80,80);
+	text-align: center;
+	line-height: 40px;
+	color: rgb(255,255,255);
+	border-radius: 5px 5px 0 0;
+	z-index: 999;
+	cursor: pointer;
+
+}
+
+.contact-form {
+	display: none;
+	position: fixed;
+	top: 240px;
+	right: 50px;
+	width: 240px;
+	height: 300px;
+	border: 1px solid rgb(80,80,80);
+	border-radius: 5px;
+	background: rgb(255,255,255);
+	color: rgb(80,80,80);
+	text-align: center;
+	padding: 15px 10px;
+	z-index: 999;
+}
+
+.contact-form .contact-form-item {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.contact-form .contact-form-item input, .contact-form-item textarea {
+	width: 90%;
+	padding: 3px;
+	outline: none;
+	font-size: 	12px;
+	color: rgb(140,140,140);
+	border: 1px solid rgb(80,80,80);
+	resize: none;
+
+}
+
+.contact-form .contact-form-item--head-title {
+	font-size: 	14px;
+	font-weight: 600;
+}
+
+.contact-form .contact-form-item--head-text {
+	font-size: 	10px;
+	font-weight: 600;
+}
+/*-----CONTACT-FORM-STYLE-END-----*/
 
 /*-----FORM-PAGE-STYLE-START-----*/
 

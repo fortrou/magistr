@@ -1,6 +1,40 @@
 <div class="container">
 <div class="row">
 	<div class="footer">
+		<div class="support-button">
+			Техпідтримка
+		</div>
+		<div class="contact-form">
+			<form action="">
+				<div class="contact-form-item contact-form-item--head">
+					<span class="contact-form-item--head-title">
+						Техпідтримка
+					</span>
+					<p class="contact-form-item--head-text"> 
+						Ваше звернення буде опрацьоване протягом 24 годин.
+					</p>
+				</div>
+				<div class="contact-form-item">
+					<input name="name" type="text" placeholder="Ваше ім'я">
+				</div>
+				<div class="contact-form-item">
+					<input name="email" type="email" placeholder="Ваш email">
+				</div>
+				<div class="contact-form-item">
+					<textarea name="message" id="" cols="" rows="3" placeholder="Текст вашого повідомлення" resize="none"></textarea>
+				</div>
+				<div class="contact-form-item">
+					<a href=""
+						class="button button-full button-full--dark">
+						Надіслати
+					</a>
+					<a href=""
+						class="button button-border button-border--dark">
+						Прикріпити
+					</a>
+				</div>
+			</form>
+		</div>
 		<div class="content">
 			<div class="element-wrap-list footer-columns col-md-12 element-margin-bottom-40 element-margin-top-40">
 				<div class="element-wrap  element-width-200">

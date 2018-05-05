@@ -128,6 +128,40 @@
 					</div>
 				</div>
 			</div>
+			<div class="support-button">
+				Техпідтримка
+			</div>
+			<div class="contact-form">
+				<form action="">
+					<div class="contact-form-item contact-form-item--head">
+						<span class="contact-form-item--head-title">
+							Техпідтримка
+						</span>
+						<p class="contact-form-item--head-text"> 
+							Ваше звернення буде опрацьоване протягом 24 годин.
+						</p>
+					</div>
+					<div class="contact-form-item">
+						<input name="name" type="text" placeholder="Ваше ім'я">
+					</div>
+					<div class="contact-form-item">
+						<input name="email" type="email" placeholder="Ваш email">
+					</div>
+					<div class="contact-form-item">
+						<textarea name="message" id="" cols="" rows="" placeholder="Текст вашого повідомлення"></textarea>
+					</div>
+					<div class="contact-form-item">
+						<a href=""
+							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+							Надіслати
+						</a>
+						<a href=""
+							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+							Прикріпити
+						</a>
+					</div>
+				</form>
+			</div>
 		</div>
 	</div>
 </div>
