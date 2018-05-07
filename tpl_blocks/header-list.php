@@ -36,11 +36,6 @@
 				</div>
 			</div>
 			<div class="clear"></div>
-			<div class="form-page-title">
-				<h1>
-					РЕЄСТРАЦІЯ НОВОГО КОРИСТУВАЧА
-				</h1>
-			</div>
 
 		</div>
 	</div>

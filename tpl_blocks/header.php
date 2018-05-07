@@ -9,10 +9,18 @@
 			<div class="header-info">
 				<div class="content">
 					<div class="col-md-12">
-						<a href="tel: +380996545428">
-							<span class="fa fa-phone"></span>
+						
+						<a href="" class="second-tel-show js-second-phone">
+							<span class="fa fa-phone "></span>
+						</a>
+						<a href="tel: +380733226768" class="contacts-phone-second">
+							<div class="contacts-text">
+								(073) 322-67-68
+							</div>
+						</a>
+						<a href="tel: +380996545428" class="contacts-phone-first">
 							<span class="contacts-text hide-480">
-								(099) 654-54-
+								(099) 654-54-28
 							</span>
 						</a>
 						<a href="">
@@ -27,6 +35,7 @@
 								ПН-ПТ: 11.00 - 19.00
 							</span>
 						</a>
+						
 						<div class="header-info-buttons">
 							<a href=""
 								class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
@@ -118,6 +127,40 @@
 						<div class="clear"></div>
 					</div>
 				</div>
+			</div>
+			<div class="support-button">
+				Техпідтримка
+			</div>
+			<div class="contact-form">
+				<form action="">
+					<div class="contact-form-item contact-form-item--head">
+						<span class="contact-form-item--head-title">
+							Техпідтримка
+						</span>
+						<p class="contact-form-item--head-text"> 
+							Ваше звернення буде опрацьоване протягом 24 годин.
+						</p>
+					</div>
+					<div class="contact-form-item">
+						<input name="name" type="text" placeholder="Ваше ім'я">
+					</div>
+					<div class="contact-form-item">
+						<input name="email" type="email" placeholder="Ваш email">
+					</div>
+					<div class="contact-form-item">
+						<textarea name="message" id="" cols="" rows="" placeholder="Текст вашого повідомлення"></textarea>
+					</div>
+					<div class="contact-form-item">
+						<a href=""
+							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+							Надіслати
+						</a>
+						<a href=""
+							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+							Прикріпити
+						</a>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

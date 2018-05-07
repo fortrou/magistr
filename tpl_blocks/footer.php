@@ -1,6 +1,40 @@
 <div class="container">
 <div class="row">
 	<div class="footer">
+		<div class="support-button">
+			Техпідтримка
+		</div>
+		<div class="contact-form">
+			<form action="">
+				<div class="contact-form-item contact-form-item--head">
+					<span class="contact-form-item--head-title">
+						Техпідтримка
+					</span>
+					<p class="contact-form-item--head-text"> 
+						Ваше звернення буде опрацьоване протягом 24 годин.
+					</p>
+				</div>
+				<div class="contact-form-item">
+					<input name="name" type="text" placeholder="Ваше ім'я">
+				</div>
+				<div class="contact-form-item">
+					<input name="email" type="email" placeholder="Ваш email">
+				</div>
+				<div class="contact-form-item">
+					<textarea name="message" id="" cols="" rows="3" placeholder="Текст вашого повідомлення" resize="none"></textarea>
+				</div>
+				<div class="contact-form-item">
+					<a href=""
+						class="button button-full button-full--dark">
+						Надіслати
+					</a>
+					<a href=""
+						class="button button-border button-border--dark">
+						Прикріпити
+					</a>
+				</div>
+			</form>
+		</div>
 		<div class="content">
 			<div class="element-wrap-list footer-columns col-md-12 element-margin-bottom-40 element-margin-top-40">
 				<div class="element-wrap  element-width-200">
@@ -89,7 +123,7 @@
 					<div class="sub-footer-text">
 						<p> 
 							<a href="" class="link-contacts"> 
-								Контакты 
+								Контакти 
 							</a> 
 						</p>
 						<p>м. Харків, вул. Плеханівська 18, оф. 816А
@@ -111,16 +145,16 @@
 								<a href="">Email: magistr.zno@gmail.com</a>
 							</p>
 							<p>
-								<a href="">Telegram: (068) 057-29-02</a>
+								<a href="">Telegram: (073) 322-67-68</a>
 							</p>
 							<div class="social">
 								<span class="social-item">
-									<a href="http://fb.com" target="_blank">
+									<a href="https://www.facebook.com/magistr.zno" target="_blank">
 										<i class="fa fa-facebook-square" aria-hidden="true"></i>
 									</a>
 								</span>
 								<span class="social-item">
-									<a href="http://youtube.com" target="_blank">
+									<a href="https://www.youtube.com/channel/UCvXa8W2QSjs54RQauCUqkTQ" target="_blank">
 										<i class="fa fa-youtube-square" aria-hidden="true"></i>
 									</a>
 								</span>

@@ -48,7 +48,7 @@ function initalize_swap(class_toggle, slide_time, twin_selector, max_resolution_
 	}
 }
 $(document).ready(function(){
-
+		
 	//HEADER-MENU
 	var swap_main = new initalize_swap('sub-section', 7000, '.menu .menu-elements li', 767);
 	swap_main.run();
@@ -70,9 +70,33 @@ $(document).ready(function(){
 		$(".auth-form").toggle(300);
 		event.preventDefault();
 	});
-
 	$(".close-form").click(function () {
 		$(".auth-form").hide(300);
+	});	
+	//CONTACT-FORM
+	$(".support-button").click(function (event) {
+		$(".contact-form").toggle(300);
+		evnt.preventDefault();
+	});
+	//PHONE-NUMBER
+	$(".js-second-phone").click(function (event) {
+		$("a.contacts-phone-second > div.contacts-text").toggle(300);
+		$("a.contacts-phone-second > span.contacts-text").toggle(300);
+		event.preventDefault();
+		function mediaSize() { 
+		if (window.matchMedia('(max-width: 600px)').matches) {
+			$('a.contacts-phone-first').removeClass('contacts-phone-first').addClass('contacts-phone-second')
+			$('span.contacts-text.hide-480').css({'display':'block','top':'81px'});
+		} else {
+		}
+	};
+  		mediaSize();
+	});
+
+
+	$("li#mobMenu").click(function (event) {
+		$(".block-right-mobile").toggle(300);
+		event.preventDefault();
 	});
 
 	//TABS 

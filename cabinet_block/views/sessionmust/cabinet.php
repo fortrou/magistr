@@ -12,7 +12,7 @@
 						<div class="menu-cabinet-elements-block-left">
 							<li class="menu-cabinet-logo">
 								<a href="/index.php" target="_blank">
-									<img src="/tpl_img/logo-mini.png" alt="mini-logo">
+									<img src="/tpl_img/logo-mini-white.png" alt="mini-logo">
 								</a>
 							</li>
 							<li class="menu-cabinet-elements">
@@ -32,20 +32,67 @@
 							</li>
 						</div>
 						<div class="menu-cabinet-elements-block-right">
-							<li>
+							<li id="mobMenu" class="menu-cabinet-mobile-icon">
+								<a href="">
+									<i class="fa fa-bars" aria-hidden="true"></i>
+								</a>	
+							</li>
+							<div class="block-right-mobile">	
+							<li class="menu-cabinet-submenu">
 								<a href="">
 									Курс
 								</a>
+								<ul>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 1
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 2
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Название курса 3
+										</a>
+									</li>
+								</ul>
 							</li>
-							<li class="menu-profile-element">
+							<li class="menu-profile-element menu-cabinet-submenu">
 								<a href="">
 									Профіль
 								</a>
+								<ul>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Персональна інформація
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Керування розсилками
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Оплата курсів
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Вихід
+										</a>
+									</li>
+								</ul>
 								<div class="menu-profile-photo">
 									<img src="/tpl_img/logo-mini.png" alt="profile-photo" class="">
 								</div>
 								<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
 							</li>
+							</div>
+							
 						</div>
 					</ul>
 					<div class="clear"></div>
@@ -262,33 +309,14 @@
 								</div>
 							</div>
 							<div class="form-item course-blocks">	
-								<div class="course-block payed-course">	
-									<div class="course-element course-element--name">
-										Курс: 
-										<span class="course-name-title"></span>
-									</div>
-									<div class="course-element course-element--price">
-										Сума: 
-										<span class="course-price-summ"></span>
-									</div>
-									<div class="course-element course-element--button">
-										<a href="" class="course-pay-button">
-											ПОДОВЖИТИ
-										</a>
-									</div>
-									<div class="course-element course-element--term">
-										Термін оплати: 
-										<span class="course-term-days"></span>
-									</div>
-								</div>
 								<div class="course-block unpayed-course">	
-									<div class="course-element course-element--name">
-										<span class="course-item">Курс:</span>
-										<span class="course-item-name">Course Name</span>
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
 									</div>
 									<div class="course-element course-element--price">
-										<span class="course-item">Сума:</span>
-										<span class="course-item-summ"></span>
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
 									</div>
 									<div class="course-element course-element--button">
 										<a href="" class="course-pay-button">
@@ -296,8 +324,46 @@
 										</a>
 									</div>
 									<div class="course-element course-element--term">
-										<span class="course-item">Термін оплати:</span> 
-										<span class="course-item-term"></span>
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
+									</div>
+								</div>
+								<div class="course-block payed-course">	
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
+									</div>
+									<div class="course-element course-element--price">
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											ПОДОВЖИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
+									</div>
+								</div>
+																<div class="course-block payed-course">	
+									<div class="course-element course-element--courseName">
+										<span class="course-item">КУРС:</span>
+										<span class="course-item course-item--value">Course Name</span>
+									</div>
+									<div class="course-element course-element--price">
+										<span class="course-item">СУМА:</span>
+										<span class="course-item course-item--value">1000 грн.</span>
+									</div>
+									<div class="course-element course-element--button">
+										<a href="" class="course-pay-button">
+											ПОДОВЖИТИ
+										</a>
+									</div>
+									<div class="course-element course-element--term">
+										<span class="course-item">ТЕРМІН ОПЛАТИ:</span> 
+										<span class="course-item course-item--value">30 днів</span>
 									</div>
 								</div>
 
