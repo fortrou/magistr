@@ -16,6 +16,7 @@
 										Ми пропонуємо підготовку до іспитів з трьох дисциплін. 
 									</div>
 								</div>
+								<!--
 								<div class="elements-block col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0">
 									<div class="element-wrap">
 										<img src="/tpl_img/femida.png" class="main-image" alt="">
@@ -36,16 +37,56 @@
 										</div>
 									</div>
 								</div>
-								<div class="sub-section-btns col-xl-12 offset-xl-4 col-lg-12 offset-lg-4 col-md-12 offset-md-1">
+								-->
+								<div class="cards-container">
+									<div class="card-block">
+										<div class="card-block__image">
+											<img src="/tpl_img/femida.png" class="main-image" alt="Femida">
+										</div>
+										<div class="card-block__title">
+											<h4>ПРАВО</h4>
+										</div>
+									</div>
+									<div class="card-block card-block--english">
+										<div class="card-block__image">
+											<img src="/tpl_img/english.png" class="main-image" alt="English">
+										</div>
+										<div class="card-block__title">
+											<h4>АНГЛІЙСЬКА МОВА</h4>
+										</div>
+										<div class="carb-block__footer">
+										<div class="card-block__price">
+											Ціна за предмет: 1000грн.								
+										</div>
+										<div class="card-block__button">
+											<a href="">
+												Придбати зараз!
+											</a>
+										</div>
+										</div>
+									</div>
+									<div class="card-block">
+										<div class="card-block__image">
+											<img src="/tpl_img/rubik.png" class="main-image" alt="Rubik">
+										</div>
+										<div class="card-block__title">
+											<h4>ТЗНПК</h4>
+										</div>
+									</div>
+								</div>
+								<div class="cards-footer">	
 									<a href="" 
-									class="inline-block-display button-full-blue button-full-blue--big element-width-300 element-border-radius-5 ">
-									ЦІНА ЗА ПІДГОТОВКУ - 2900 грн.
-										</a>
+										class="button button-big button-full button-full--blue cards-button">
+										ПРИДБАЙ ПОВНИЙ КОМПЛЕКТ КУРСІВ ВСЬОГО ЗА 2900
+									</a>
+								</div>
+								<div class="more-info-block">
 									<a href="" 
-										class="inline-block-display button-full-white element-width-300">
+										class="button button-full button-full--white">
 										ДЕТАЛЬНІШЕ
 									</a>
 								</div>
+								<!--DEMO BLOCKS-->
 							</div>
 						</div>
 					<div class="how-to-start sub-section" data-section="2">
