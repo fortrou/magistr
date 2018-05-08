@@ -37,7 +37,7 @@
 		</div>
 		<div class="content">
 			<div class="element-wrap-list footer-columns col-md-12 element-margin-bottom-40 element-margin-top-40">
-				<div class="element-wrap  element-width-200">
+				<div class="element-wrap">
 					<h3 class="subject-title--orange">
 						Інформація
 					</h3>
@@ -53,7 +53,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="element-wrap element-width-200">
+				<div class="element-wrap">
 					<h3 class="subject-title--orange">
 						Про нас
 					</h3>
@@ -83,7 +83,7 @@
 						</li>
 					</ul>
 				</div>
-				<div class="element-wrap element-width-200">
+				<div class="element-wrap">
 					<h3 class="subject-title--orange">
 						Новини
 					</h3>
@@ -114,10 +114,15 @@
 					</ul>
 				</div>
 			</div>
+			<div class="faq-block">
+				<a href="" class="faq-link">
+					Популярні запитання
+				</a>
+			</div>
 		</div>
 	</div>
 	<div class="sub-footer">
-		<div class="content element-margin-bottom-40 element-margin-top-40">
+		<div class="content">
 			<div class="element-wrap-list footer-columns col-md-12">
 				<div class="element-wrap element-width-350">
 					<div class="sub-footer-text">
@@ -159,11 +164,11 @@
 									</a>
 								</span>
 							</div>
-							<p>
-								<a href="">
+							<div>
+								<a href="" class="faq-link">
 									Популярні запитання
 								</a>
-							</p>
+							</div>
 						</div>
 					</div>
 				</div>
