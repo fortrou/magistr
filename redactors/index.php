@@ -12,16 +12,19 @@
 	$first_level_slug  = '';
 	$second_level_slug = '';
 	$third_level_slug  = '';
+	$description 	   = '';
+	$keywords 		   = '';
+
 	$routes = require_once("routes.php");
 	if(empty($routes)) {
 		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");
 	}
-	$_SERVER["REQUEST_URI"] = preg_replace('/\?(.*)/', '', $_SERVER["REQUEST_URI"]);
 	$address = trim($_SERVER["REQUEST_URI"],"/");
-	$result = preg_grep("~$address~", array_keys($routes));
-	$result = array_values($result);
-	if(!empty($routes[$result[0]])) {
-		$data = explode('/', $routes[$address]);
+	//$result = preg_grep("~$address~", array_keys($routes));
+	$result = check_array_with_regular($routes, $address);
+	//$result = array_values($result);
+	if($result && !empty($result[1])) {
+		$data = explode('/', $result[1]);
 		$slug_data = explode('/', $address);
 		$first_level_slug = $slug_data[0];
 		if(count($slug_data) > 1) $second_level_slug = $slug_data[1];

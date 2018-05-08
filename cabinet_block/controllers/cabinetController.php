@@ -7,7 +7,8 @@
 		}
 		public static function get_MainForSession() {
 			global $user_cookie;
-			//if(empty($user_cookie)) header("Location:/cabinet_block/auth"); 
+			//if(empty($user_cookie)) header("Location:/cabinet_block/auth");
+			$active = '';
 			cabinetModel::get_MainForSession($userData);
 			require_once(VIEW . "sessionmust/cabinet.php");
 		}
