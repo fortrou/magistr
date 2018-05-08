@@ -10,7 +10,7 @@
 							<div class="sub-section-element">
 								<div class="info-block col-md-12 ">
 									<div>
-										<span class="text-semibold">Онлайн-центр</span><span class="text-magistr">"МАГІСТР</span><span class="text-zno">ЗНО"</span> готує до вступу до магістратури за спеціальністю <span class="text-magistr">"ПРАВО"</span>.
+										<span class="text-semibold text-magistr">Онлайн-центр</span><span class="text-magistr"> "МАГІСТР</span><span class="text-zno">ЗНО"</span> готує до вступу до магістратури за спеціальністю <span class="text-magistr">"ПРАВО"</span>.
 									</div>
 									<div>
 										Ми пропонуємо підготовку до іспитів з трьох дисциплін. 
@@ -76,17 +76,16 @@
 								</div>
 								<div class="cards-footer">	
 									<a href="" 
-										class="button button-big button-full button-full--blue cards-button">
+										class="button button-big button-rounded button-full button-full--blue cards-button">
 										ПРИДБАЙ ПОВНИЙ КОМПЛЕКТ КУРСІВ ВСЬОГО ЗА 2900
 									</a>
 								</div>
 								<div class="more-info-block">
 									<a href="" 
-										class="button button-full button-full--white">
+										class="button button-big button-full button-full--white">
 										ДЕТАЛЬНІШЕ
 									</a>
 								</div>
-								<!--DEMO BLOCKS-->
 							</div>
 						</div>
 					<div class="how-to-start sub-section" data-section="2">
@@ -124,13 +123,20 @@
 										</a>
 									</div>
 								</div>
-								<div class="col-xl-12 offset-xl-8 col-lg-12 offset-lg-8 col-md-5 offset-md-0 element-margin-top-40">
+								<!-- 
 									<a href="" 
 										class="inline-block-display button-full-white element-width-300 ">
 										ДЕТАЛЬНІШЕ
 									</a>
-								</div>
+								</div> -->
 							</div>
+							<div class="col-xl-12 offset-xl-4 col-lg-12 offset-lg-4 col-md-12 offset-md-0">
+							<div class="more-info-block">
+								<a href="" class="button button-big button-full button-full--white">
+									ДЕТАЛЬНІШЕ
+								</a>
+							</div>
+						</div>
 						</div>
 					</div>
 	<div class="how-to-learn sub-section" data-section="3">
@@ -202,7 +208,7 @@
 					</div>
 					<div class="question-block-button">
 						<a href="" 
-							class="button-full-white element-width-200 ">
+							class="button button-big button-full button-full--white">
 							ДЕТАЛЬНІШЕ
 						</a>
 					</div>

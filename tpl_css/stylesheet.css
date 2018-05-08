@@ -293,6 +293,8 @@ li.menu-cabinet-submenu:hover > ul {
 .sub-footer {
 	background: rgba(101, 101, 101, 1);
 	color: rgb(255, 255, 255);
+	font-weight: 600;
+	padding: 20px 0px;
 }
 .sub-footer .sub-footer-text {
 	font-size: 14px;
@@ -400,6 +402,7 @@ li.menu-cabinet-submenu:hover > ul {
 	width: 100%;
 	text-align: center;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-items: center;
 }
@@ -429,6 +432,9 @@ li.menu-cabinet-submenu:hover > ul {
 .button-big {
 	font-size: 16px;
 	padding: 10px 20px;
+}
+.button-rounded {
+	border-radius: 40px;
 }
 .button-border {
 	border: 2px solid rgb(0,0,0);
@@ -488,7 +494,7 @@ li.menu-cabinet-submenu:hover > ul {
 	border: 2px solid rgb(255,255,255);
 }
 .button-full--white:hover {
-	color: rgb(66,139,220);
+	color: rgb(255,179,73);
 }
 .button-full--dark {
 	border: 2px solid rgb(80,80,80);
@@ -695,6 +701,7 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .cards-footer {
 	width: 100%;
+	height: 100px;
     max-width: 800px;
     text-align: center;
     border:  1px solid rgb(200,200,200);
@@ -706,10 +713,10 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .cards-button {
 	position: relative;
-	top:25px;
+	top:75px;
 }
 .cards-button:hover {
-	background: rgba(66,139,220,0.9);
+	background: rgba(66,139,220,0.85);
 	color: rgb(255,255,255);
 }
 
@@ -1315,7 +1322,18 @@ table.static-list-table td.date {
 	text-align: center;
 	margin-bottom: 30px;
 }
-
+.faq-block {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.faq-link {
+	color: rgb(255,255,255);
+	font-size: 14px;
+	font-weight: 600;
+}
+.footer .faq-block {
+		display: none;
+} 
 .no-display {
 	display: none;
 }
@@ -1465,7 +1483,7 @@ table.static-list-table td.date {
 		margin-bottom: 20px;
 	}
 	.element-wrap-list .element-wrap {
-		width: 300px;
+		width: auto;
 	}
 	.main .element-wrap {
 		width: 240px;
@@ -1476,6 +1494,12 @@ table.static-list-table td.date {
 	.main-arrow {
 		margin-left: -10px;
 	}
+	.sub-footer .faq-link {
+		display: none;
+	} 
+	.footer .faq-block {
+		display: block;
+	} 
 	.sub-section-btns {
 		text-align: center;
 	}
@@ -1501,7 +1525,6 @@ table.static-list-table td.date {
 	.menu-cabinet .menu-elements li.menu-cabinet-elements {
 		padding: 15px 10px;
 	}
-
 	.course-blocks {
 		flex-direction: row;
 	}
@@ -1516,6 +1539,11 @@ table.static-list-table td.date {
 }
 @media only screen and (max-width: 600px) {
 
+	.info-block {
+		max-width: 360px;
+		margin: 0 auto;
+		margin-top: 25px;
+	}
 	.header-info span.fa {
 		font-size: 20px;
 		margin-top: 10px;
@@ -1768,7 +1796,12 @@ table.static-list-table td.date {
 	}
 	.cards-footer {
 		border: none;
+		height: auto;
 	}
+	.cards-button {
+		top: 15px;
+	}
+
 
 
 }
