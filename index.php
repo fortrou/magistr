@@ -56,7 +56,7 @@
 										</div>
 										<div class="carb-block__footer">
 										<div class="card-block__price">
-											Ціна за предмет: 1000грн.								
+											Ціна за предмет: 1000 грн.								
 										</div>
 										<div class="card-block__button">
 											<a href="">

@@ -6,11 +6,16 @@
 			print($e);
 		}
 	}
-	get_header(); 
+	require_once(BLOCK_FOLDER . "/header-watch.php");
 ?>
-	<div class="container">
-		<div class="row">
-			<div class="form">
+<div class="container">
+	<div class="row">
+		<div class="form-page-title">
+			<h1>
+				РЕЄСТРАЦІЯ НОВОГО КОРИСТУВАЧА
+			</h1>
+		</div>
+		<div class="form">
 				<form action="" method="post" id="registration_form_user" enctype="multipart/form-data">
 					<input type="hidden" name="action" value="registration_user">
 					<div class="form-block">
@@ -101,7 +106,7 @@
 						</div>
 						<div class="form-item">
 							<label for="education" class="form-item-title">
-								Вуз і факультет *
+								Вуз і факультет
 							</label>
 							<input id="education" name="user_academy" type="text" required />
 							<div class="form-item-tooltip">
@@ -110,7 +115,7 @@
 						</div>
 						<div class="form-item form-item--photo">
 							<label for="photo" class="form-item-title">
-								Фото *
+								Фото
 							</label>
 							<div class="loaded-photo"></div>
 	   						<input id="photo" name="user_avatar" type="file" accept="image/*,image/jpeg,,image/jpg,image/png,image/bmp" required />
@@ -130,15 +135,16 @@
 								* Поля, відмічені зірочками, заповнюються обов'язково.
 							</div>
 						</div>
+					</div>
 					<div class="form-item form-item--send">
-					<a href=""
-						class="submitter block-display button-full-blue element-border-radius-5 element-width-400"
-						data-form="registration_form_user">
-						ЗАРЕЄСТРУВАТИСЯ
-					</a>
+						<a href=""
+							class="submitter button button-full button-width button-full--blue"
+							data-form="registration_form_user">
+							ЗАРЕЄСТРУВАТИСЯ
+						</a>
 					</div>
 				</form>
-			</div>
 		</div>
 	</div>
+</div>
 <?php require_once(BLOCK_FOLDER . "/footer.php"); ?>

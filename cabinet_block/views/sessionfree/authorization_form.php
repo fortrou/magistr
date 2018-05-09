@@ -1,6 +1,11 @@
-<?php get_header(); ?>
+<?php require_once(BLOCK_FOLDER . "/header-watch.php"); ?>
 	<div class="container">
 		<div class="row">
+			<div class="form-page-title">
+				<h1>
+					ВХІД В КАБІНЕТ
+				</h1>
+			</div>
 			<div class="form auth-form-page">
 				<form action="">
 						<div class="form-item">
@@ -11,7 +16,9 @@
 						</div>
 						<div class="form-item form-item-footer">
 							<a href="">
-								<span class="lost-pass-text">Забули пароль?</span>
+								<span class="lost-pass-text">
+									Забули пароль?
+								</span>
 							</a>
 							<a href=""
 								class="inline-block-display button-full-blue element-width-90 element-border-radius-5">

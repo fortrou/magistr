@@ -81,17 +81,17 @@
 								Сплатити через банк (натисніть на кнопку 'Сгенерувати платiжку', щоб отримати реквізити для cплати у банку)
 								<div class="form-item form-item--btn">
 										<a href=""
-											class="submitter block-display button-full-blue element-border-radius-5 "
+											class="submitter button button-full button-full--blue"
 											data-form=" ">
 											Згенерувати платіжку
 										</a>
 										<a href=""
-											class="submitter block-display button-full-blue element-border-radius-5 "
+											class="submitter button button-full button-full--blue"
 											data-form=" ">
 											Прикріпити файл
 										</a>
 										<a href=""
-											class="submitter block-display button-full-blue element-border-radius-5 "
+											class="submitter button button-full button-full--blue"
 											data-form=" ">
 											Відправити квитанцію
 										</a>

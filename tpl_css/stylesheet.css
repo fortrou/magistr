@@ -59,8 +59,13 @@ html, body {
 	font-style: normal;
 	font-weight: normal;
 }
-a {
+a {	
+	color: rgb(66,139,220);
 	text-decoration: none !important;
+	transition: 0.3s;
+}
+a:hover {
+	color: rgb(255, 180, 73);
 }
 
 /*-----HEADER-STYLE-START-----*/
@@ -296,6 +301,9 @@ li.menu-cabinet-submenu:hover > ul {
 	font-weight: 600;
 	padding: 20px 0px;
 }
+.sub-footer .element-wrap-list.footer-columns .element-wrap {
+	width: auto;
+}
 .sub-footer .sub-footer-text {
 	font-size: 14px;
 	text-align: left;
@@ -408,7 +416,7 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .twin-arrow {
 	position: absolute;
-	top: 0;
+	top: -30px;
 	left: 0;
 	bottom: -180px;
 	right: 0;
@@ -426,15 +434,31 @@ li.menu-cabinet-submenu:hover > ul {
 	font-weight: 600;
 	text-align: center;
 	transition: 1s;
-	padding: 5px 10px;
+	padding: 10px 10px;
 	cursor: pointer;
+}
+.button-small {
+	font-size: 12px;
+	padding: 5px 5px;
 }
 .button-big {
 	font-size: 16px;
 	padding: 10px 20px;
 }
+.button-icon {
+	width: 40px;
+	margin-left: 10px;
+	font-size: 25px;
+	padding: 0px 5px;
+}
 .button-rounded {
 	border-radius: 40px;
+}
+.button-wide {
+	padding: 10px 75px;
+}
+.button-width {
+	width: 100%;
 }
 .button-border {
 	border: 2px solid rgb(0,0,0);
@@ -866,7 +890,7 @@ li.menu-cabinet-submenu:hover > ul {
 
 .form {
 	width: 480px;
-	margin: 0 auto;
+	margin: 30px auto;
 	margin-bottom: 30px;
 	font-weight: 600;
 }
@@ -882,7 +906,7 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .form-item {
 	position: relative;
-	margin-top: 10px;
+	margin-top: 11px;
 }
 .form-item input{
 	width: 100%;
@@ -917,7 +941,7 @@ li.menu-cabinet-submenu:hover > ul {
 	display: none;
 	float: right;
 	position: absolute;
-	top: 29px;
+	top: -11px;
 	right: -1px;
 	width: 60%;
 	height: 40px;
@@ -926,6 +950,9 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 12px;
 	background: rgba(237,237,237,1);
 	padding-left: 5px;
+}
+.form-item.form-item--photo > .form-item-tooltip {
+	top: 29px;
 }
 .form-item input:hover + .form-item-tooltip, .form-item textarea:hover + .form-item-tooltip {
 	display: block;
@@ -1255,7 +1282,6 @@ li.menu-cabinet-submenu:hover > ul {
     background: #aaa;
 }
 
-
 /*-----CHECKBOX-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/
@@ -1276,9 +1302,6 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 25px;
 	padding: 0 5px;
 	line-height: 1.3;
-}
-.static-page-header .header-info-buttons .button-border-blue {
-	padding: 0 20px;
 }
 .static-page-title-2 {
 	text-align: center;
@@ -1535,7 +1558,9 @@ table.static-list-table td.date {
 	.cards-footer {
 		width: 85%;
 	}
-
+	.form-item.form-item--photo > .form-item-tooltip {
+		display: block;
+	}
 }
 @media only screen and (max-width: 600px) {
 
@@ -1710,6 +1735,10 @@ table.static-list-table td.date {
 	.subject-title--orange {
 		padding: 10px 0;
 	}
+
+	.form-item.form-item--photo > .form-item-tooltip {
+		display: block;
+	}
 	.auth-form {
 		position: fixed;
 		top: 0;
@@ -1815,7 +1844,7 @@ table.static-list-table td.date {
 		display: none !important;
 	}
 	.element-wrap-list-arrowed .element-wrap {
-		height: 230px !important;
+		margin-bottom: 20px;
 	}
 	.form {
 		width: 90%;
@@ -1851,9 +1880,8 @@ table.static-list-table td.date {
 	.menu-cabinet .menu-elements li.menu-cabinet-elements {
 		padding: 15px 0px;
 	}
-	
-	.static-page-header .header-info-buttons .button-border-blue {
-		line-height: 1.3;
+	.static-page-header .header-info-buttons .button-border--blue {
+		padding: 0 15px;
 	}
 	.card-block {
 		width: 65%;

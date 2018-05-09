@@ -39,7 +39,7 @@
 								</div>
 								<div class="form-item form-item--btn">
 									<a href=""
-										class="submitter block-display button-full-blue element-border-radius-5 element-width-200"
+										class="submitter button button-wide button-full button-full--blue"
 										data-form="profile_form_user">
 										ЗБЕРЕГТИ
 									</a>
