@@ -17,16 +17,16 @@
 							</div>
 							<div class="header-info-buttons">
 								<a href="" 
-									class="block-display float-right-block button-border-blue element-border-radius-5 ">
+									class="button button-border button-border--blue">
 									СПРОБУВАТИ БЕЗКОШТОВНО
-								</a>
+								</a> 
 								<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
 									target="_blank"
-									class="block-display float-right-block button-full-blue button-full-blue--icon element-border-radius-5 element-margin-left-10">	
+									class="button button-full button-icon button-full--blue ">	
 									<i class="fa fa-user-plus" aria-hidden="true"></i>
 								</a>
 								<a href=""
-									class="block-display float-right-block button-full-blue button-full-blue--icon js-auth-form element-border-radius-5 element-margin-left-10">
+									class="button button-full button-icon button-full--blue js-auth-form">
 									<i class="fa fa-sign-in" aria-hidden="true"></i>
 								</a>
 								<div class="auth-form">
@@ -61,8 +61,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="clear"></div>
-
+			
 		</div>
 	</div>
 </div>

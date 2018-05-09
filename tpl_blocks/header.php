@@ -8,8 +8,7 @@
 		<div class="header">
 			<div class="header-info">
 				<div class="content">
-					<div class="col-md-12">
-						
+					<div class="col-md-12">				
 						<a href="" class="second-tel-show js-second-phone">
 							<span class="fa fa-phone "></span>
 						</a>
@@ -42,6 +41,7 @@
 								ВХІД
 							</a>
 							<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
+								target="_blank"
 								class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
 								РЕЄСТРАЦІЯ
 							</a>
@@ -79,7 +79,9 @@
 			<div class="content">
 				<div class="header-begin-info col-md-12">
 					<div class="logo">
-						<img src="/tpl_img/logo.png" alt="logo" >	
+						<a href="/index.php">
+							<img src="/tpl_img/logo.png" alt="logo" >	
+						</a>
 					</div>						
 					<div class="header-begin-info-btns">
 						<a href="" 
@@ -110,7 +112,7 @@
 			<div class="menu-mobile">
 				<div class="menu">
 					<div class="content">
-						<ul class="menu-elements">
+						<ul class="menu-elements mobile-menu-elements">
 							<li data-rel-section="1">
 								<div id="m-btn-main" class="menu-mobile-btn-main"></div>
 							</li>
@@ -127,40 +129,6 @@
 						<div class="clear"></div>
 					</div>
 				</div>
-			</div>
-			<div class="support-button">
-				Техпідтримка
-			</div>
-			<div class="contact-form">
-				<form action="">
-					<div class="contact-form-item contact-form-item--head">
-						<span class="contact-form-item--head-title">
-							Техпідтримка
-						</span>
-						<p class="contact-form-item--head-text"> 
-							Ваше звернення буде опрацьоване протягом 24 годин.
-						</p>
-					</div>
-					<div class="contact-form-item">
-						<input name="name" type="text" placeholder="Ваше ім'я">
-					</div>
-					<div class="contact-form-item">
-						<input name="email" type="email" placeholder="Ваш email">
-					</div>
-					<div class="contact-form-item">
-						<textarea name="message" id="" cols="" rows="" placeholder="Текст вашого повідомлення"></textarea>
-					</div>
-					<div class="contact-form-item">
-						<a href=""
-							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
-							Надіслати
-						</a>
-						<a href=""
-							class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
-							Прикріпити
-						</a>
-					</div>
-				</form>
 			</div>
 		</div>
 	</div>

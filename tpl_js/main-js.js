@@ -76,7 +76,7 @@ $(document).ready(function(){
 	//CONTACT-FORM
 	$(".support-button").click(function (event) {
 		$(".contact-form").toggle(300);
-		evnt.preventDefault();
+		event.preventDefault();
 	});
 	//PHONE-NUMBER
 	$(".js-second-phone").click(function (event) {

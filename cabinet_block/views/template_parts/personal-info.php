@@ -48,7 +48,7 @@
 									</div>
 									<div class="form-item form-item--btn">
 										<a href=""
-											class="submitter block-display button-full-blue element-border-radius-5 element-width-200"
+											class="submitter button button-wide button-full button-full--blue"
 											data-form="profile_form_user">
 											ЗБЕРЕГТИ
 										</a>
@@ -62,31 +62,31 @@
 										<label for="lastname" class="form-item-title">
 											Прізвище
 										</label>
-										<input id="lastname" name="user_surname" type="text" disabled />
+										<input id="lastname" name="user_surname" type="text" />
 									</div>
 									<div class="form-item">
 										<label for="firsname" class="form-item-title">
 											Ім'я
 										</label>
-										<input id="firstname" name="user_name" type="text" disabled />
+										<input id="firstname" name="user_name" type="text" />
 									</div>
 									<div class="form-item">
 										<label for="middlename" class="form-item-title">
 											По батькові
 										</label>
-										<input id="middlename" name="user_lastname" type="text" disabled />
+										<input id="middlename" name="user_lastname" type="text" />
 									</div>
 									<div class="form-item">
 										<label for="telephone" class="form-item-title">
 											Телефон(-и)
 										</label>
-										<input id="telephone" name="user_phone" type="telephone" disabled />
+										<input id="telephone" name="user_phone" type="telephone" />
 									</div>
 									<div class="form-item">
 										<label for="city" class="form-item-title">
-											Місто *
+											Місто
 										</label>
-										<input id="city" name="user_city" type="text" disabled />
+										<input id="city" name="user_city" type="text" />
 									</div>
 								</div>
 								<div class="form-block form-block--more">
@@ -95,29 +95,29 @@
 									</div>
 									<div class="form-item">
 										<label for="education" class="form-item-title">
-											Вуз і факультет *
+											Вуз і факультет
 										</label>
-										<input id="education" name="user_academy" type="text" disabled />
+										<input id="education" name="user_academy" type="text" />
 									</div>
 									<div class="form-item form-item--photo form-item--changeable">
 										<label for="photo" class="form-item-title">
-											Фото *
+											Фото
 										</label>
 										<div class="loaded-photo"></div>
 				   						<input id="photo" name="user_avatar" type="file" accept="image/*,image/jpeg,,image/jpg,image/png,image/bmp" required />
 			  							<div class="form-item-tooltip ">
-											Завантажте фото об'ємом до 5МБ. Підтримуються формати .jpeg, .jpg, .png, .bmp
+											Завантажте можна фото об'ємом до 5МБ. Підтримуються формати .jpeg, .jpg, .png, .bmp
 										</div>
 									</div>
 									<div class="form-item form-item--textarea">
 										<label for="info" class="form-item-title">
 											Звідки ви дізналися про "МагістрЗНО"?
 										</label>
-										<textarea id="info" name="user_registred" id="" cols="" rows="" disabled></textarea>
+										<textarea id="info" name="user_registred" id="" cols="" rows=""></textarea>
 									</div>
 									<div class="form-item form-item--btn">
 										<a href=""
-											class="submitter block-display button-full-blue element-border-radius-5 element-width-200"
+											class="submitter button button-wide button-full button-full--blue"
 											data-form="profile_form_user">
 											ЗБЕРЕГТИ
 										</a>
