@@ -100,6 +100,7 @@ a:hover {
 	color: rgb(255, 180, 73);
 }
 .header-info-buttons {
+	margin-top: 5px;
 	float: right;
 	display: inline-block;
 	position: relative;
@@ -274,6 +275,33 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 	30px;
 }
 
+.menu-create {
+	position: fixed;
+	right: 55px;
+	top: 170px;
+	background: rgb(66,139,220);
+	width: 250px;
+	border-radius: 3px;
+	font-size: 14px;
+	font-weight: 600;
+	z-index: 9999;
+}
+
+.menu-create li {
+	list-style: none;
+	padding: 10px 10px;
+	text-align: center;
+}
+
+.menu-create li:hover {
+	background: rgb(255,180,73);
+	cursor: pointer;
+}
+
+.menu-create li a{
+	color: rgb(255,255,255);
+}
+
 /*-----MENU-CABINET-END-----*/
 
 
@@ -441,6 +469,10 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 12px;
 	padding: 5px 5px;
 }
+.button-middle {
+	height: 30px;
+	padding: 3px 10px;
+}
 .button-big {
 	font-size: 16px;
 	padding: 10px 20px;
@@ -526,6 +558,21 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .button-full--dark:hover {
 	color: rgb(80,80,80);
+}
+
+.create-button {
+	position:  fixed;
+    right:  0;
+    top:  170px;
+    background:  rgb(66,139,220);
+    border-radius:  10px;
+    width: 50px;
+    height: 50px;
+    text-align:  center;
+    color:  rgb(255,255,255);
+    font-size: 40px;
+    line-height: 50px;
+    z-index: 9999;
 }
 /*ПЕРЕДЕЛАТЬ СТИЛИ ПОД БЭМ, УНИФИЦИРОВАТЬ РАЗМЕРЫ ОТСТУПЫ ПОУБИРАТЬ ФИКСИРОВАННУЮ ШИРИНУ В РАЗМЕТКЕ*/
 .button-full-blue {
@@ -1295,6 +1342,7 @@ li.menu-cabinet-submenu:hover > ul {
 	align-items: center;
 }
 .static-page-header .header-info-buttons {
+	margin-top: 0px;
 	display: flex;
 }
 .static-page-header .header-info-buttons .button-full-blue.button-full-blue--icon{

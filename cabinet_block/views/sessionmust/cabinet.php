@@ -27,6 +27,14 @@
 							Оплата курсів
 						</a>
 					</li>
+					<?php
+						if(isset($_GET['tab']) && $_GET['tab'] == 4) $active = "active";
+					?>
+					<li class="<?php echo $active; $active = ''; ?>">
+						<a href="">
+							Списки користувачів
+						</a>
+					</li>
 				</ul>
 				<?php 
 					//global $user_cookie;

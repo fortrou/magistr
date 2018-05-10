@@ -36,14 +36,14 @@
 						</a>
 						
 						<div class="header-info-buttons">
-							<a href=""
-								class="block-display float-right-block button-full-yellow js-auth-form element-width-70 element-border-radius-5 element-margin-left-10">
-								ВХІД
-							</a>
 							<a href="<?php print PROTOCOL . SITE_NAME . "cabinet_block/registration" ?>"
 								target="_blank"
-								class="block-display float-right-block button-border-yellow element-width-160 element-border-radius-5 ">
+								class="button button-middle button-border button-border--orange element-width-160">
 								РЕЄСТРАЦІЯ
+							</a>
+							<a href=""
+								class="button button-middle button-full button-full--orange js-auth-form element-width-70 element-margin-left-10">
+								ВХІД
 							</a>
 							<div class="auth-form">
 								<form action="">
@@ -66,7 +66,7 @@
 											</span>
 										</a>
 										<a href=""
-											class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+											class="button button-full button-full--blue element-width-90">
 											УВІЙТИ
 										</a>
 									</div>
@@ -85,11 +85,11 @@
 					</div>						
 					<div class="header-begin-info-btns">
 						<a href="" 
-							class="block-display button-border-blue element-width-240 element-border-radius-5">
+							class="button button-border button-border--blue element-width-240">
 							СПРОБУВАТИ БЕЗКОШТОВНО
 						</a>
 						<a href="" 
-							class="block-display button-full-blue element-width-160 element-border-radius-5 element-margin-left-10">
+							class="button button-full button-full--blue element-width-160 element-margin-left-10">
 							ПОЧАТИ НАВЧАННЯ
 						</a>
 					</div>

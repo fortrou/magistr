@@ -66,28 +66,29 @@
 									Профіль
 								</a>
 								<ul>
-									<?php
-										if((isset($_GET['tab']) && $_GET['tab'] == 1) || !isset($_GET['tab'])) $active = "active";
-									?>	
-									<li class="menu-cabinet-submenu-item <?php echo $active; $active = ''; ?>">
+									<li class="menu-cabinet-submenu-item">
 										<a href="">
 											Персональна інформація
 										</a>
 									</li>
-									<?php
-										if(isset($_GET['tab']) && $_GET['tab'] == 2) $active = "active";
-									?>
-									<li class="menu-cabinet-submenu-item <?php echo $active; $active = ''; ?>">
+									<li class="menu-cabinet-submenu-item">
 										<a href="">
 											Керування розсилками
 										</a>
 									</li>
-									<?php
-										if(isset($_GET['tab']) && $_GET['tab'] == 3) $active = "active";
-									?>
-									<li class="menu-cabinet-submenu-item <?php echo $active; $active = ''; ?>">
+									<li class="menu-cabinet-submenu-item">
 										<a href="">
 											Оплата курсів
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Списки користувачів
+										</a>
+									</li>
+									<li class="menu-cabinet-submenu-item">
+										<a href="">
+											Квитанції
 										</a>
 									</li>
 									<li class="menu-cabinet-submenu-item">
@@ -101,12 +102,63 @@
 								</div>
 								<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
 							</li>
-							</div>
-							
+							</div>							
 						</div>
 					</ul>
 					<div class="clear"></div>
 				</div>
 			</div>
+		</div>
+		<div class="create-button">
+				<i class="fa fa-plus" aria-hidden="true"></i>
+		</div>
+		<div class="menu-create">
+			<ul class="menu-create-block">
+				<li class="li menu-create-element">
+					<a href="">
+						Створити онлайн-урок
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Додати новину
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Додати футер
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Редагувати лендінг
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Зробити бекап
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Курси
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Теми
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Опції
+					</a>
+				</li>
+				<li class="li menu-create-element">
+					<a href="">
+						Скрипти
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
