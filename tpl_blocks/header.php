@@ -22,8 +22,8 @@
 								(099) 654-54-28
 							</span>
 						</a>
-						<a href="">
-							<span class="fa fa-envelope"></span>
+						<a href="" class="js-open-support">
+							<span class="fa fa-envelope "></span>
 							<span class="contacts-text hide-768">
 								magistr.zno@gmail.com
 							</span>
@@ -42,13 +42,13 @@
 								РЕЄСТРАЦІЯ
 							</a>
 							<a href=""
-								class="button button-middle button-full button-full--orange js-auth-form element-width-70 element-margin-left-10">
+								class="button button-middle button-full button-full--orange js-open element-width-70 element-margin-left-10">
 								ВХІД
 							</a>
-							<div class="auth-form">
+							<div class="auth-form js-close js-open-block">
 								<form action="">
 									<div class="auth-form-item auth-form-item--head">
-										<i class="fa fa-times-circle close-form" aria-hidden="true"></i>
+										<i class="fa fa-times-circle js-close" aria-hidden="true"></i>
 										<span class="auth-form-item--head-title">
 											Увійти в особистий кабінет
 										</span>

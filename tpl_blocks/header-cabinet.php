@@ -33,75 +33,75 @@
 							</li>
 						</div>
 						<div class="menu-cabinet-elements-block-right">
-							<li id="mobMenu" class="menu-cabinet-mobile-icon">
+							<li id="mobMenu" class="menu-cabinet-mobile-icon js-open">
 								<a href="">
 									<i class="fa fa-bars" aria-hidden="true"></i>
 								</a>	
 							</li>
-							<div class="block-right-mobile">	
-							<li class="menu-cabinet-submenu">
-								<a href="">
-									Курс
-								</a>
-								<ul>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Название курса 1
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Название курса 2
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Название курса 3
-										</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu-profile-element menu-cabinet-submenu">
-								<a href="">
-									Профіль
-								</a>
-								<ul>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Персональна інформація
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Керування розсилками
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Оплата курсів
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Списки користувачів
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Квитанції
-										</a>
-									</li>
-									<li class="menu-cabinet-submenu-item">
-										<a href="">
-											Вихід
-										</a>
-									</li>
-								</ul>
-								<div class="menu-profile-photo">
-									<img src="/tpl_img/logo-mini.png" alt="profile-photo" class="">
-								</div>
-								<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
-							</li>
+							<div class="block-right-mobile js-open-block">	
+								<li class="menu-cabinet-submenu">
+									<a href="">
+										Курс
+									</a>
+									<ul>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Название курса 1
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Название курса 2
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Название курса 3
+											</a>
+										</li>
+									</ul>
+								</li>
+								<li class="menu-profile-element menu-cabinet-submenu">
+									<a href="">
+										Профіль
+									</a>
+									<ul>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Персональна інформація
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Керування розсилками
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Оплата курсів
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Списки користувачів
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Квитанції
+											</a>
+										</li>
+										<li class="menu-cabinet-submenu-item">
+											<a href="">
+												Вихід
+											</a>
+										</li>
+									</ul>
+									<div class="menu-profile-photo">
+										<img src="/tpl_img/logo-mini.png" alt="profile-photo" class="">
+									</div>
+									<img src="/tpl_img/sort_down.png" alt="sort_down" class="menu-arrow-down">
+								</li>
 							</div>							
 						</div>
 					</ul>
@@ -109,52 +109,55 @@
 				</div>
 			</div>
 		</div>
-		<div class="create-button">
-				<i class="fa fa-plus" aria-hidden="true"></i>
+		<div class="create-button js-open">
+			<i class="fa fa-plus" aria-hidden="true"></i>
 		</div>
-		<div class="menu-create">
+		<div class="menu-create js-open-block">
+			<div class="close-button">
+				<i class="fa fa-times-circle js-close" aria-hidden="true"></i>
+			</div>
 			<ul class="menu-create-block">
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Створити онлайн-урок
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Додати новину
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Додати футер
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Редагувати лендінг
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Зробити бекап
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Курси
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Теми
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Опції
 					</a>
 				</li>
-				<li class="li menu-create-element">
+				<li class="menu-create-element">
 					<a href="">
 						Скрипти
 					</a>

@@ -1,10 +1,13 @@
 <div class="container">
 	<div class="row">
 		<div class="footer">
-			<div class="support-button">
+			<div class="support-button js-open">
 				Техпідтримка
 			</div>
-			<div class="contact-form">
+			<div class="contact-form js-open-block">
+				<div class="close-button">
+					<i class="fa fa-times-circle js-close" aria-hidden="true"></i>
+				</div>
 				<form action="">
 					<div class="contact-form-item contact-form-item--head">
 						<span class="contact-form-item--head-title">
@@ -23,13 +26,13 @@
 					<div class="contact-form-item">
 						<textarea name="message" id="" cols="" rows="3" placeholder="Текст вашого повідомлення" resize="none"></textarea>
 					</div>
-					<div class="contact-form-item">
+					<div class="contact-form-item contact-form-item--buttons">
 						<a href=""
-							class="button button-full button-full--dark">
+							class="button button-small button-full button-full--dark">
 							Надіслати
 						</a>
 						<a href=""
-							class="button button-border button-border--dark">
+							class="button button-small button-border button-border--dark">
 							Прикріпити
 						</a>
 					</div>
@@ -38,10 +41,10 @@
 			<div class="content">
 				<div class="element-wrap-list footer-columns col-md-12 element-margin-bottom-40 element-margin-top-40">
 					<div class="element-wrap">
-						<h3 class="subject-title--orange">
+						<h3 class="subject-title--orange js-open">
 							Інформація
 						</h3>
-						<ul class="footer-list-block">
+						<ul class="footer-list-block js-open-block">
 							<li>
 								<a href="">link1 </a>
 							</li>
@@ -54,10 +57,10 @@
 						</ul>
 					</div>
 					<div class="element-wrap">
-						<h3 class="subject-title--orange">
+						<h3 class="subject-title--orange js-open">
 							Про нас
 						</h3>
-						<ul class="footer-list-block">
+						<ul class="footer-list-block js-open-block">
 							<li>
 								<a href="">link1 </a>
 							</li>
@@ -68,10 +71,10 @@
 								<a href="">link3</a>
 							</li>
 						</ul>
-						<h3 class="subject-title--orange">
+						<h3 class="subject-title--orange js-open">
 							Партнери
 						</h3>
-						<ul class="footer-list-block">
+						<ul class="footer-list-block js-open-block">
 							<li>
 								<a href="">link1 </a>
 							</li>
@@ -84,10 +87,10 @@
 						</ul>
 					</div>
 					<div class="element-wrap">
-						<h3 class="subject-title--orange">
+						<h3 class="subject-title--orange js-open">
 							Новини
 						</h3>
-						<ul class="footer-list-block">
+						<ul class="footer-list-block js-open-block">
 							<li>
 								<a href="">link1 </a>
 							</li>
@@ -98,10 +101,10 @@
 								<a href="">link3</a>
 							</li>
 						</ul>
-						<h3 class="subject-title--orange">
+						<h3 class="subject-title--orange js-open">
 							Блог
 						</h3>
-						<ul class="footer-list-block">
+						<ul class="footer-list-block js-open-block">
 							<li>
 								<a href="">link1 </a>
 							</li>
@@ -149,7 +152,7 @@
 					</div>
 					<div class="element-wrap">
 						<div class="sub-footer-text">
-							<p>
+							<p class="js-open-support">
 								<a href="">
 									Email: magistr.zno@gmail.com
 								</a>

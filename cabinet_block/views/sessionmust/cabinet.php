@@ -42,6 +42,7 @@
 						require_once(VIEW . '/template_parts/personal-info.php');
 						require_once(VIEW . '/template_parts/messages-info-student.php');
 						require_once(VIEW . '/template_parts/payment-info-student.php');
+						require_once(VIEW . '/template_parts/users-list-admin.php');
 					//}
 				?>	
 			</div>
