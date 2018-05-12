@@ -66,7 +66,7 @@ class Database
 		}
 		$part_2 = rtrim($part_2, ' AND ');
 		$sql = "UPDATE {$table} SET {$part_1} WHERE {$part_2}";
-		print("<br>UPDATE SQL --- $sql<br>");
+		//print("<br>UPDATE SQL --- $sql<br>");
 		$res = $mysqli->query($sql);
 		if($mysqli->affected_rows == 0) return false;
 		return $mysqli->affected_rows;
@@ -85,7 +85,7 @@ class Database
 		}
 		$part_1 = rtrim($part_1, ' AND ');
 		$sql = "DELETE FROM {$table} WHERE {$part_1}";
-		print("<br>DELETE SQL --- $sql<br>");
+		//print("<br>DELETE SQL --- $sql<br>");
 		$res = $mysqli->query($sql);
 		if($mysqli->affected_rows == 0) return false;
 		return true;

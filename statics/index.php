@@ -1,7 +1,6 @@
 <?php
-	require_once("../config.php");
-	require_once("local_config.php");
 	require_once("../tpl_php/autoload.php");
+	require_once("local_config.php");
 	require_once("../tpl_php/functions.php");
 	session_start();
 
@@ -19,6 +18,7 @@
 	if(empty($routes)) {
 		print("<h1>Приносим извинения, сайт временно отдыхает</h1>");
 	}
+	$_SERVER["REQUEST_URI"] = preg_replace('/\?(.*)/', '', $_SERVER["REQUEST_URI"]);
 	$address = trim($_SERVER["REQUEST_URI"],"/");
 	//$result = preg_grep("~$address~", array_keys($routes));
 	$result = check_array_with_regular($routes, $address);

@@ -62,5 +62,11 @@
 			if($mysqli->affected_rows == 0) throw new Exception("Sorry error with redacting");
 			return true;
 		}
+		public static function delete_static($id) {
+			if(empty($id)) throw new Exception("Incorrect data");
+			global $mysqli;
+
+			if(Database::delete('mag_statics', array('id' => $id))) header("Location: /statics/list");
+		}
 	}
 ?>

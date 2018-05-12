@@ -2,19 +2,19 @@
 /*if(!isset($_GET['tab'])){
 	header("Location:create.php?tab=1");
 }*/
-require '../tpl_php/autoload.php';
+require_once('../tpl_php/autoload.php');
 session_start();
-if(!isset($_SESSION['data'])){
+/*if(!isset($_SESSION['data'])){
 header("Location:../index.php");
-}
+}*/
 //var_dump($_POST);
 //var_dump($_SESSION['lesson']);
 $db = Database::getInstance();
 $mysqli = $db->getConnection();
 if(isset($_POST['createTest'])){
-	Test::createTest($_POST['tName'],$_SESSION['data']['id'],$_POST['class'],$_POST['subjects'],$_POST['level']);
-	$sql = sprintf("INSERT INTO os_lesson_test(id_lesson,id_test,type,lang) VALUES(%s,%s,%s,'%s')",
-		$_SESSION['lesson']['lesson_id'],$_SESSION['test']['id'],$_SESSION['lesson']['test_type'],$_SESSION['lesson']['test_lang']);
+	Test::createTest($_POST['tName'], 4);
+	$sql = sprintf("INSERT INTO mag_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
+		$_SESSION['lesson']['lesson_id'],$_SESSION['test']['id'],$_SESSION['lesson']['test_type']);
 	//print($sql);
 	$result = $mysqli->query($sql);
 	header("Location:createquestion.php");
