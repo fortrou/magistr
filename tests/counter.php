@@ -53,7 +53,7 @@ $year_num = get_currentYearNum();
     
     if (isset($_POST['sbm']) && !isset($_GET['tab'])) {
         $_SESSION['data_collection']['timer'] = $_POST['timer']/60;
-        $sql_quest = "SELECT DISTINCT * FROM os_test_quest WHERE id_test='$testId'";
+        $sql_quest = "SELECT DISTINCT * FROM mag_test_quest WHERE id_test='$testId'";
         $res_quest = $mysqli->query($sql_quest);
         //var_dump($res_quest);
         while($row_quest = $res_quest->fetch_assoc()){
@@ -71,7 +71,7 @@ $year_num = get_currentYearNum();
                     $answ = $_POST[$tstr];
                 }
                 
-                $sql = "SELECT * FROM `os_test_answs` WHERE correct=1 AND id_quest='$qid'";
+                $sql = "SELECT * FROM `mag_test_answs` WHERE correct=1 AND id_quest='$qid'";
                 $res = $mysqli->query($sql);
                 $row = $res->fetch_assoc();
                 
@@ -129,9 +129,9 @@ $year_num = get_currentYearNum();
             /** мультивыбор **/
             if($row_quest['type'] == 2){
                 $qid = $row_quest['id_q'];
-                $sql = "SELECT * FROM `os_test_answs` WHERE id_quest='$qid'";
+                $sql = "SELECT * FROM `mag_test_answs` WHERE id_quest='$qid'";
                 $res = $mysqli->query($sql);
-                $sql1 = "SELECT COUNT(*) FROM `os_test_answs` WHERE correct=1 AND id_quest='$qid'";
+                $sql1 = "SELECT COUNT(*) FROM `mag_test_answs` WHERE correct=1 AND id_quest='$qid'";
                 $res1 = $mysqli->query($sql1);
                 $row1 = $res1->fetch_assoc();
                 
@@ -198,7 +198,7 @@ $year_num = get_currentYearNum();
             /** Последовательность **/
             if($row_quest['type'] == 3){
                 $qid = $row_quest['id_q'];
-                $sql = "SELECT * FROM `os_test_answs` WHERE id_quest='$qid'";
+                $sql = "SELECT * FROM `mag_test_answs` WHERE id_quest='$qid'";
                 $res = $mysqli->query($sql);
                 
                 $num_answs = $res->num_rows;
@@ -265,15 +265,15 @@ $year_num = get_currentYearNum();
                 
                 
                 
-                $sqlm = "SELECT * FROM os_test_matches WHERE id_quest='$qid' AND num IN
-                (SELECT correct FROM `os_test_answs` WHERE id_quest='$qid')";
+                $sqlm = "SELECT * FROM mag_test_matches WHERE id_quest='$qid' AND num IN
+                (SELECT correct FROM `mag_test_answs` WHERE id_quest='$qid')";
                 $resm = $mysqli->query($sqlm);
                 
                 $num_matches = $resm->num_rows;
                 
                 $array_m = array();
                 while ($rowm = $resm->fetch_assoc()) {
-                    $sql = "SELECT * FROM `os_test_answs` WHERE id_quest='$qid' AND correct='".$rowm['num']."'";
+                    $sql = "SELECT * FROM `mag_test_answs` WHERE id_quest='$qid' AND correct='".$rowm['num']."'";
                     $res = $mysqli->query($sql);
                     $row = $res->fetch_assoc();
                     $array_m[(int)$row['id_a']] = $rowm['id_ma'];
@@ -285,7 +285,7 @@ $year_num = get_currentYearNum();
                 $el = 9999;
                 $arr_select = array();
                 
-                $sql = "SELECT * FROM `os_test_answs` WHERE id_quest='$qid'";
+                $sql = "SELECT * FROM `mag_test_answs` WHERE id_quest='$qid'";
                 $res = $mysqli->query($sql);
                 $num_answs = $res->num_rows;
                 while ($row = $res->fetch_assoc()) { 
@@ -353,7 +353,7 @@ $year_num = get_currentYearNum();
                     $answ = $_POST[$tstr];
                 }
                 
-                $sql = "SELECT * FROM `os_test_short_answ` WHERE id_quest='$qid'";
+                $sql = "SELECT * FROM `mag_test_short_answ` WHERE id_quest='$qid'";
                 //print("<br>$sql<br>");
                 $res = $mysqli->query($sql);
                 $row = $res->fetch_assoc();
@@ -418,7 +418,7 @@ $year_num = get_currentYearNum();
 if(isset($_SESSION['data'])){
     if ($_SESSION['data']['level'] == 1) {
         //var_dump($_SESSION['data_collection']['current_completed']);
-        $sql = "SELECT DISTINCT * FROM os_lessons WHERE id IN (SELECT id_lesson FROM os_lesson_test WHERE id_test='" . 
+        $sql = "SELECT DISTINCT * FROM mag_lessons WHERE id IN (SELECT id_lesson FROM mag_lesson_test WHERE id_test='" . 
         $_SESSION['data_collection']['current_completed'] . "') AND lesson_year = $year_num";
         //print("<br>$sql<br>");
             $res = $mysqli->query($sql);
@@ -436,22 +436,22 @@ if(isset($_SESSION['data'])){
         }
     if($_SESSION["data"]["level"] == 1){
 
-        $sql = sprintf("SELECT * FROM os_lessons 
+        $sql = sprintf("SELECT * FROM mag_lessons 
                                 WHERE id 
                                    IN (
                                       SELECT id_lesson 
-                                        FROM os_lesson_classes 
+                                        FROM mag_lesson_classes 
                                        WHERE id_class 
                                           IN (
                                              SELECT class 
-                                               FROM os_users 
+                                               FROM mag_users 
                                               WHERE id='%s')) 
-            AND subject IN(SELECT id_subject FROM os_student_subjects WHERE id_student='%s') AND lesson_year = $year_num",
+            AND subject IN(SELECT id_subject FROM mag_student_subjects WHERE id_student='%s') AND lesson_year = $year_num",
             $_SESSION["data"]["id"],$_SESSION["data"]["id"]);
         $res = $mysqli->query($sql);
         //print("<br>$sql<br>");
         while ($row = $res->fetch_assoc()) {
-            $sql_journal = sprintf("SELECT * FROM os_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
+            $sql_journal = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
             $res_journal = $mysqli->query($sql_journal);
             //print("<br>$sql_journal<br>");
             if ($res_journal->num_rows == 0) {
@@ -464,16 +464,16 @@ if(isset($_SESSION['data'])){
                 }
                 $date_ru = explode(" ",$row["date_ru"]);
                 $date_ua = explode(" ",$row["date_ua"]);
-                $sql_create = sprintf("INSERT INTO os_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
+                $sql_create = sprintf("INSERT INTO mag_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
                     $_SESSION["data"]["id"],$row["id"],$date_ru[0],$date_ua[0],$row["subject"]);
                 $res_create = $mysqli->query($sql_create);
                 //print("<br>$sql_create<br>");
             }
         }
-        $sql_lesson_num = "SELECT id_lesson FROM os_lesson_test WHERE id_test=$testId AND id_lesson IN (SELECT id FROM os_lessons WHERE lesson_year = $year_num)";
+        $sql_lesson_num = "SELECT id_lesson FROM mag_lesson_test WHERE id_test=$testId AND id_lesson IN (SELECT id FROM mag_lessons WHERE lesson_year = $year_num)";
         $res_lesson_num = $mysqli->query($sql_lesson_num);
         $row_lesson_num = $res_lesson_num->fetch_assoc();
-        $sql = sprintf("SELECT * FROM os_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION['data']['id'],$row_lesson_num["id_lesson"]);
+        $sql = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION['data']['id'],$row_lesson_num["id_lesson"]);
         $res = $mysqli->query($sql);
         $row = $res->fetch_assoc();
         //print("<br>$sql");
@@ -481,21 +481,21 @@ if(isset($_SESSION['data'])){
             $_SESSION['data_collection']['test_truth'] = 0;
         }
         if ($res->num_rows == 0) {
-            $new_sql = "SELECT * FROM os_tests WHERE id='$testId'";
+            $new_sql = "SELECT * FROM mag_tests WHERE id='$testId'";
             $new_res = $mysqli->query($new_sql);
             $new_row = $new_res->fetch_assoc();
-            $sql_les = sprintf("SELECT subject FROM os_lessons WHERE id='%s'",$row_lesson_num["id_lesson"]);
+            $sql_les = sprintf("SELECT subject FROM mag_lessons WHERE id='%s'",$row_lesson_num["id_lesson"]);
             $res_les = $mysqli->query($sql_les);
             $row_les = $res_les->fetch_assoc();
             switch ($new_row['type']) {
                 case 4:
-                    $sql_in = sprintf("INSERT INTO os_journal(id_s,id_l,mark_tr,id_subj) VALUES(%s,%s,%s,'%s')",
+                    $sql_in = sprintf("INSERT INTO mag_journal(id_s,id_l,mark_tr,id_subj) VALUES(%s,%s,%s,'%s')",
                     $_SESSION['data']['id'],$row_lesson_num["id_lesson"],$_SESSION['data_collection']['test_truth'],$row_les['subject']);
                     $res_in = $mysqli->query($sql_in);
                 break;
 
                 case 5:
-                    $sql_in = sprintf("INSERT INTO os_journal(id_s,id_l,mark_contr,id_subj,test_contr,is_first,is_completed) VALUES(%s,%s,%s,'%s','%s',0,1)",
+                    $sql_in = sprintf("INSERT INTO mag_journal(id_s,id_l,mark_contr,id_subj,test_contr,is_first,is_completed) VALUES(%s,%s,%s,'%s','%s',0,1)",
                     $_SESSION['data']['id'],$row_lesson_num["id_lesson"],$_SESSION['data_collection']['test_truth'],$row_les['subject'],$string_answs);
                     $res_in = $mysqli->query($sql_in);
                 break;
@@ -504,19 +504,19 @@ if(isset($_SESSION['data'])){
 
         }
         else{
-            $new_sql = "SELECT * FROM os_tests WHERE id='$testId'";
+            $new_sql = "SELECT * FROM mag_tests WHERE id='$testId'";
             $new_res = $mysqli->query($new_sql);
             $new_row = $new_res->fetch_assoc();
             switch ($new_row['type']) {
                 case 4:
-                    $sql_in = sprintf("UPDATE os_journal SET mark_tr=%s WHERE id_s='%s' AND id_l='%s'",
+                    $sql_in = sprintf("UPDATE mag_journal SET mark_tr=%s WHERE id_s='%s' AND id_l='%s'",
                     $_SESSION['data_collection']['test_truth'],$_SESSION['data']['id'],$row_lesson_num["id_lesson"]);
                     $res_in = $mysqli->query($sql_in);
                 break;
 
                 case 5:
                 if ($row["is_completed"] == 0) {
-                    $sql_in = sprintf("UPDATE os_journal SET mark_contr=%s, test_contr='%s',is_first=0,is_completed=1 WHERE id_s='%s' AND id_l='%s'",
+                    $sql_in = sprintf("UPDATE mag_journal SET mark_contr=%s, test_contr='%s',is_first=0,is_completed=1 WHERE id_s='%s' AND id_l='%s'",
                     $_SESSION['data_collection']['test_truth'],$string_answs,$_SESSION['data']['id'],$row_lesson_num["id_lesson"]);
                     //print($sql_in);
                     $res_in = $mysqli->query($sql_in);
@@ -542,7 +542,7 @@ if(isset($_SESSION['data'])){
         //header("Location:".$_SERVER['REQUEST_URI']);    
     //print($_SESSION['data_collection']['test_truth']);
     //var_dump($collect_truth);
-        $sql_subj = sprintf("SELECT * FROM os_subjects WHERE id = (SELECT DISTINCT subject FROM os_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s'))",
+        $sql_subj = sprintf("SELECT * FROM mag_subjects WHERE id = (SELECT DISTINCT subject FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",
         $_GET['id']);
     $res_subj = $mysqli->query($sql_subj);
     $row_subj = $res_subj->fetch_assoc();
@@ -600,11 +600,11 @@ if(isset($_SESSION['data'])){
             <div class="block0">
 		<?php
             if ($_SESSION['data']['level'] == 1) {
-                    $sql_class = sprintf("SELECT * FROM os_class_manager WHERE id='%s'",$_SESSION['data']['class']);
+                    $sql_class = sprintf("SELECT * FROM mag_class_manager WHERE id='%s'",$_SESSION['data']['class']);
                     $res_class = $mysqli->query($sql_class);
                     $row_class = $res_class->fetch_assoc();
 
-                    $sql_test_data = "SELECT * FROM os_tests WHERE id=$testId";
+                    $sql_test_data = "SELECT * FROM mag_tests WHERE id=$testId";
                     //print($sql_test_data);
                     $res_test_data = $mysqli->query($sql_test_data);
                     $row_test_data = $res_test_data->fetch_assoc();
@@ -625,7 +625,7 @@ if(isset($_SESSION['data'])){
         $mta = explode("/",$_SERVER['DOCUMENT_ROOT']);
         $mtel = $mta[count($mta) - 2];
 
-        $sql_mb = "SELECT * FROM os_tests WHERE id='$testId'";
+        $sql_mb = "SELECT * FROM mag_tests WHERE id='$testId'";
         //var_dump($sql_mb);
         $res_mb = $mysqli->query($sql_mb);
         $row_mb = $res_mb->fetch_assoc();
@@ -647,7 +647,7 @@ if(isset($_SESSION['data'])){
         
         $max_convert = 0;
 
-        $sql_fc = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+        $sql_fc = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
         $res_fc = $mysqli->query($sql_fc);
         //var_dump($res_fc);
                 while($row_fc = $res_fc->fetch_assoc()){
@@ -658,7 +658,7 @@ if(isset($_SESSION['data'])){
                             //print("<br>$max_convert<br>");
                             break;
                         case 2:
-                            $sql = sprintf("SELECT count(id_a) FROM os_test_answs WHERE id_quest=%s AND correct=1",$row_fc['id_q']);
+                            $sql = sprintf("SELECT count(id_a) FROM mag_test_answs WHERE id_quest=%s AND correct=1",$row_fc['id_q']);
                             $result = $mysqli->query($sql);
                             $row_loc = $result->fetch_assoc();
                             //var_dump($row_fc['cost']);
@@ -667,14 +667,14 @@ if(isset($_SESSION['data'])){
                             //print("<br>$max_convert<br>");
                             break;
                         case 3:
-                            $sql = sprintf("SELECT count(id_a) FROM os_test_answs WHERE id_quest=%s",$row_fc['id_q']);
+                            $sql = sprintf("SELECT count(id_a) FROM mag_test_answs WHERE id_quest=%s",$row_fc['id_q']);
                             $result = $mysqli->query($sql);
                             $row_loc = $result->fetch_assoc();
                             $max_convert += (int)$row_loc['count(id_a)']*(int)$row_fc['cost'];
                             //print("<br>$max_convert<br>");
                             break;
                         case 4:
-                            $sql = sprintf("SELECT count(id_a) FROM os_test_answs WHERE id_quest=%s",$row_fc['id_q']);
+                            $sql = sprintf("SELECT count(id_a) FROM mag_test_answs WHERE id_quest=%s",$row_fc['id_q']);
                             $result = $mysqli->query($sql);
                             $row_loc = $result->fetch_assoc();
                             $max_convert += (int)$row_loc['count(id_a)']*(int)$row_fc['cost'];
@@ -694,18 +694,18 @@ if(isset($_SESSION['data'])){
         
         <?php
         $date = date("Y-m-d H:i");
-        $sql_ti = "SELECT * FROM os_lesson_test WHERE id_test='" . $_SESSION['data_collection']['current_completed'] . "'";
+        $sql_ti = "SELECT * FROM mag_lesson_test WHERE id_test='" . $_SESSION['data_collection']['current_completed'] . "'";
         //print("<br>$sql_ti<br>");
         $res_ti = $mysqli->query($sql_ti);
         $row_ti = $res_ti->fetch_assoc();
         
-            $sql = "SELECT DISTINCT * FROM os_lessons WHERE id IN (SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='" .
+            $sql = "SELECT DISTINCT * FROM mag_lessons WHERE id IN (SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='" .
              $_SESSION['data_collection']['current_completed'] . "')  
             AND lesson_year = $year_num";
             //print("<br>$sql<br>");
             $res = $mysqli->query($sql);
             $row = $res->fetch_assoc();
-            $sql_subject = "SELECT * FROM os_subjects WHERE id = '".$row['subject']."'";
+            $sql_subject = "SELECT * FROM mag_subjects WHERE id = '".$row['subject']."'";
             $res_subject = $mysqli->query($sql_subject);
             $row_subject = $res_subject->fetch_assoc();
             if($row_ti['type']==4){
@@ -892,7 +892,7 @@ if(isset($_SESSION['data'])){
                 //print("<br>$value<br>");
                 $arr_data = explode("*-=+=-*",$value);
                 //var_dump($arr_data);
-                $sql_comment = sprintf("SELECT full_desc FROM os_test_quest WHERE id_q='%s'",$arr_data[0]);
+                $sql_comment = sprintf("SELECT full_desc FROM mag_test_quest WHERE id_q='%s'",$arr_data[0]);
                 $res_comment = $mysqli->query($sql_comment);
                 $row_comment = $res_comment->fetch_assoc();
                 if($arr_data[1]!=1){
@@ -988,7 +988,7 @@ if(isset($_SESSION['data'])){
             }
 
             print("</table>");
-            /*$sql_quest = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+            /*$sql_quest = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
             $res_quest = $mysqli->query($sql_quest);
             //var_dump($res_quest);
             while($row_quest = $res_quest->fetch_assoc()){

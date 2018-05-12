@@ -222,7 +222,7 @@ $db = Database::getInstance();
 
                     <div class="cont">
                         <?php
-                                $sql = "SELECT * FROM os_tests WHERE id='".$_SESSION['test_red']['testId']."'";
+                                $sql = "SELECT * FROM mag_tests WHERE id='".$_SESSION['test_red']['testId']."'";
                                 $res = $mysqli->query($sql);
                                 $row = $res->fetch_assoc();
                                 printf("<h2>Тип теста: %s [ %s ]</h2>",$row['name'],$row['lang']);
@@ -234,7 +234,7 @@ $db = Database::getInstance();
                         <div id="quests_list" class="text-center">
                             <ul class="list_q">
                             <?php
-                                $sql = "SELECT * FROM os_test_quest WHERE id_test='".$_SESSION['test_red']['testId']."'";
+                                $sql = "SELECT * FROM mag_test_quest WHERE id_test='".$_SESSION['test_red']['testId']."'";
 
                                 $res = $mysqli->query($sql);
 

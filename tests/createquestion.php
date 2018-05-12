@@ -216,7 +216,7 @@ $db = Database::getInstance();
     			<div class="testes">
                         <center><span class='testText'> Тест успешно создан, приступим к созданию формы </span></center>
                         <?php
-                                $sql = "SELECT * FROM os_tests WHERE id='".$_SESSION['test']['id']."'";
+                                $sql = "SELECT * FROM mag_tests WHERE id='".$_SESSION['test']['id']."'";
                                 $res = $mysqli->query($sql);
                                 $row = $res->fetch_assoc();
                                 printf("<h2>Тип теста: %s [ %s ]</h2>",$row['name'],$row['lang']);
@@ -228,7 +228,7 @@ $db = Database::getInstance();
                         <div id="quests_list" class="text-center">
                             <ul class="list_q">
                             <?php
-                                $sql = "SELECT * FROM os_test_quest WHERE id_test='".$_SESSION['test']['id']."'";
+                                $sql = "SELECT * FROM mag_test_quest WHERE id_test='".$_SESSION['test']['id']."'";
 
                                 $res = $mysqli->query($sql);
 
