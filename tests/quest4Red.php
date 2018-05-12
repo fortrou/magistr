@@ -10,25 +10,25 @@ $mysqli = $db->getConnection();
 $qId = $_GET['qid'];
 
 if(isset($_POST['add_more'])){
-    $tsql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('',0,'$qId')";
+    $tsql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('',0,'$qId')";
     $res = $mysqli->query($tsql);
     header("Location:".$_SERVER['REQUEST_URI']);
 }
 if(isset($_POST['add_match'])){
-    $sql_cnt = "SELECT COUNT(*) FROM os_test_matches WHERE id_quest='$qId'";
+    $sql_cnt = "SELECT COUNT(*) FROM mag_test_matches WHERE id_quest='$qId'";
     $res_cnt = $mysqli->query($sql_cnt);
     $row_cnt = $res_cnt->fetch_assoc();
     $cnt = $row_cnt['COUNT(*)'];
     $cnt++;
-    $tsql = "INSERT INTO os_test_matches(match_text,num,id_quest) VALUES('','$cnt','$qId')";
+    $tsql = "INSERT INTO mag_test_matches(match_text,num,id_quest) VALUES('','$cnt','$qId')";
     $res = $mysqli->query($tsql);
     header("Location:".$_SERVER['REQUEST_URI']);
 }
     //var_dump($_POST);
-    $sql_answs = "SELECT * FROM os_test_answs WHERE id_quest='$qId'";
+    $sql_answs = "SELECT * FROM mag_test_answs WHERE id_quest='$qId'";
     $res_answs = $mysqli->query($sql_answs);
 
-    $sql_matches = "SELECT * FROM os_test_matches WHERE id_quest='$qId'";
+    $sql_matches = "SELECT * FROM mag_test_matches WHERE id_quest='$qId'";
     $res_matches = $mysqli->query($sql_matches);
     //print("<br>$sql_answs<br>");
     
@@ -41,7 +41,7 @@ if(isset($_POST['add_match'])){
     $cntr_1 = 0;
 if (isset($_POST['sbm'])) {
     $id_ar = array();
-    $tsql = "SELECT id_a FROM os_test_answs WHERE id_quest='$qId'";
+    $tsql = "SELECT id_a FROM mag_test_answs WHERE id_quest='$qId'";
     $tres = $mysqli->query($tsql);
     
     /** Массив идентификаторов **/
@@ -83,7 +83,7 @@ if (isset($_POST['sbm'])) {
     
     /** Массив нумерации соответствий **/
         $arr_num = array();
-    $sql_num = "SELECT * FROM os_test_matches WHERE id_quest='$qId'";
+    $sql_num = "SELECT * FROM mag_test_matches WHERE id_quest='$qId'";
     $res_num = $mysqli->query($sql_num);
     while ($row_num = $res_num->fetch_assoc()) {
         $arr_num[] = $row_num['num'];
@@ -111,7 +111,7 @@ while($row = $res_answs->fetch_assoc()){
     //var_dump($row);
     $answ = sprintf("del%s",$it_an+1);
     if (isset($_POST[$answ])) {
-        $tsql = sprintf("DELETE FROM os_test_answs WHERE id_a=%s",$row['id_a']);
+        $tsql = sprintf("DELETE FROM mag_test_answs WHERE id_a=%s",$row['id_a']);
         $tres = $mysqli->query($tsql);
         header("Location:".$_SERVER['REQUEST_URI']);
     }
@@ -130,7 +130,7 @@ while($row = $res_matches->fetch_assoc()){
     
     $answ = sprintf("delete%s",$it_an_1+1);
     if (isset($_POST[$answ])) {
-        $tsql = sprintf("DELETE FROM os_test_matches WHERE id_ma=%s",$row['id_ma']);
+        $tsql = sprintf("DELETE FROM mag_test_matches WHERE id_ma=%s",$row['id_ma']);
         $tres = $mysqli->query($tsql);
         header("Location:".$_SERVER['REQUEST_URI']);
     }
@@ -172,7 +172,7 @@ while($row = $res_matches->fetch_assoc()){
  
 
                 <?php
-                    $sql_quest = "SELECT * FROM os_test_quest WHERE id_q='$qId'";
+                    $sql_quest = "SELECT * FROM mag_test_quest WHERE id_q='$qId'";
                     $res_quest = $mysqli->query($sql_quest);
                     $row_quest = $res_quest->fetch_assoc();
                     $question = $row_quest['name'];

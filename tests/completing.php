@@ -1,5 +1,5 @@
 <?php
-    $alphabet = array("А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К");
+    $alphabet = array("А","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І");
     $abc = array("a","b","c","d","e","f","g","h","i","j");
     session_start();
     require_once('../tpl_php/autoload.php');
@@ -23,7 +23,7 @@ $date_plus_two	   = $end_timestamp+60*60*24*2;
 if(!isset($_GET['id']))
 	header("Location:index.php");
 	
-	$sql_user_data = sprintf("SELECT * FROM os_users WHERE id = %s", $_SESSION['data']['id']);
+	$sql_user_data = sprintf("SELECT * FROM mag_users WHERE id = %s", $_SESSION['data']['id']);
     /*echo "<pre>";
     print_r($_SESSION);
     echo "</pre>";*/
@@ -36,11 +36,11 @@ if(!isset($_GET['id']))
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection();
 
-	$sql = "SELECT * FROM os_tests WHERE id='".$_GET['id']."'";
+	$sql = "SELECT * FROM mag_tests WHERE id='".$_GET['id']."'";
 	$res = $mysqli->query($sql);
 	$row = $res->fetch_assoc();
 	if ($row['lang']!=$_COOKIE['lang']) {
-		$sql_red = sprintf("SELECT id FROM os_tests WHERE lang='%s' AND type='%s' AND less_id = (SELECT less_id FROM os_tests WHERE id='%s')",
+		$sql_red = sprintf("SELECT id FROM mag_tests WHERE lang='%s' AND type='%s' AND less_id = (SELECT less_id FROM mag_tests WHERE id='%s')",
 			$_COOKIE['lang'],$row['type'],$row['id']);
 		//print($sql_red);
 		$res_red = $mysqli->query($sql_red);
@@ -53,20 +53,20 @@ if(!isset($_GET['id']))
 			print("Данного теста пока нет на другом языке");
 		}*/
 	}
-    $sql_subj = sprintf("SELECT * FROM os_subjects WHERE id IN (SELECT DISTINCT subject FROM os_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s'))",
+    $sql_subj = sprintf("SELECT * FROM mag_subjects WHERE id IN (SELECT DISTINCT subject FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",
     	$_GET['id']);
     //print("$sql_subj<br>");
     $res_subj = $mysqli->query($sql_subj);
     $row_subj = $res_subj->fetch_assoc();
 
     $keywords = sprintf("тест, школа, онлайн, пройти, предмет, урок, контроль, %s",$row_subj['name_ru']); 
-    $sql = "SELECT * FROM os_tests WHERE id='".$_GET['id']."'";
+    $sql = "SELECT * FROM mag_tests WHERE id='".$_GET['id']."'";
     $res = $mysqli->query($sql);
     $row = $res->fetch_assoc();
     if ($row['type'] == 5) {
-    	$sql = sprintf("SELECT * FROM os_journal WHERE id_s='%s' 
-    		AND id_l IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s' AND id_lesson IN (
-    		SELECT id FROM os_lessons WHERE lesson_year = $year_num))",$_SESSION['data']['id'],$testId);
+    	$sql = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' 
+    		AND id_l IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s' AND id_lesson IN (
+    		SELECT id FROM mag_lessons WHERE lesson_year = $year_num))",$_SESSION['data']['id'],$testId);
     	
 		$res = $mysqli->query($sql);
 		if($res->num_rows != 0){
@@ -92,14 +92,14 @@ if(!isset($_GET['id']))
     	$flag_test = 4;
     }
     //var_dump($flag_contr);
-    $sql_test = sprintf("SELECT * FROM os_lesson_test WHERE id_test='%s'",
+    $sql_test = sprintf("SELECT * FROM mag_lesson_test WHERE id_test='%s'",
     	$_GET['id']);
     $res_test = $mysqli->query($sql_test);
     $row_test = $res_test->fetch_assoc();
     $id_lesson = $row_test["id_lesson"];
     $type_test = $row_test["type"];
 
-    $sql_class = sprintf("SELECT * FROM os_class_manager WHERE id IN(SELECT DISTINCT class FROM os_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s'))",$_GET['id']);
+    $sql_class = sprintf("SELECT * FROM mag_class_manager WHERE id IN(SELECT DISTINCT class FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",$_GET['id']);
     $res_class = $mysqli->query($sql_class);
     $row_class = $res_class->fetch_assoc();
     $desc = "";
@@ -118,7 +118,7 @@ if(!isset($_GET['id']))
 		}
 		$desc .= sprintf("$type тестування з предмету %s. Створено для класу %s на сайті http://online-shkola.com.ua",$row_subj['name_ru'],$row_class['class_name']);
 //print($desc);
-	$sql_test = "SELECT * FROM os_tests WHERE id='$testId'";
+	$sql_test = "SELECT * FROM mag_tests WHERE id='$testId'";
     $result = $mysqli->query($sql_test);
 	$row_test = $result->fetch_assoc();
 	if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru") {
@@ -135,17 +135,17 @@ if(!isset($_GET['id']))
 	<head>
 		<meta name="keywords" content="<?php print($keywords); ?>" />
 		<meta name="description" content="<?php print($desc); ?>" />
-	<title>Прохождение теста: <?php print($row_test['tName']) ?> - Онлайн школа Альтернатива</title>
+	<title>Проходження теста: <?php print($row_test['tName']) ?> - </title>
 	<?php require_once('../tpl_blocks/head.php'); ?>
 	</head>
 
 	<body>
 		<?php
 			if(isset($_SESSION['data'])){
-				include ("../tpl_blocks/header.php");
+				include ("../tpl_blocks/header-cabinet.php");
 			}
 			else{
-				include ("../test_access/head2.php");
+				include ("../test_access/head2.php"); //Лишнее?
 			}
 		?>
 		<div class="content"> 
@@ -220,10 +220,10 @@ if(!isset($_GET['id']))
 				<div class="names">
 					<?
 						
-						$sql_names1 = sprintf("SELECT * FROM os_lessons 
-							WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num",$_COOKIE['lang']);
-						$sql_names2 = sprintf("SELECT name_".$_COOKIE['lang']." AS name FROM os_subjects WHERE id IN (SELECT subject FROM os_lessons 
-							WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num)");
+						$sql_names1 = sprintf("SELECT * FROM mag_lessons 
+							WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num",$_COOKIE['lang']);
+						$sql_names2 = sprintf("SELECT name_".$_COOKIE['lang']." AS name FROM mag_subjects WHERE id IN (SELECT subject FROM mag_lessons 
+							WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num)");
 						//print("<br>$sql_names1<br>");
 						//print("<br>$sql_names2<br>");
 						$res_names1 = $mysqli->query($sql_names1);
@@ -257,7 +257,7 @@ if(!isset($_GET['id']))
 					<?php
 					if($_GET['id'] != 0 && $test_away != 1){
 						$iteration = 1;
-						$sql_quest = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+						$sql_quest = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
 						$res_quest = $mysqli->query($sql_quest);
 						while($row_quest = $res_quest->fetch_assoc()){
 							if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru"){
@@ -274,7 +274,7 @@ if(!isset($_GET['id']))
 			                        $arr_mix = Quest::mix_1_data($qid);
 			                        //var_dump($arr_mix);
 			                        
-			                    $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
 			                    $res = $mysqli->query($sql);
 			                    $num = $res->num_rows;
 			                    //print("<br>$num<br>");
@@ -295,7 +295,7 @@ if(!isset($_GET['id']))
 			                    print("<td><ul style='list-style:none;'>");
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_1_data($qid);
-			                    $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
 			                    $res = $mysqli->query($sql);
 			                    $num = $res->num_rows;
 			                    //print("<br>$num<br>");
@@ -312,7 +312,7 @@ if(!isset($_GET['id']))
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_1_data($qid);
 
-			                    $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
 								$res = $mysqli->query($sql);
 								$num = $res->num_rows;
 			                    //print("<br>$num<br>");
@@ -372,12 +372,12 @@ if(!isset($_GET['id']))
 			                    $arr_mix = Quest::mix_m_data($qid);
 			                    //var_dump($arr_mix);
 
-			                    $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
 			                    $res = $mysqli->query($sql);
 			                    $num = $res->num_rows;
 			                    //print("<br>$num<br>");
 			                    
-			                    $sql1 = "SELECT * FROM os_test_matches WHERE id_quest='$qid'";
+			                    $sql1 = "SELECT * FROM mag_test_matches WHERE id_quest='$qid'";
 			                    $res1 = $mysqli->query($sql1);
 			                    $num_horiz = $res1->num_rows;
 

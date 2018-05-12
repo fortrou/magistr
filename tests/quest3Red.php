@@ -9,12 +9,12 @@ $mysqli = $db->getConnection();
 $qId = $_GET['qid'];
 
 if(isset($_POST['add_more'])){
-    $tsql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('',0,'$qId')";
+    $tsql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('',0,'$qId')";
     $res = $mysqli->query($tsql);
     header("Location:".$_SERVER['REQUEST_URI']);
 }
     //var_dump($_POST);
-    $sql_answs = "SELECT * FROM os_test_answs WHERE id_quest='$qId'";
+    $sql_answs = "SELECT * FROM mag_test_answs WHERE id_quest='$qId'";
     $res_answs = $mysqli->query($sql_answs);
     //print("<br>$sql_answs<br>");
 
@@ -24,7 +24,7 @@ if(isset($_POST['add_more'])){
 
 if (isset($_POST['sbm'])) {
     $id_ar = array();
-    $tsql = "SELECT id_a FROM os_test_answs WHERE id_quest='$qId'";
+    $tsql = "SELECT id_a FROM mag_test_answs WHERE id_quest='$qId'";
     $tres = $mysqli->query($tsql);
     
     /** Массив идентификаторов **/
@@ -70,7 +70,7 @@ while($row = $res_answs->fetch_assoc()){
     //var_dump($row);
     $answ = sprintf("del%s",$it_an);
     if (isset($_POST[$answ])) {
-        $tsql = sprintf("DELETE FROM os_test_answs WHERE id_a=%s",$row['id_a']);
+        $tsql = sprintf("DELETE FROM mag_test_answs WHERE id_a=%s",$row['id_a']);
         $tres = $mysqli->query($tsql);
         header("Location:".$_SERVER['REQUEST_URI']);
     }
@@ -99,7 +99,7 @@ while($row = $res_answs->fetch_assoc()){
     <?php require_once('../tpl_blocks/header.php'); ?>
     <script type="text/javascript" src="../editors/ckeditor/ckeditor.js"></script>
                 <?php
-                    $sql_quest = "SELECT * FROM os_test_quest WHERE id_q='$qId'";
+                    $sql_quest = "SELECT * FROM mag_test_quest WHERE id_q='$qId'";
                     $res_quest = $mysqli->query($sql_quest);
                     $row_quest = $res_quest->fetch_assoc();
                     $question = $row_quest['name'];

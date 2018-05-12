@@ -12,27 +12,27 @@
     $testId=$_GET['tid'];
     $id_del = $_GET['id'];
 	if (isset($_POST['delete'])) {
-	    $sql_del = "DELETE FROM os_tests WHERE id='$testId'";
+	    $sql_del = "DELETE FROM mag_tests WHERE id='$testId'";
 	    $res_del = $mysqli->query($sql_del);
         unset($_SESSION['referer']);
 	    header("Location:".$_SERVER["REQUEST_URI"]);
-        $sql_t = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+        $sql_t = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
         $res_t = $mysqli->query($sql_t);
         //print($sql_t);
         while($row = $res_t->fetch_assoc()){
             if($row['type']!=5){
-                $sql_d = sprintf("DELETE FROM os_test_answs WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_answs WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
-                $sql_d = sprintf("DELETE FROM os_test_matches WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_matches WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
             }
             else{
-                $sql_d = sprintf("DELETE FROM os_test_short_answ WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_short_answ WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
             }
-            $sql_d = sprintf("DELETE FROM os_test_quest WHERE id_q='%s'",$row['id_q']);
+            $sql_d = sprintf("DELETE FROM mag_test_quest WHERE id_q='%s'",$row['id_q']);
             $res_d = $mysqli->query($sql_d);
-            $sql_del = sprintf("DELETE FROM os_lesson_test WHERE id_test='%s'",$testId);
+            $sql_del = sprintf("DELETE FROM mag_lesson_test WHERE id_test='%s'",$testId);
             $res_del = $mysqli->query($sql_del);
         }
 	}
@@ -42,22 +42,22 @@
         header("Location:$ref");
     }
     $_SESSION['test_red']['testId'] = $testId;
-    $sql_t = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+    $sql_t = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
     $res_t = $mysqli->query($sql_t);
     //print($sql_t);
     while($row = $res_t->fetch_assoc()){
         if (isset($_POST['del_q'.$row['id_q']])) {
             if($row['type']!=5){
-                $sql_d = sprintf("DELETE FROM os_test_answs WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_answs WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
-                $sql_d = sprintf("DELETE FROM os_test_matches WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_matches WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
             }
             else{
-                $sql_d = sprintf("DELETE FROM os_test_short_answ WHERE id_quest='%s'",$row['id_q']);
+                $sql_d = sprintf("DELETE FROM mag_test_short_answ WHERE id_quest='%s'",$row['id_q']);
                 $res_d = $mysqli->query($sql_d);
             }
-            $sql_d = sprintf("DELETE FROM os_test_quest WHERE id_q='%s'",$row['id_q']);
+            $sql_d = sprintf("DELETE FROM mag_test_quest WHERE id_q='%s'",$row['id_q']);
             $res_d = $mysqli->query($sql_d);
         }
     }
@@ -79,7 +79,7 @@
             <form method='POST' action='<?=$_SERVER['REQUEST_URI']?>'>
                 <ul class='q_list'>
                     <?php
-                        $sql_t = "SELECT * FROM os_test_quest WHERE id_test='$testId'";
+                        $sql_t = "SELECT * FROM mag_test_quest WHERE id_test='$testId'";
                         $res_t = $mysqli->query($sql_t);
                         //print($sql_t);
                         while($row = $res_t->fetch_assoc()){
@@ -107,7 +107,7 @@
             </form>
             <form method='POST' action='<?=$_SERVER['REQUEST_URI']?>' enctype='multipart/form-data'>
                 <?php
-                        $sqlTest = "SELECT * FROM os_tests WHERE id='$testId'";
+                        $sqlTest = "SELECT * FROM mag_tests WHERE id='$testId'";
                         $resTest = $mysqli->query($sqlTest);
                         $rowTest = $resTest->fetch_assoc();
                 
