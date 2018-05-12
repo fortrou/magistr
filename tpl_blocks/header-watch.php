@@ -26,13 +26,13 @@
 									<i class="fa fa-user-plus" aria-hidden="true"></i>
 								</a>
 								<a href=""
-									class="button button-full button-icon button-full--blue js-auth-form">
+									class="button button-full button-icon button-full--blue js-auth-form js-open">
 									<i class="fa fa-sign-in" aria-hidden="true"></i>
 								</a>
-								<div class="auth-form">
+								<div class="auth-form js-open-block">
 									<form action="">
 										<div class="auth-form-item auth-form-item--head">
-											<i class="fa fa-times-circle close-form" aria-hidden="true"></i>
+											<i class="fa fa-times-circle js-close" aria-hidden="true"></i>
 											<span class="auth-form-item--head-title">
 												Увійти в особистий кабінет
 											</span>
@@ -50,7 +50,7 @@
 												</span>
 											</a>
 											<a href=""
-												class="inline-block-display button-full-blue element-width-90 element-border-radius-5">
+												class="button button-full button-full--blue">
 												УВІЙТИ
 											</a>
 										</div>

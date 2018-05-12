@@ -27,6 +27,14 @@
 							Оплата курсів
 						</a>
 					</li>
+					<?php
+						if(isset($_GET['tab']) && $_GET['tab'] == 4) $active = "active";
+					?>
+					<li class="<?php echo $active; $active = ''; ?>">
+						<a href="">
+							Списки користувачів
+						</a>
+					</li>
 				</ul>
 				<?php 
 					//global $user_cookie;
@@ -34,6 +42,7 @@
 						require_once(VIEW . '/template_parts/personal-info.php');
 						require_once(VIEW . '/template_parts/messages-info-student.php');
 						require_once(VIEW . '/template_parts/payment-info-student.php');
+						require_once(VIEW . '/template_parts/users-list-admin.php');
 					//}
 				?>	
 			</div>

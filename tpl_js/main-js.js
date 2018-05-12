@@ -59,25 +59,22 @@ $(document).ready(function(){
 		swap_main.setBlockNum($(this).attr('data-rel-section'));
 		swap_main.click_block();
 	});
-
-	//FOOTER-MENU
-	$(".subject-title--orange").click(function () {
-		$(this).next(".footer-list-block").toggle(300);
-	});
-
-	//AUTH-FORM-POPUP
-	$(".js-auth-form").click(function (event) {
-		$(".auth-form").toggle(300);
+	//OPEN FORM-BLOCK
+	$(".js-open").click(function(event) {
+		$(this).next(".js-open-block").toggle(300);
 		event.preventDefault();
-	});
-	$(".close-form").click(function () {
-		$(".auth-form").hide(300);
-	});	
-	//CONTACT-FORM
-	$(".support-button").click(function (event) {
+
+	})
+	$(".js-open-support").click(function(event) {
 		$(".contact-form").toggle(300);
 		event.preventDefault();
-	});
+
+	})
+	//CLOSE FORM-BLOCK
+	$(".js-close").click(function () {
+		$(this).parents(".js-open-block").hide(300);
+	});	
+
 	//PHONE-NUMBER
 	$(".js-second-phone").click(function (event) {
 		$("a.contacts-phone-second > div.contacts-text").toggle(300);
@@ -91,12 +88,6 @@ $(document).ready(function(){
 		}
 	};
   		mediaSize();
-	});
-
-
-	$("li#mobMenu").click(function (event) {
-		$(".block-right-mobile").toggle(300);
-		event.preventDefault();
 	});
 
 	//TABS 
