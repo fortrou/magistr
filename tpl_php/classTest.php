@@ -29,7 +29,7 @@
 			$lang = htmlspecialchars($lang);
 
 			
-			$sql = "INSERT INTO os_tests(name, type, less_id)
+			$sql = "INSERT INTO mag_tests(name, type, less_id)
 			VALUES('$name', '$type', '$lesson')";
 			$result = $mysqli->query($sql);
 			//print("<br>$sql<br>");
