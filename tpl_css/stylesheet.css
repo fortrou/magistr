@@ -321,6 +321,18 @@ li.menu-cabinet-submenu:hover > ul {
 	color: rgb(255, 255, 255);
 	font-size: 16px;
 }
+.footer .faq-block {
+	display: none;
+} 
+.footer .faq-block {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.footer .faq-link {
+	color: rgb(255,255,255);
+	font-size: 14px;
+	font-weight: 600;
+}
 .sub-footer {
 	background: rgba(101, 101, 101, 1);
 	color: rgb(255, 255, 255);
@@ -731,10 +743,6 @@ li.menu-cabinet-submenu:hover > ul {
 	width: 35%;
 	border-radius: 10px;
 	border-color: rgba(66,139,220);
-	/* background: radial-gradient(
-		rgba(255,180,73,0.5), 
-		rgba(255,180,73,0.7), 
-		rgba(255,180,73,1)); */	
 	transition: all 0.4s;
 	transition-timing-function: ease-out;
 }
@@ -742,10 +750,6 @@ li.menu-cabinet-submenu:hover > ul {
 	margin-top:-13px;
 	margin-bottom: -13px;
 	width: 36%;
-	/* background: radial-gradient(
-		rgba(255,180,73,0.4), 
-		rgba(255,180,73,0.6), 
-		rgba(255,180,73,1)); */	
 	border: 2px solid rgba(66,139,220);
 }
 .carb-block__footer {
@@ -803,7 +807,6 @@ li.menu-cabinet-submenu:hover > ul {
 	background: rgba(66,139,220,0.85);
 	color: rgb(255,255,255);
 }
-
 
 /*-----CARDS-STYLE-END-----*/
 
@@ -890,6 +893,32 @@ li.menu-cabinet-submenu:hover > ul {
 	border: 1px solid rgb(80,80,80);
 	resize: none;
 }
+
+.contact-form .contact-form-item.contact-form-item--buttons {
+	display: flex;
+	justify-content: space-evenly;
+}
+.contact-form .contact-form-item .file-upload {
+	 position: relative; 
+     overflow: hidden; 
+     width: 90px;
+     height: 32px;
+}
+.contact-form .contact-form-item .file-upload input[type="file"]{
+    display: none; 
+}
+.contact-form .contact-form-item .file-upload label {
+     display: block;
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     cursor: pointer;
+}
+.contact-form .contact-form-item .file-upload span {
+     line-height: 30px;
+}
 .contact-form .contact-form-item--head-title {
 	font-size: 	14px;
 	font-weight: 600;
@@ -898,6 +927,7 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 	10px;
 	font-weight: 600;
 }
+
 /*-----CONTACT-FORM-STYLE-END-----*/
 
 /*-----FORM-PAGE-STYLE-START-----*/
@@ -1406,18 +1436,8 @@ table.static-list-table td.date {
 	text-align: center;
 	margin-bottom: 30px;
 }
-.faq-block {
-	text-align: center;
-	margin-bottom: 20px;
-}
-.faq-link {
-	color: rgb(255,255,255);
-	font-size: 14px;
-	font-weight: 600;
-}
-.footer .faq-block {
-		display: none;
-} 
+
+
 .no-display {
 	display: none;
 }
@@ -1876,6 +1896,12 @@ table.static-list-table td.date {
 		display: flex;
 		justify-content: space-around;
 	}
+
+	.contact-form .contact-form-item .file-upload {
+		width: 180px;
+		height: 72px;
+	}
+
 	.menu-create {
 		position: absolute;
 		top: 0;
@@ -1997,6 +2023,9 @@ table.static-list-table td.date {
 	}
 	.card-block--english:hover {
 		width: 71%;
+	}
+	.contact-form .contact-form-item .file-upload {
+		width: 100%;
 	}
 }
 

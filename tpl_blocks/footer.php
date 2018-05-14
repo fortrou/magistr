@@ -18,23 +18,25 @@
 						</p>
 					</div>
 					<div class="contact-form-item">
-						<input name="name" type="text" placeholder="Ваше ім'я">
+						<input name="name" type="text" placeholder="Ваше ім'я" pattern="[А-Яа-яЇїІіҐґЄє`´ʼ’ʼ’]{3,}" title="Введіть ваше ім'я" required />
 					</div>
 					<div class="contact-form-item">
-						<input name="email" type="email" placeholder="Ваш email">
+						<input name="email" type="email" placeholder="Ваш email" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" title="Наприклад: yourname@gmail.com" required />
 					</div>
 					<div class="contact-form-item">
-						<textarea name="message" id="" cols="" rows="3" placeholder="Текст вашого повідомлення" resize="none"></textarea>
+						<textarea name="message" id="" cols="" rows="3" placeholder="Текст вашого повідомлення" resize="none" required></textarea>
 					</div>
 					<div class="contact-form-item contact-form-item--buttons">
 						<a href=""
 							class="button button-small button-full button-full--dark">
 							Надіслати
 						</a>
-						<a href=""
-							class="button button-small button-border button-border--dark">
-							Прикріпити
-						</a>
+						<div class="file-upload button button-small button-border button-border--dark">
+    						<label>
+         						<input type="file" name="file">
+         		 				<span>Прикріпити</span>
+     						</label>
+						</div>
 					</div>
 				</form>
 			</div>
