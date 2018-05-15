@@ -1,17 +1,17 @@
 <?php
 session_start();
-if(strpos($_SERVER['HTTP_REFERER'],'redactme') != false && !isset($_SESSION['referer'])){
+/*if(strpos($_SERVER['HTTP_REFERER'],'redactme') != false && !isset($_SESSION['referer'])){
     $_SESSION['referer'] = "redact";
-}
+}*/
 //var_dump($_SESSION['referer']);
 
-if(!isset($_SESSION['test'])){
+/*if(!isset($_SESSION['test'])){
 	header("Location:create.php");
 }
 
 if(!isset($_SESSION['data'])){
 header("Location:../index.php");
-}
+}*/
 
 require '../tpl_php/autoload.php';
 $db = Database::getInstance();

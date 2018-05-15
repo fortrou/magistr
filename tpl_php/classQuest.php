@@ -97,7 +97,7 @@
     public static function format_question_name($quest,$type,$cost,$id_of_test,$desc,$_doc=""){
 		$db = Database::getInstance();
 		$mysqli = $db->getConnection();
-        $sql = "INSERT INTO os_test_quest(name,type,cost, doc, full_desc ,id_test) VALUES('$quest','$type','$cost','$_doc','$desc','$id_of_test')";
+        $sql = "INSERT INTO mag_test_quest(name,type,cost, doc, full_desc ,id_test) VALUES('$quest','$type','$cost','$_doc','$desc','$id_of_test')";
         $result = $mysqli->query($sql);
 			
         //var_dump($res);
@@ -107,12 +107,12 @@
     public static function get_idq($quest){
 		$db = Database::getInstance();
 		$mysqli = $db->getConnection();
-        $sql = "SELECT MAX(id_q) AS id_q FROM os_test_quest WHERE name = '$quest'";
+        $sql = "SELECT MAX(id_q) AS id_q FROM mag_test_quest WHERE name = '$quest'";
         //print("<br>$sql<br>");
         $result = $mysqli->query($sql);
 		$row = $result->fetch_assoc();
         //var_dump($res);
-        var_dump($row);
+        //var_dump($row);
         //var_dump($link);
         return $row['id_q'];
     }
@@ -129,9 +129,9 @@
                 $answ = $_SESSION['correct'][$i];
                 
                 if(!is_array($right) && $i+1==$right || is_array($right) && in_array($i+1,$right))
-                    $sql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('$answ','1','$id_q')";
+                    $sql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('$answ','1','$id_q')";
                 else
-                    $sql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('$answ','0','$id_q')";
+                    $sql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('$answ','0','$id_q')";
 //print("<br>$sql<br>");
                 $result = $mysqli->query($sql);
                 //var_dump($link);
@@ -156,7 +156,7 @@
             
             $answ = $_SESSION['correct'][$i];
             $match = $numeration[$i];
-            $sql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('$answ','$match','$id_q')";
+            $sql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('$answ','$match','$id_q')";
             $result = $mysqli->query($sql);
             //var_dump($res);
             //print("<br>$sql<br>");
@@ -175,7 +175,7 @@
         for($i = 0; $i < $cnt;$i++){
             $answ = $_SESSION['correct'][$i];
             $match = $right[$i];
-            $sql = "INSERT INTO os_test_answs(answer,correct,id_quest) VALUES('$answ','$match','$id_q')";
+            $sql = "INSERT INTO mag_test_answs(answer,correct,id_quest) VALUES('$answ','$match','$id_q')";
             $result = $mysqli->query($sql);
             //print("<br>$sql<br>");
         }
@@ -187,7 +187,7 @@
         $db = Database::getInstance();
         $mysqli = $db->getConnection();
         $id_q = Quest::get_idq($quest);
-        $sql = "INSERT INTO os_test_short_answ(answer,id_quest) VALUES('$answer','$id_q')";
+        $sql = "INSERT INTO mag_test_short_answ(answer,id_quest) VALUES('$answer','$id_q')";
         $res = $mysqli->query($sql);
 
     }
@@ -198,7 +198,7 @@
         $id_q = Quest::get_idq($quest);
         for($i = 1;$i <= $mcount;$i++){
             $match = $arr_m[$i-1];
-            $sql = "INSERT INTO os_test_matches(match_text,num,id_quest) VALUES('$match','$i','$id_q')";
+            $sql = "INSERT INTO mag_test_matches(match_text,num,id_quest) VALUES('$match','$i','$id_q')";
             $result = $mysqli->query($sql);
             //var_dump($res);
             //print("<br>$sql<br>");
@@ -225,7 +225,7 @@
         $db = Database::getInstance();
         $mysqli = $db->getConnection();
         //print($id);
-        $sql_upd = "UPDATE os_test_quest SET name='$text', cost='$cost', full_desc='$full_desc' WHERE id_q='$id'";
+        $sql_upd = "UPDATE mag_test_quest SET name='$text', cost='$cost', full_desc='$full_desc' WHERE id_q='$id'";
         //print("<br>$sql<br>");
         $res_upd = $mysqli->query($sql_upd);
         //var_dump($res);
@@ -242,9 +242,9 @@
                 $answ = $arr_a[$i];
                 $id_a = $id_ar[$i];
                 if(in_array($i+1,$right) || $i+1==$right)
-                    $sql_upd = "UPDATE os_test_answs SET answer='$answ',correct='1' WHERE id_a='$id_a'";
+                    $sql_upd = "UPDATE mag_test_answs SET answer='$answ',correct='1' WHERE id_a='$id_a'";
                 else
-                    $sql_upd = "UPDATE os_test_answs SET answer='$answ',correct='0' WHERE id_a='$id_a'";
+                    $sql_upd = "UPDATE mag_test_answs SET answer='$answ',correct='0' WHERE id_a='$id_a'";
                 //print("<br>$sql_upd<br>");
                 $res_upd = $mysqli->query($sql_upd);
                 //var_dump($res_upd);
@@ -261,7 +261,7 @@
             $answ = $arr_a[$i];
             $match = $right[$i];
             $id_a = $id_ar[$i];
-            $sql_upd = "UPDATE os_test_answs SET answer='$answ',correct='$match' WHERE id_a='$id_a'";
+            $sql_upd = "UPDATE mag_test_answs SET answer='$answ',correct='$match' WHERE id_a='$id_a'";
             $res_upd = $mysqli->query($sql_upd);
             //print("<br>$sql_upd<br>");
         }
@@ -273,7 +273,7 @@
         for($i = 0;$i < count($mnum);$i++){
             $match = $arr_m[$i];
             $num = $mnum[$i];
-            $sql_upd = "UPDATE os_test_matches SET match_text='$match' WHERE id_quest='$id_q' AND num='$num'";
+            $sql_upd = "UPDATE mag_test_matches SET match_text='$match' WHERE id_quest='$id_q' AND num='$num'";
             $res_upd = $mysqli->query($sql_upd);
             //var_dump($res);
             //print("<br>$sql_upd<br>");
@@ -281,7 +281,7 @@
     }
     
     public static function mix_1_data($id_q){
-        $sql_data = "SELECT id_a, answer FROM os_test_answs WHERE id_quest='$id_q'";
+        $sql_data = "SELECT id_a, answer FROM mag_test_answs WHERE id_quest='$id_q'";
         //print("<br>$sql_data<br>");
         $db = Database::getInstance();
         $mysqli = $db->getConnection();
@@ -310,7 +310,7 @@
         return $array;    
     }
     /*function mix_3_data($id_q){
-        $sql_data = "SELECT id_a, answer FROM os_test_answs WHERE id_quest='$id_q'";
+        $sql_data = "SELECT id_a, answer FROM mag_test_answs WHERE id_quest='$id_q'";
         //print("<br>$sql_data<br>");
         $db = Database::getInstance();
         $mysqli = $db->getConnection();
@@ -339,7 +339,7 @@
         return $array;  
     }*/
     public static function mix_m_data($id_q){
-    $sql_data = "SELECT id_ma, match_text FROM os_test_matches WHERE id_quest='$id_q'";
+    $sql_data = "SELECT id_ma, match_text FROM mag_test_matches WHERE id_quest='$id_q'";
     $db = Database::getInstance();
     $mysqli = $db->getConnection();
     $res_data = $mysqli->query($sql_data);

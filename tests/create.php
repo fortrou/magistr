@@ -13,10 +13,10 @@ $db = Database::getInstance();
 $mysqli = $db->getConnection();
 if(isset($_POST['createTest'])){
 	Test::createTest($_POST['tName'], 4);
-	$sql = sprintf("INSERT INTO mag_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
+	/*$sql = sprintf("INSERT INTO mag_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
 		$_SESSION['lesson']['lesson_id'],$_SESSION['test']['id'],$_SESSION['lesson']['test_type']);
 	//print($sql);
-	$result = $mysqli->query($sql);
+	$result = $mysqli->query($sql*/	
 	header("Location:createquestion.php");
 }
 ?>
@@ -34,7 +34,7 @@ if(isset($_POST['createTest'])){
 	</head>
 	<body>
 	<?php
-		include ("../tpl_blocks/header.php");
+		include ("../tpl_blocks/header-cabinet.php");
 	?>
 		<div class="content">
 		<div class="block0">
