@@ -28,5 +28,4 @@ $('#m-btn-adv').click(function() {
 	$('#m-btn-learn').removeClass('menu-mobile-btn-learn--active').addClass('menu-mobile-btn-learn');		
 })
 
-
 });

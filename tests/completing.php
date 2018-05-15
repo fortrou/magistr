@@ -10,12 +10,12 @@ $flag_contr = 0;
 $locked = 0;
 // relocate if test opened in new tab
 $test_away = 0;
-$year_num = get_currentYearNum();
-$options = new Options();
-$date_end = $options->get_option('semester_end_date');
-$semester = $options->get_option('semester_current_number');
+$year_num = 2;//get_currentYearNum();
+//$options = new Options();
+//$date_end = $options->get_option('semester_end_date');
+//$semester = $options->get_option('semester_current_number');
 //print($date_end);
-$end_timestamp	   = strtotime($date_end);
+//$end_timestamp	   = strtotime($date_end);
 $current_timestamp = time();
 $result_timestump  = $end_timestamp - $current_timestamp;
 $date_plus_two	   = $end_timestamp+60*60*24*2;
@@ -57,7 +57,7 @@ if(!isset($_GET['id']))
     	$_GET['id']);
     //print("$sql_subj<br>");
     $res_subj = $mysqli->query($sql_subj);
-    $row_subj = $res_subj->fetch_assoc();
+   // $row_subj = $res_subj->fetch_assoc();
 
     $keywords = sprintf("тест, школа, онлайн, пройти, предмет, урок, контроль, %s",$row_subj['name_ru']); 
     $sql = "SELECT * FROM mag_tests WHERE id='".$_GET['id']."'";
@@ -95,13 +95,13 @@ if(!isset($_GET['id']))
     $sql_test = sprintf("SELECT * FROM mag_lesson_test WHERE id_test='%s'",
     	$_GET['id']);
     $res_test = $mysqli->query($sql_test);
-    $row_test = $res_test->fetch_assoc();
+    //$row_test = $res_test->fetch_assoc();
     $id_lesson = $row_test["id_lesson"];
     $type_test = $row_test["type"];
 
     $sql_class = sprintf("SELECT * FROM mag_class_manager WHERE id IN(SELECT DISTINCT class FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",$_GET['id']);
     $res_class = $mysqli->query($sql_class);
-    $row_class = $res_class->fetch_assoc();
+    //$row_class = $res_class->fetch_assoc();
     $desc = "";
 		if ($row_test['type'] == 5) {
 			$type = "Контрольное";
@@ -144,15 +144,13 @@ if(!isset($_GET['id']))
 			if(isset($_SESSION['data'])){
 				include ("../tpl_blocks/header-cabinet.php");
 			}
-			else{
-				include ("../test_access/head2.php"); //Лишнее?
-			}
 		?>
 		<div class="content"> 
 				<?php if(!isset($_SESSION['data'])): ?>
 			<div class="alt_title_test">
 		<div class="block0">
-			<?php if(!isset($_SESSION['data'])): ?>
+			<!--
+	<?php if(!isset($_SESSION['data'])): ?>
 <?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru"): ?>
 			<h1>Все материалы, которые вы видите, являются демонстрационными. Функции обучения в демонстрационном доступе ограничены.
 			 Для получения полного доступа к нашей онлайн-школе зарегистрируйтесь на сайте и оплатите обучение<br>
@@ -163,6 +161,7 @@ if(!isset($_GET['id']))
 			 <a href="http://online-shkola.com.ua/auth_log.php?type=1">Сплатити за навчання</a></h1>
 			<?php endif; ?>
 		<?php endif; ?> 
+	-->
 		</div>
 		</div>
 		<?php endif; ?>
@@ -172,12 +171,12 @@ if(!isset($_GET['id']))
 
 		<?php
 			/*if($_SESSION["data"]["level"] == 1){
-		        $sql = sprintf("SELECT * FROM os_lessons WHERE class=(SELECT class FROM os_users WHERE id='%s') AND subject IN(SELECT id_subject FROM os_student_subjects WHERE id_student='%s')",
+		        $sql = sprintf("SELECT * FROM mag_lessons WHERE class=(SELECT class FROM mag_users WHERE id='%s') AND subject IN(SELECT id_subject FROM mag_student_subjects WHERE id_student='%s')",
 		            $_SESSION["data"]["id"],$_SESSION["data"]["id"]);
 		        $res = $mysqli->query($sql);
 		        //print("<br>$sql<br>");
 		        while ($row = $res->fetch_assoc()) {
-		            $sql_journal = sprintf("SELECT * FROM os_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
+		            $sql_journal = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
 		            $res_journal = $mysqli->query($sql_journal);
 		            //print($sql_journal);
 		            if ($res_journal->num_rows == 0) {
@@ -190,7 +189,7 @@ if(!isset($_GET['id']))
 		                }
 		                $date_ru = explode(" ",$row["date_ru"]);
 		                $date_ua = explode(" ",$row["date_ua"]);
-		                $sql_create = sprintf("INSERT INTO os_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
+		                $sql_create = sprintf("INSERT INTO mag_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
 		                    $_SESSION["data"]["id"],$row["id"],$date_ru[0],$date_ua[0],$row["subject"]);
 		                $res_create = $mysqli->query($sql_create);
 		                //print("<be>$sql_create<br>");
@@ -228,8 +227,8 @@ if(!isset($_GET['id']))
 						//print("<br>$sql_names2<br>");
 						$res_names1 = $mysqli->query($sql_names1);
 						$res_names2 = $mysqli->query($sql_names2);
-						$row_names1 = $res_names1->fetch_assoc();
-						$row_names2 = $res_names2->fetch_assoc();
+						//$row_names1 = $res_names1->fetch_assoc();
+						//$row_names2 = $res_names2->fetch_assoc();
 
 						if($_SESSION['data']['class'] != 11 && $_SESSION['data']['edu_type'] == 1) {
 							$lock_result = control_semester($row_names1['date_ua']);
@@ -265,7 +264,7 @@ if(!isset($_GET['id']))
 			                } else {
 			                	printf("<tr><td colspan='3'>Питання №%s ( %s бал(-и/-ів)): %s </td></tr>",$iteration,$row_quest['cost'],$row_quest['name']);
 			                }
-							
+							print("<br>$sql_quest</br>");
 							print("<tr>");
 							if($row_quest['type']==1){
 								print("<td><ul style='list-style:none;'>");
