@@ -82,7 +82,6 @@ a:hover {
 	vertical-align: middle;
 	margin-right: 30px;
 }
-
 .header-info .contacts-phone-second > .contacts-text {
 	display: none;
 	position: absolute;
@@ -94,7 +93,6 @@ a:hover {
 	background: rgba(255,255,255,0.7);
 	z-index: 10;
 }
-
 .header-info span.fa {
 	margin-right: 10px;
 	color: rgb(255, 180, 73);
@@ -286,7 +284,6 @@ li.menu-cabinet-submenu:hover > ul {
 	font-weight: 600;
 	z-index: 9999;
 }
-
 .menu-create li {
 	list-style: none;
 	padding: 10px 10px;
@@ -1373,6 +1370,397 @@ li.menu-cabinet-submenu:hover > ul {
 }
 
 /*-----CHECKBOX-STYLE-END-----*/
+
+/*-----TESTS-STYLE-START-----*/
+.content .block0 .tests_table tr tbody td ul li {
+    line-height: 1 !important; 
+    padding: 0 0 1px 35px !important;
+}
+
+.content .block0 .tests_table tr tbody td ul p {
+    padding-top: 5px;
+}
+.testes ul li {
+    vertical-align: top;
+    display: flex;
+}
+.tests_table {
+    margin: 30px 0;
+}
+.tests_table tr:nth-child(odd) {
+    color: #000;
+    font-size: 16px;
+    font-weight: bold;
+}
+.matchRadio {
+    list-style: none;
+}
+.matchRadio li {
+    float: left;
+    width: 15px;
+    margin-left: 15px;
+    border: 1px solid transparent;
+    text-align: center;
+    line-height: 30px;
+}
+.matchRadio input {
+    min-width: 15px;
+}
+/* Cначала обозначаем стили для IE8 и более старых версий
+т.е. здесь мы немного облагораживаем стандартный чекбокс. */
+.radio {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+}
+/* Это для всех браузеров, кроме совсем старых, которые не поддерживают
+селекторы с плюсом. Показываем, что label кликабелен. */
+.radio+label {
+    cursor: pointer;
+}
+/* Далее идет оформление чекбокса в современных браузерах, а также IE9 и выше.
+Благодаря тому, что старые браузеры не поддерживают селекторы :not и :checked,
+в них все нижеследующие стили не сработают. */
+/* Прячем оригинальный чекбокс. */
+.radio:not(checked) {
+    position: relative;
+    opacity: 0;
+    z-index: 2;
+    margin: 0 -32px 0 -19px;
+}
+.radio:not(checked)+label {
+    position: relative;
+    /* будем позиционировать псевдочекбокс относительно label */
+    padding: 3px 0 0 40px;
+    /* оставляем слева от label место под псевдочекбокс */
+    line-height: 30px;
+}
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.radio:not(checked)+label:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    width: 28px;
+    height: 28px;
+    background: url(/tpl_img/cletka0.png);
+    z-index: 1;
+}
+.radio+label:before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 28px;
+    height: 28px;
+    background: url(/tpl_img/cletka0.png);
+    z-index: 1;
+}
+.radio:not(checked)+label:hover:before {
+    /*  background: url(/tpl_img/cletka3.png); */
+}
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+/* Меняем фон чекбокса, когда он включен. */
+.radio:checked+label:before {
+    background: url(/tpl_img/cletka1.png);
+}
+li.test_q_true {
+    color: green;
+}
+li.test_q_false {
+    color: red;
+}
+li.test_q_false .radio:checked+label:before,
+li.test_q_false .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka4.png);
+}
+li.test_q_true .radio:checked+label:before,
+li.test_q_true .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka2.png);
+}
+.bukva_a .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a.png);
+}
+.bukva_a .radio+label:before {
+    background: url(/tpl_img/cletka_a.png);
+}
+.bukva_b .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_b.png);
+}
+.bukva_b .radio+label:before {
+    background: url(/tpl_img/cletka_b.png);
+}
+.bukva_c .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_c.png);
+}
+.bukva_c .radio+label:before {
+    background: url(/tpl_img/cletka_c.png);
+}
+.bukva_d .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_d.png);
+}
+.bukva_d .radio+label:before {
+    background: url(/tpl_img/cletka_d.png);
+}
+.bukva_a .radio:checked+label:before,
+.bukva_b .radio:checked+label:before,
+.bukva_c .radio:checked+label:before,
+.bukva_d .radio:checked+label:before,
+.bukva_e .radio:checked+label:before {
+    background: url(/tpl_img/cletka1.png);
+}
+.bukva_a1 .radio:checked+label:before,
+.bukva_a2 .radio:checked+label:before,
+.bukva_a3 .radio:checked+label:before,
+.bukva_a4 .radio:checked+label:before,
+.bukva_a5 .radio:checked+label:before {
+    background: url(/tpl_img/cletka1.png);
+}
+.bukva_a1 .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a1.png);
+}
+.bukva_a1 .radio+label:before {
+    background: url(/tpl_img/cletka_a1.png);
+}
+.bukva_a2 .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a2.png);
+}
+.bukva_a2 .radio+label:before {
+    background: url(/tpl_img/cletka_a2.png);
+}
+.bukva_a3 .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a3.png);
+}
+.bukva_a3 .radio+label:before {
+    background: url(/tpl_img/cletka_a3.png);
+}
+.bukva_a4 .radio:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a4.png);
+}
+.bukva_a4 .radio+label:before {
+    background: url(/tpl_img/cletka_a4.png);
+}
+.bukva_a5 .radio:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a5.png);
+}
+.bukva_a5 .radio+label:before {
+    background: url(/tpl_img/bukva_a5.png.png);
+}
+.bukva_a6 .radio:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a6.png);
+}
+.bukva_a6 .radio+label:before {
+    background: url(/tpl_img/bukva_a6.png);
+}
+.bukva_a7 .radio:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a7.png);
+}
+.bukva_a7 .radio+label:before {
+    background: url(/tpl_img/bukva_a7.png);
+}
+li.test_q_false .checkbox:checked+label:before,
+li.test_q_false .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka4.png);
+}
+li.test_q_true .checkbox:checked+label:before,
+li.test_q_true .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka2.png);
+}
+.bukva_a .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a.png);
+}
+.bukva_a .checkbox+label:before {
+    background: url(/tpl_img/cletka_a.png);
+}
+.bukva_b .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_b.png);
+}
+.bukva_b .checkbox+label:before {
+    background: url(/tpl_img/cletka_b.png);
+}
+.bukva_c .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_c.png);
+}
+.bukva_c .checkbox+label:before {
+    background: url(/tpl_img/cletka_c.png);
+}
+.bukva_d .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_d.png);
+}
+.bukva_d .checkbox+label:before {
+    background: url(/tpl_img/cletka_d.png);
+}
+.bukva_a .checkbox:checked+label:before,
+.bukva_b .checkbox:checked+label:before,
+.bukva_c .checkbox:checked+label:before,
+.bukva_d .checkbox:checked+label:before,
+.bukva_e .checkbox:checked+label:before {
+    background: url(/tpl_img/cletka1.png);
+}
+.bukva_a1 .checkbox:checked+label:before,
+.bukva_a2 .checkbox:checked+label:before,
+.bukva_a3 .checkbox:checked+label:before,
+.bukva_a4 .checkbox:checked+label:before,
+.bukva_a5 .checkbox:checked+label:before {
+    background: url(/tpl_img/cletka1.png);
+}
+.bukva_a1 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a1.png);
+}
+.bukva_a1 .checkbox+label:before {
+    background: url(/tpl_img/cletka_a1.png);
+}
+.bukva_a2 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a2.png);
+}
+.bukva_a2 .checkbox+label:before {
+    background: url(/tpl_img/cletka_a2.png);
+}
+.bukva_a3 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a3.png);
+}
+.bukva_a3 .checkbox+label:before {
+    background: url(/tpl_img/cletka_a3.png);
+}
+.bukva_a4 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/cletka_a4.png);
+}
+.bukva_a4 .checkbox+label:before {
+    background: url(/tpl_img/cletka_a4.png);
+}
+.bukva_a5 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a5.png);
+}
+.bukva_a5 .checkbox+label:before {
+    background: url(/tpl_img/bukva_a5.png.png);
+}
+.bukva_a6 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a6.png);
+}
+.bukva_a6 .checkbox+label:before {
+    background: url(/tpl_img/bukva_a6.png);
+}
+.bukva_a7 .checkbox:not(checked)+label:before {
+    background: url(/tpl_img/bukva_a7.png);
+}
+.bukva_a7 .checkbox+label:before {
+    background: url(/tpl_img/bukva_a7.png);
+}
+ul.test_ul_sootv li.bukva_a1 {
+    background: url(/tpl_img/cletka_a1.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a2 {
+    background: url(/tpl_img/cletka_a2.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a3 {
+    background: url(/tpl_img/cletka_a3.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a4 {
+    background: url(/tpl_img/cletka_a4.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a5 {
+    background: url(/tpl_img/cletka_a5.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a6 {
+    background: url(/tpl_img/cletka_a6.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a7 {
+    background: url(/tpl_img/cletka_a7.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_a {
+    background: url(/tpl_img/cletka_a.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_b {
+    background: url(/tpl_img/cletka_b.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_c {
+    background: url(/tpl_img/cletka_c.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_d {
+    background: url(/tpl_img/cletka_d.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_e {
+    background: url(/tpl_img/bukva_e.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_f {
+    background: url(/tpl_img/bukva_f.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+ul.test_ul_sootv li.bukva_g {
+    background: url(/tpl_img/bukva_g.png) no-repeat;
+    line-height: 0;
+    padding: 1px 0 1px 35px;
+    margin: 3px 0;
+}
+
+.testes ul li p,
+.rez_teste ul li p {
+    line-height: 15px;
+    margin-top: 2px;
+}
+.createTest form ul li {
+    display: block !important;
+}
+.class_sootvetst .radio:not(checked)+label:before {
+    left: -28px;
+}
+.class_sootvetst .radio:not(checked) {
+    margin: 0;
+}
+.matchRadio input {
+    min-width: 15px;
+}
+.class_sootvetst input {
+    min-width: 28px;
+}
+.class_sootvetst li {
+    width: 28px;
+    margin-left: 0;
+}
+.block0_cont input {
+    padding-left: 10px;
+}
+
+/*-----TESTS-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/
 .static-page-header {
