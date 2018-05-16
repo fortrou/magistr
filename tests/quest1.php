@@ -43,8 +43,8 @@
             </script>
                   
                     
-                    <ul>
-                        <?
+                <ul>
+                    <?
                         for($i = 0; $i < $cnt; $i++){
                             $value = $_SESSION['correct'][$i];
                             printf("<li><span class='testText'>%sй ответ</span>

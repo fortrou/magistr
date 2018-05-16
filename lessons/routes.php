@@ -1,7 +1,7 @@
 <?php
-	return array( 'cabinet_block' => 'cabinet/get_MainForSession', 
-				  'cabinet_block/auth' => 'cabinet/get_authorizationForm', 
-				  'cabinet_block/registration' => 'cabinet/get_registrationForm'/*, 
+	return array( 'lessons' => 'lesson/get_LessonListForSession', 
+				  'lessons/create' => 'lesson/create_lesson', 
+				  'lessons/update' => 'lesson/update_lesson'/*, 
 				  '' => '', 
 				  '' => '', 
 				  '' => '', 
