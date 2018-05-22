@@ -103,13 +103,7 @@ if(!isset($_GET['id']))
     $res_class = $mysqli->query($sql_class);
     //$row_class = $res_class->fetch_assoc();
     $desc = "";
-		if ($row_test['type'] == 5) {
-			$type = "Контрольное";
-		}
-		if ($row_test['type'] == 4) {
-			$type = "Тренировочное";
-		}
-		$desc = sprintf("$type тестирование по предмету %s. Создано для класса %s на сайте http://online-shkola.com.ua",$row_subj['name_ru'],$row_class['class_name']);
+		
 		if ($row_test['type'] == 5) {
 			$type = "Контрольне";
 		}
@@ -122,10 +116,7 @@ if(!isset($_GET['id']))
     $result = $mysqli->query($sql_test);
 	$row_test = $result->fetch_assoc();
 	if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru") {
-		$array_translates = array( "try_later_test" => "Если у вас открыт еще один тест в другой вкладке, то нажмите Ок и закройте его. Если нет, то нажмите Ок, подождите 15 секунд и попробуйте снова"
-								 );
-	} else {
-		$array_translates = array( "try_later_test" => "Якщо у вас відкрито ще один тест в іншій вкладці, натисніть кнопку Ок і закрийте його. Якщо ні, то натисніть Ок, зачекайте 15 секунд і спробуйте знову"
+		$array_translates = array( "try_later_test" => "Якщо у вас відкрито ще один тест в іншій вкладці, натисніть кнопку ОК і закрийте його. Якщо ні, то натисніть ОК, зачекайте 15 секунд і спробуйте знову"
 								 );
 	}
 ?>
@@ -261,7 +252,7 @@ if(!isset($_GET['id']))
 						while($row_quest = $res_quest->fetch_assoc()){
 							if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru"){
 								printf("<div class='test-block'>");
-			                	printf("<div class='test-title'>Питання №%s ( %s бал(-и/-ів)): %s </div>",$iteration,$row_quest['cost'],$row_quest['name']);
+			                	printf("<div class='test-title'><span class='test-question'>Питання №%s ( %s бал(-и/-ів)):</span> %s </div>",$iteration,$row_quest['cost'],$row_quest['name']);
 			                }
 							//print("<br>$sql_quest</br>");
 							if($row_quest['type']==1){
@@ -282,7 +273,7 @@ if(!isset($_GET['id']))
 			                  		/*----FIRST TEST TYPE----*/
 			                        printf("<div class='char char_%s'>
 			                        	<input id='answ-%s_%s' type='radio' class='radio' name='%s' value='%s'> 
-			                        	<label for='answ-%s_%s'>%s</label>
+			                        	<label for='answ-%s_%s'><p class='test-answer'>%s</p></label>
 			                        	</div>",
 			                        	$abc[$i-1],$qid,$abc[$i-1],$qid,$arr_mix['id'][$i-1],$qid,$abc[$i-1],Quest::strip_conors($arr_mix['data'][$i-1]));
 			                    }
@@ -317,58 +308,58 @@ if(!isset($_GET['id']))
 								$res = $mysqli->query($sql);
 								$num = $res->num_rows;
 			                    //print("<br>$num<br>");
-			                    print("<div class='test_ul_sootv matched-body'>");
+			                    print("<div class='test-matched-body'>");
 			                    /*
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
 			                        printf("<li  class='char_%s'><span>%s</span> %s</li>",$alphabet[$i-1],$arr_mix['data'][$i-1]);
 			                    }
 			                    */
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<div class='matched-block'>
+			                        printf("<div class='test-matched-item'>
 			                        		<div class='char char_%s'></div>
-			                        		<div>%s</div>
-			                        		</div>",
+			                        		%s</div>",
 			                        		$abc[$i-1],$arr_mix['data'][$i-1]);
 			                    }
-
 			                    print("</div>");
 			                    /*print("<td><ul style='list-style:none;'>");
 			                    while($row = $res->fetch_assoc()){
 			                        printf("<li>%s</li>",$row['answer']);
 			                    }
 			                    print("</ul></td>");*/
-			                    print("<ul style='list-style:none;'>");     
-			                    print("<li>
-			                        	<ul class='matchRadio'>");
-			                    printf("<li style='width:36px;'></li>");
+									 //ПЕРЕДЕЛАННАЯ ВЕРСИЯ СООТВЕТСТВИЙ
+
+			                    print("<div class='test-matched-cellblock'>
+			                    	<table class='q-answer'><tbody><tr>");         
+			                    printf("<th></th>");
 			                        for($it = 0; $it < $num; $it++){
-			                            printf("<li>%s</li>",$alphabet[$it]);
+			                            printf("<th>%s</th>",$alphabet[$it]);
 			                        }
-			                        print("</ul>
-			                    </li>");
+			                        print("</tr>");
 			                        for($i = 1; $i <= $num; $i++){
-			                            print("<li>
-			                            <ul class='matchRadio'>");
-			                            printf("<li style='width:30px;'><span>%s</span></li>",$i);
+			                            print("<tr>");
+			                            printf("<th class='th-col'>%s</th>",$i);
 			                            for($it = 1; $it <= $num; $it++){
 											$val = $arr_mix['id'][$it-1];
 											$let = $abc[$it-1];
-			                                printf("<li>
-			                                		<input type='radio' class='radio' name='%s%s' value='%s'>
-			                                		<label></label>
-			                                		</li>",
-			                                		$qid,$arr_mix['id'][$it-1],$i);
+			                                printf("<td>
+			                                		<label>
+			                                		<input type='radio' class='q-radio' name='%s%s' value='%s'>
+			                                		<span class='q-ans'></span></label>
+			                                		</td>",
+			                                		$qid,$i,$arr_mix['id'][$it-1]);
 			                           		}
-			                            	print("</ul></li>");
+			                           	 print("</tr>");	
 			                        }
-			                    
-			                    print("</ul>");
+			                    print("</tbody></table>");
+			                    print("</div></div></div>");
 							}
 
 
+
 							if($row_quest['type']==4){
-			                    print("<td><table><tr><td style='vertical-align: top;min-width: 200px;
-    padding: 0 10px;'><ul style='list-style:none;' class='test_ul_sootv'>");
+			                    print("<div class='test-body'>
+			                    	<div class='test-matched-body'>
+			                    	<div class='test-columns-block'>");
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_m_data($qid);
 			                    //var_dump($arr_mix);
@@ -383,64 +374,63 @@ if(!isset($_GET['id']))
 			                    $num_horiz = $res1->num_rows;
 
 			                    $num_el = 1;
-
+			                    	printf("<div class='test-column-item'> ");
 			                    while($row = $res->fetch_assoc()){
-			                        printf("<li class='char_a$num_el' >%s</li>",$row['answer']);
+			                        printf("<div class='test-matched-item'>
+			                        	<div class='char char_num$num_el'></div>%s</div>",$row['answer']);
 			                        $num_el++;
 			                    }
-			                                    
-			                                print("</ul></td>");
-							print("<td style='vertical-align: top;min-width: 200px;
-    padding: 0 10px;'><ul style='list-style:none;' class='test_ul_sootv'>");
-			                    
+			                    	print("</div>");
+			                    	printf("<div class='test-column-item'> ");
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<li class='char_%s'>%s</li>",$abc[$i-1],$arr_mix['data'][$i-1]);
+			                        printf("<div class='test-matched-item'>
+			                        	<div class='char char_%s'></div>%s</div>",$abc[$i-1],$arr_mix['data'][$i-1]);
 			                    }
-
-			                    print("</ul></td></tr></table>");
+			                    print("</div></div>");
 								
 								
-			                                print("<ul style='list-style:none;'>");
-			                                    
-			                                print("<li>
-			                                    <ul class='matchRadio'>");
-			                                    printf("<li style='width:6px;'></li>");
+			                                 print("<div class='test-matched-cellblock '>
+			                    					<table class='q-answer'><tbody><tr>");         
+			                   				 printf("<th></th>");
 			                                    
 			                                    for($it = 0; $it < $num_horiz; $it++){
-			                                        printf("<li>%s</li>",$alphabet[$it]);
+			                                        printf("<th>%s</th>",$alphabet[$it]);
 			                                    }
-			                                    print("</ul>
-			                                    <div style='clear:both;'></div>
-			                                </li>");
+			                                    print("</tr>");
+			                                    
 			                                    for($i = 1; $i <= $num; $i++){
-			                                        print("<li>
-			                                        <ul class='matchRadio class_sootvetst'>");
-			                                        printf("<li style='width:17px;margin-right: 14px;'><span>%s</span></li>",$i);
+			                                        print("<tr>");
+			                                        printf("<th class='th-col'>%s</li>",$i);
 			                                        for($it = 1; $it <= $num_horiz; $it++){
 			                                            $val = $arr_mix['id'][$it-1];
 			                                            $let = $abc[$it-1];
-			                                            print("<li>
+			                                            print("<td>
+			                                					<label>
+			                                						<input type='radio' class='q-radio nomer_$i char_$let' name='$qid$i' value='$val'>
+			                                						<span class='q-ans'></span></label>
+			                                					</td>
+
+			                                            	");/*<li>
 			                                            	<input type='radio' class='radio' name='$qid$i' value='$val' class='nomer_$i char_$let'>
-			                                            	<label></label></li>");
+			                                            	<label></label></li>*/
 			                                        }
-			                                        print("</ul>
-			                                        <div style='clear:both;'></div>
-			                                    </li>");
-			                                }
-			                                
-			                            print("</ul>");
-			                        
-
-			                    
-
-								 print("</td>");
+			                                        print("</tr>");
+			                                }                
+			                             print("</tbody></table>");
+			                    print("</div></div></div></div>");
 							}
+
+
 							if($row_quest['type']==5){
-								printf("<td><input type='text' name='%s'></td><td></td>",$row_quest['id_q']);
+								print("<div class='test-body'>");
+								printf("<div class='test-short-answer'>
+									<input type='text' name='%s'></div>",
+									$row_quest['id_q']);
 							}
-							print("</tr>");
 							$iteration++;
+							
 						}
+						print("</div>");
 					}
 					else{
 						if($test_away == 1) {
@@ -451,13 +441,10 @@ if(!isset($_GET['id']))
 						}
 					}
 					?>
-				</table>
 				
 				<?php if($flag_contr == 0 && $locked == 0): ?>
-				<div class="end">
+				<div class="test-body end">
 					<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
-						<input type="submit" name="sbm" value="Завершить тест">
-					<?php else: ?>
 						<input type="submit" name="sbm" value="Завершити тест">
 					<?php endif; ?>
 				</div>
@@ -481,7 +468,7 @@ if(!isset($_GET['id']))
 							}
 						?>
 					<?php else: ?>
-					<div class="end">
+					<div class="test-body end">
 						<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
 							<input type="submit" name="sbm" value="Завершить тест">
 						<?php else: ?>
@@ -555,6 +542,8 @@ if(!isset($_GET['id']))
 			</div>
 		</div>
 	</div>
+</div>
+</div>
 	<?php
 		/*unset($_SESSION['data_collection']);
 		unset($_SESSION['string_answs']);*/
