@@ -13,7 +13,7 @@ $db = Database::getInstance();
 $mysqli = $db->getConnection();
 if(isset($_POST['createTest'])){
 	Test::createTest($_POST['tName'], 4);
-	/*$sql = sprintf("INSERT INTO mag_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
+	/*$sql = sprintf("INSERT INTO os_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
 		$_SESSION['lesson']['lesson_id'],$_SESSION['test']['id'],$_SESSION['lesson']['test_type']);
 	//print($sql);
 	$result = $mysqli->query($sql*/	

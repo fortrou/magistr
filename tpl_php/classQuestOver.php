@@ -11,10 +11,10 @@
 		$db = Database::getInstance();
 		$mysqli = $db->getConnection();
         $qid = $quest;
-        $sql_question = "SELECT * FROM os_test_quest WHERE id_q='$qid'";
+        $sql_question = "SELECT * FROM mag_test_quest WHERE id_q='$qid'";
         $res_question = $mysqli->query($sql_question);
         $row_question = $res_question->fetch_assoc();
-        $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+        $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
         //print("<br>$sql<br>");    
         $result = $mysqli->query($sql);
         
@@ -100,10 +100,10 @@
 		$db = Database::getInstance();
 		$mysqli = $db->getConnection();
         $qid = $quest;
-        $sql_question = "SELECT * FROM os_test_quest WHERE id_q='$qid'";
+        $sql_question = "SELECT * FROM mag_test_quest WHERE id_q='$qid'";
         $res_question = $mysqli->query($sql_question);
         $row_question = $res_question->fetch_assoc();
-        $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+        $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
         $result = $mysqli->query($sql);
         
         $num = $result->num_rows;
@@ -193,10 +193,10 @@
         $abc = array("a","b","c","d","e","f","g","h","i","j");
 
         $qid = $quest;
-        $sql_question = "SELECT * FROM os_test_quest WHERE id_q='$qid'";
+        $sql_question = "SELECT * FROM mag_test_quest WHERE id_q='$qid'";
         $res_question = $mysqli->query($sql_question);
         $row_question = $res_question->fetch_assoc();
-        $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+        $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
         $result = $mysqli->query($sql);
         
         $num = $result->num_rows;
@@ -335,13 +335,13 @@
         $abc = array("a","b","c","d","e","f","g","h","i","j");
 
         $qid = $quest;
-        $sql_question = "SELECT * FROM os_test_quest WHERE id_q='$qid'";
+        $sql_question = "SELECT * FROM mag_test_quest WHERE id_q='$qid'";
         $res_question = $mysqli->query($sql_question);
         $row_question = $res_question->fetch_assoc();
-        $sql = "SELECT * FROM os_test_answs WHERE id_quest='$qid'";
+        $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
         $result = $mysqli->query($sql);
         //print("<br>$sql<br>");
-        $sqlm = "SELECT * FROM os_test_matches WHERE id_quest='$qid'";
+        $sqlm = "SELECT * FROM mag_test_matches WHERE id_quest='$qid'";
         $resultm = $mysqli->query($sqlm);
         //print("<br>$sqlm<br>");
         $num = $result->num_rows;
@@ -355,7 +355,7 @@
         }
         $rmarr = array();
         while($row = $result->fetch_assoc()){
-            $sql_rm = sprintf("SELECT * FROM os_test_matches WHERE id_quest='$qid' AND num='%s'",$row['correct']);
+            $sql_rm = sprintf("SELECT * FROM mag_test_matches WHERE id_quest='$qid' AND num='%s'",$row['correct']);
             $res_rm = $mysqli->query($sql_rm);
             $row_rm = $res_rm->fetch_assoc();
             $rmarr[] = $row_rm['id_ma'];
@@ -382,7 +382,7 @@
 
                 print("</ul>
                         </td><td><ul style='list-style:none;' class='test_ul_sootv'>");
-                    $sqlm = "SELECT * FROM os_test_matches WHERE id_quest='$qid'";
+                    $sqlm = "SELECT * FROM mag_test_matches WHERE id_quest='$qid'";
                     $resultm = $mysqli->query($sqlm);
                     $it_m = 0;
                     while($row_m = $resultm->fetch_assoc()){
@@ -416,7 +416,7 @@
                             print("<li>
                             <ul class='matchRadio'>");
                             printf("<li style='width:30px;'><span>%s:</span></li>",$i);
-                            $sqlm = "SELECT * FROM os_test_matches WHERE id_quest='$qid'";
+                            $sqlm = "SELECT * FROM mag_test_matches WHERE id_quest='$qid'";
                             $resultm = $mysqli->query($sqlm);
                             $it = 1;
                             $flag = 0;
@@ -491,10 +491,10 @@
             $mysqli = $db->getConnection();
             $alphabet = Quest::getAlphabet();
             $qid = $quest;
-            $sql_question = "SELECT * FROM os_test_quest WHERE id_q='$qid'";
+            $sql_question = "SELECT * FROM mag_test_quest WHERE id_q='$qid'";
             $res_question = $mysqli->query($sql_question);
             $row_question = $res_question->fetch_assoc();
-            $sql_ra = sprintf("SELECT * FROM os_test_short_answ WHERE id_quest='%s'",$row_question['id_q']);
+            $sql_ra = sprintf("SELECT * FROM mag_test_short_answ WHERE id_quest='%s'",$row_question['id_q']);
             $res_ra = $mysqli->query($sql_ra);
             $row_ra = $res_ra->fetch_assoc();
             //var_dump($answ);
