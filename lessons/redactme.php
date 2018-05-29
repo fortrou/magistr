@@ -1,9 +1,9 @@
 <?php 
 	session_start();
 	require ('../tpl_php/autoload.php');
-	if (!isset($_GET['id']) || !isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) {
-		header("Location: ../");
-	}
+	//if (!isset($_GET['id']) || !isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) {
+	//	header("Location: ../");
+	//}
 	$id = (int)$_GET['id'];
 	if ( $_POST['send'] )
 	{

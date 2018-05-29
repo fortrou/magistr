@@ -2288,6 +2288,10 @@ p.cat_small_hat {
     text-align: left;
     padding: 5px 10px;
 }
+
+.lesson-create input[type="checkbox"]:checked, .lesson-create input[type="checkbox"]:not(checked) {
+	position: static;
+}
 /*-----OLD-STYLES-FOR-LESSONS-&-COURSES-END-----*/
 
 @media only screen and (max-width: 960px) {

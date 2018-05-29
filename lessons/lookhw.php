@@ -3,7 +3,7 @@
 	require_once '../tpl_php/autoload.php';
 	
 	if ( !isset($_GET['id']) )
-		header("Location: ../index.php");
+//		header("Location: ../index.php");
 	$id = (int)$_GET['id'];
 	$db = Database::getInstance();
 		$mysqli = $db->getConnection();
