@@ -1931,6 +1931,29 @@ li.test_q_true .checkbox:not(checked)+label:before {
 	position: static;
 }
 
+/*-----CREATE-TESTS-STYLE-----*/
+select.create-test  {
+	width: 100%;
+	max-width: 480px;
+    border: 1px solid #CACACA;
+    border-radius: 5px;
+    font-weight: bold; 
+    color: #494949;
+    padding: 0 5px;
+}
+
+.create-test-content {
+	width: 100%;
+	max-width: 960px;
+	padding: 5px;
+}
+
+.create-test-formItem {
+	width: 100%;
+	max-width: 960px;
+	margin: 5px 0px;
+}
+
 /*-----TESTS-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/

@@ -191,31 +191,31 @@ $db = Database::getInstance();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Создать тест - Онлайн школа Альтернатива</title>
+		<title>Створити тест</title>
         <?php require_once('../tpl_blocks/head.php'); ?>
 		<meta name="description" content=" ">
 		<meta name="keywords" content=" ">
         <script type="text/javascript" src="../editors/ckeditor/ckeditor.js"></script>
-    <style>
-        .matchRadio{
-            list-style:none;
-        }
-        
-        .matchRadio li{
-            float:left;
-            width:15px;
-            margin-left:10px;
-            border:1px solid transparent;
-            text-align:center;
-        }
-    </style>
+  <!--   <style>
+      .matchRadio{
+          list-style:none;
+      }
+      
+      .matchRadio li{
+          float:left;
+          width:15px;
+          margin-left:10px;
+          border:1px solid transparent;
+          text-align:center;
+      }
+  </style> -->
 	</head>
 	<body>
         <?php require_once('../tpl_blocks/header.php'); ?>
         <div class="content">
 		<div class='createTest' >
     			<div class="testes">
-                        <center><span class='testText'> Тест успешно создан, приступим к созданию формы </span></center>
+                        <span class='testText'> Тест успішно створено, можна створювати форму </span>
                         <?php
                                 $sql = "SELECT * FROM mag_tests WHERE id='".$_SESSION['test']['id']."'";
                                 $res = $mysqli->query($sql);
@@ -224,7 +224,7 @@ $db = Database::getInstance();
 
                         ?>
                         <h5 class="text-left">
-                            Список вопросов:
+                            Список питань:
                         </h5>
                         <div id="quests_list" class="text-center">
                             <ul class="list_q">
@@ -237,19 +237,19 @@ $db = Database::getInstance();
                                     printf("<li>%s | балл: %s | ",$row['name'],$row['cost']);
                                     switch((int)$row['type']){
                                         case 1:
-                                            print(" | Вопрос с 1 вариантом ответа ");
+                                            print(" | Питання з одним варіантом відповіді ");
                                         break;
                                         case 2:
-                                            print(" | Вопрос с несколькими вариантами ответов ");
+                                            print(" | Питання з кількома варіантами відповідей ");
                                         break;
                                         case 3:
-                                            print(" | Вопрос на установку правильной последовательности ");
+                                            print(" | Питання на встановлення правильної послідовності ");
                                         break;
                                         case 4:
-                                            print(" | Вопрос на установку соответствий ");
+                                            print(" | Питання на встановлення відповідностей ");
                                         break;
                                         case 5:
-                                            print(" | Вопрос с коротким ответом ");
+                                            print(" | Питання з короткою відповіддю ");
                                         break;
                                     }
                                     print("</li>");
@@ -263,54 +263,49 @@ $db = Database::getInstance();
                         </div>
                         <?php if(!isset($_SESSION['referer']) && $_SESSION['referer']!= 'redact'):?>
                         <a href="../lessons/stage2.php?id=<?=$_SESSION['lesson']['lesson_id']?>">
-                            <center><span class='end_create_test'>Завершить заполнение теста</span></center>
+                            <center><span class='end_create_test'>Завершити заповнення тесту</span></center>
                         </a>
                         <?php else: ?>
                         <a href="../lessons/redactme.php?id=<?=$_SESSION['lesson']['lesson_id']?>">
-                           <center> <span class='end_create_test'>Завершить заполнение теста</span></center>
+                           <center> <span class='end_create_test'>Завершити заповнення тесту</span></center>
                         </a>
                         <?php endif; ?><br></br>
                         <form method="post" action="createquestion.php">
-                        <span class='testText' > Выберите 1 из 5 типов тестов и нажмите "Выбрать"</span>
-                        <p><select style='    height: 32px;
-    border: 1px solid #CACACA;
-    border-radius: 5px;
-    font-weight: bold; 
-    color: #494949;
-    padding: 0 5px;' id="select_quests" name='type' size='1'>
+                        <span class='testText' > Оберіть 1 з 5 типів тестів та натисніть "Обрати"</span>
+                        <p><select class="create-test" id="select_quests" name='type' size='1'>
                             <?php if($_SESSION['typeGlobal'] == 1): ?>
-                                <option value='1' selected>Вопрос с 1 вариантом ответа</option>
+                                <option value='1' selected>Питання з одним варіантом відповіді</option>
                             <?php else: ?>
-                                <option value='1'>Вопрос с 1 вариантом ответа</option>
+                                <option value='1'>Питання з одним варіантом відповіді</option>
                             <?php endif; ?>
 
                             <?php if($_SESSION['typeGlobal'] == 2): ?>
-                                <option value='2' selected>Вопрос с несколькими вариантами ответов</option>
+                                <option value='2' selected>Питання з кількома варіантами відповідей</option>
                             <?php else: ?>
-                                <option value='2'>Вопрос с несколькими вариантами ответов</option>
+                                <option value='2'>Питання з кількома варіантами відповідей</option>
                             <?php endif; ?>
 
                             <?php if($_SESSION['typeGlobal'] == 3): ?>
-                                <option value='3' selected>Вопрос на установку правильной последовательности</option>
+                                <option value='3' selected>Питання на встановлення правильної послідовності</option>
                             <?php else: ?>
-                                <option value='3'>Вопрос на установку правильной последовательности</option>
+                                <option value='3'>Питання на встановлення правильної послідовності</option>
                             <?php endif; ?>
 
                             <?php if($_SESSION['typeGlobal'] == 4): ?>
-                                <option value='4' selected>Вопрос на установку соответствий</option>
+                                <option value='4' selected>Питання на встановлення відповідностей</option>
                             <?php else: ?>
-                                <option value='4'>Вопрос на установку соответствий</option>
+                                <option value='4'>Питання на встановлення відповідностей</option>
                             <?php endif; ?>
 
                             <?php if($_SESSION['typeGlobal'] == 5): ?>
-                                <option value='5' selected>Вопрос с коротким ответом</option>
+                                <option value='5' selected>Питання з короткою відповіддю</option>
                             <?php else: ?>
-                                <option value='5'>Вопрос с коротким ответом</option>
+                                <option value='5'>Питання з короткою відповіддю</option>
                             <?php endif; ?>
                             <!--<option value='5'>Вопрос выбором ответов из списка</option>
                             <option value='6'>Вопрос с открытым ответом</option>-->
                         </select>
-                        <input id="change_quest" type='submit' name='select' value='Выбрать'></p>
+                        <input id="change_quest" type='submit' name='select' value='Обрати'></p>
                         <!--<input id="change_quest" type='button' name='select' value='Выбрать'>-->
                         </form>
                         <div id="questionBlock">
