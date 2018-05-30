@@ -21,7 +21,7 @@ $mysqli = $db->getConnection();
 	<html lang="en">
 
   <head>
-	<title>Главная - ВнеШколы - образовательный портал</title>
+	<title></title>
    <?php require_once('../tpl_blocks/head.php'); ?>
   </head>
 

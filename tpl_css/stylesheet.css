@@ -1926,6 +1926,11 @@ li.test_q_true .checkbox:not(checked)+label:before {
     padding-left: 10px;
 }
 
+.chk_yes_qes input[type="checkbox"]:checked,
+.chk_yes_qes input[type="checkbox"]:not(checked) {
+	position: static;
+}
+
 /*-----TESTS-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/
@@ -2088,6 +2093,7 @@ table.static-list-table td.date {
 .clear {
 	clear: both;
 }
+
 
 @media only screen and (max-width: 960px) {
 

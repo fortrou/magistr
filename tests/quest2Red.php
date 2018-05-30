@@ -79,7 +79,7 @@ $mysqli = $db->getConnection();
 	<html lang="en">
 
   <head>
-	<title>Главная - ВнеШколы - образовательный портал</title>
+	<title></title>
    <?php require_once('../tpl_blocks/head.php'); ?>
    <script type="text/javascript" src="../editors/ckeditor/ckeditor.js"></script>
   </head>

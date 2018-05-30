@@ -39,7 +39,7 @@ if(isset($_POST['createTest'])){
 		<div class="content">
 		<div class="block0">
 			<div class="testes">
-		<form method='post' action='create.php' class='createTest'>    
+			<form method='post' action='create.php' class='createTest'>    
 			<input type='text' name='tName' class='questForm' placeholder='Введите название теста' required><span class='testText'>Введите название теста</span><br>
 			<input type='submit' name='createTest' class='sbm' value='Создать'>
 		</form>

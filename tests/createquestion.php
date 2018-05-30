@@ -212,6 +212,7 @@ $db = Database::getInstance();
 	</head>
 	<body>
         <?php require_once('../tpl_blocks/header.php'); ?>
+        <div class="content">
 		<div class='createTest' >
     			<div class="testes">
                         <center><span class='testText'> Тест успешно создан, приступим к созданию формы </span></center>
@@ -363,6 +364,7 @@ $db = Database::getInstance();
                             ?>
                     </div>
     			</div>
+        </div>
         </div>
     <?php require_once('../tpl_blocks/footer.php'); ?>  
     	</body>
