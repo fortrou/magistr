@@ -75,18 +75,14 @@ $mysqli = $db->getConnection();
 	//var_dump($_POST);
 ?>
 <!DOCTYPE html>
-<html>
-	<html lang="en">
-
-  <head>
-	<title>Главная - ВнеШколы - образовательный портал</title>
-   <?php require_once('../tpl_blocks/head.php'); ?>
-   <script type="text/javascript" src="../editors/ckeditor/ckeditor.js"></script>
-  </head>
-
+<html lang="en">
+  	<head>
+		<title></title>
+  		<?php require_once('../tpl_blocks/head.php'); ?>
+  		<script type="text/javascript" src="../editors/ckeditor/ckeditor.js"></script>
+  	</head>
   <body>
   	<?php require_once('../tpl_blocks/header.php'); ?>
-	
 			    <?php
 			    	$sql_quest = "SELECT * FROM mag_test_quest WHERE id_q='$qId'";
 			    	//print("<br>$sql_quest<br>");
@@ -99,7 +95,7 @@ $mysqli = $db->getConnection();
 			    	//print("<br>$cost<br>");
 			    ?>
 			    <div class='createTest' style='margin-top:20px;'>
-				    <div id="quest1" class="collapsed">
+				    <div id="quest1" class="create-test-content">
 				        <form method='post' action='<?=$_SERVER['REQUEST_URI']?>' enctype="multipart/form-data" >
 				            <?php
 				                require('r_c.php');
@@ -108,8 +104,7 @@ $mysqli = $db->getConnection();
 				                //var_dump($_SESSION['correct']);
 				                print("<br>");
 				            ?>
-				            
-				                    <span class='testText'>Введите вопрос</span>
+				                    <span class='testText'>Введіть питання</span>
 				                    <textarea type='text' name='quest' class='answForm' style='width:960px;min-height: 200px;'> <? print($question); ?></textarea>
 				                    <script type='text/javascript'>
 										CKEDITOR.replace('quest');
@@ -121,23 +116,19 @@ $mysqli = $db->getConnection();
 				                        	$tval = sprintf("answ%s",$i);
 				                            $value = $_POST[$tval];
 				                            //print("<br>$value<br>$tval<br>$i<br>");
-				                            printf("<li><span class='testText'>%sй ответ</span>
+				                            printf("<li><span class='testText'>%s-а відповідь</span>
 				                                <textarea type='text' name='answ%s' style='width:960px;min-height: 200px;'>%s</textarea>
 				                                <script type='text/javascript'>
 				                                    CKEDITOR.replace('answ%s');
 				                                </script>
-				                                <input type='submit' name='del%s' value='удалить ответ'>
-				                                <br>
-				                                
+				                                <input type='submit' name='del%s' value='видалити відповідь'>
+				                                <br>       
 				                            </li>",$i+1,$i,$value,$i,$i+1);
 				                        }
-				                        ?>
-				                        
+				                        ?>                        
 				                    </ul>
-				                    
-				            
 				            <div class="clear"></div>
-				            <input type='submit' name='add_more' value='Добаить вариант ответа'><br>
+				            <input type='submit' name='add_more' value='Додати варіант відповіді'><br>
 				                    <ul >
 				                            <?
 				                            //var_dump($_POST);
@@ -152,24 +143,14 @@ $mysqli = $db->getConnection();
 					                                        %s:<input type='checkbox' name='id%s' value='%s'><br>
 					                                    </li>",$i+1,$i+1,$i+1);
 				                                	}
-				                                
-				                                ?>
-				                            
-				                                             
+				                                ?>				                                                    
 				                    </ul>
 				            <?php
 				            require('def_red.php');
-				            ?>
-				        
+				            ?>		        
 				        </form>
 				    </div>
 				</div>
-			
-    
 	<?php require_once('../tpl_blocks/footer.php'); ?>
-
-
-
-
 	</body>
 </html>

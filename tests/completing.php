@@ -53,7 +53,7 @@ if(!isset($_GET['id']))
 			print("Данного теста пока нет на другом языке");
 		}*/
 	}
-    $sql_subj = sprintf("SELECT * FROM mag_subjects WHERE id IN (SELECT DISTINCT subject FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",
+    $sql_subj = sprintf("SELECT * FROM os_subjects WHERE id IN (SELECT DISTINCT subject FROM os_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s'))",
     	$_GET['id']);
     //print("$sql_subj<br>");
     $res_subj = $mysqli->query($sql_subj);
@@ -64,9 +64,9 @@ if(!isset($_GET['id']))
     $res = $mysqli->query($sql);
     $row = $res->fetch_assoc();
     if ($row['type'] == 5) {
-    	$sql = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' 
-    		AND id_l IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s' AND id_lesson IN (
-    		SELECT id FROM mag_lessons WHERE lesson_year = $year_num))",$_SESSION['data']['id'],$testId);
+    	$sql = sprintf("SELECT * FROM os_journal WHERE id_s='%s' 
+    		AND id_l IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s' AND id_lesson IN (
+    		SELECT id FROM os_lessons WHERE lesson_year = $year_num))",$_SESSION['data']['id'],$testId);
     	
 		$res = $mysqli->query($sql);
 		if($res->num_rows != 0){
@@ -92,24 +92,18 @@ if(!isset($_GET['id']))
     	$flag_test = 4;
     }
     //var_dump($flag_contr);
-    $sql_test = sprintf("SELECT * FROM mag_lesson_test WHERE id_test='%s'",
+    $sql_test = sprintf("SELECT * FROM os_lesson_test WHERE id_test='%s'",
     	$_GET['id']);
     $res_test = $mysqli->query($sql_test);
     //$row_test = $res_test->fetch_assoc();
     $id_lesson = $row_test["id_lesson"];
     $type_test = $row_test["type"];
 
-    $sql_class = sprintf("SELECT * FROM mag_class_manager WHERE id IN(SELECT DISTINCT class FROM mag_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='%s'))",$_GET['id']);
+    $sql_class = sprintf("SELECT * FROM mag_class_manager WHERE id IN(SELECT DISTINCT class FROM os_lessons WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='%s'))",$_GET['id']);
     $res_class = $mysqli->query($sql_class);
     //$row_class = $res_class->fetch_assoc();
     $desc = "";
-		if ($row_test['type'] == 5) {
-			$type = "Контрольное";
-		}
-		if ($row_test['type'] == 4) {
-			$type = "Тренировочное";
-		}
-		$desc = sprintf("$type тестирование по предмету %s. Создано для класса %s на сайте http://online-shkola.com.ua",$row_subj['name_ru'],$row_class['class_name']);
+		
 		if ($row_test['type'] == 5) {
 			$type = "Контрольне";
 		}
@@ -122,10 +116,7 @@ if(!isset($_GET['id']))
     $result = $mysqli->query($sql_test);
 	$row_test = $result->fetch_assoc();
 	if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru") {
-		$array_translates = array( "try_later_test" => "Если у вас открыт еще один тест в другой вкладке, то нажмите Ок и закройте его. Если нет, то нажмите Ок, подождите 15 секунд и попробуйте снова"
-								 );
-	} else {
-		$array_translates = array( "try_later_test" => "Якщо у вас відкрито ще один тест в іншій вкладці, натисніть кнопку Ок і закрийте його. Якщо ні, то натисніть Ок, зачекайте 15 секунд і спробуйте знову"
+		$array_translates = array( "try_later_test" => "Якщо у вас відкрито ще один тест в іншій вкладці, натисніть кнопку ОК і закрийте його. Якщо ні, то натисніть ОК, зачекайте 15 секунд і спробуйте знову"
 								 );
 	}
 ?>
@@ -171,12 +162,12 @@ if(!isset($_GET['id']))
 
 		<?php
 			/*if($_SESSION["data"]["level"] == 1){
-		        $sql = sprintf("SELECT * FROM mag_lessons WHERE class=(SELECT class FROM mag_users WHERE id='%s') AND subject IN(SELECT id_subject FROM mag_student_subjects WHERE id_student='%s')",
+		        $sql = sprintf("SELECT * FROM os_lessons WHERE class=(SELECT class FROM mag_users WHERE id='%s') AND subject IN(SELECT id_subject FROM mag_student_subjects WHERE id_student='%s')",
 		            $_SESSION["data"]["id"],$_SESSION["data"]["id"]);
 		        $res = $mysqli->query($sql);
 		        //print("<br>$sql<br>");
 		        while ($row = $res->fetch_assoc()) {
-		            $sql_journal = sprintf("SELECT * FROM mag_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
+		            $sql_journal = sprintf("SELECT * FROM os_journal WHERE id_s='%s' AND id_l='%s'",$_SESSION["data"]["id"],$row["id"]);
 		            $res_journal = $mysqli->query($sql_journal);
 		            //print($sql_journal);
 		            if ($res_journal->num_rows == 0) {
@@ -189,7 +180,7 @@ if(!isset($_GET['id']))
 		                }
 		                $date_ru = explode(" ",$row["date_ru"]);
 		                $date_ua = explode(" ",$row["date_ua"]);
-		                $sql_create = sprintf("INSERT INTO mag_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
+		                $sql_create = sprintf("INSERT INTO os_journal(id_s,id_l,date_ru,date_ua,status,id_subj,title_t_ru,title_t_ua,test_contr) VALUES(%s,%s,'%s','%s',$status,%s,'','','')",
 		                    $_SESSION["data"]["id"],$row["id"],$date_ru[0],$date_ua[0],$row["subject"]);
 		                $res_create = $mysqli->query($sql_create);
 		                //print("<be>$sql_create<br>");
@@ -219,10 +210,10 @@ if(!isset($_GET['id']))
 				<div class="names">
 					<?
 						
-						$sql_names1 = sprintf("SELECT * FROM mag_lessons 
-							WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num",$_COOKIE['lang']);
-						$sql_names2 = sprintf("SELECT name_".$_COOKIE['lang']." AS name FROM mag_subjects WHERE id IN (SELECT subject FROM mag_lessons 
-							WHERE id IN(SELECT DISTINCT id_lesson FROM mag_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num)");
+						$sql_names1 = sprintf("SELECT * FROM os_lessons 
+							WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num",$_COOKIE['lang']);
+						$sql_names2 = sprintf("SELECT name_".$_COOKIE['lang']." AS name FROM os_subjects WHERE id IN (SELECT subject FROM os_lessons 
+							WHERE id IN(SELECT DISTINCT id_lesson FROM os_lesson_test WHERE id_test='$testId') AND lesson_year = $year_num)");
 						//print("<br>$sql_names1<br>");
 						//print("<br>$sql_names2<br>");
 						$res_names1 = $mysqli->query($sql_names1);
@@ -252,7 +243,7 @@ if(!isset($_GET['id']))
 						//setInterval(alert,10,"a");
 					}
 					</script>
-				<table>
+				<div class="container">
 					<?php
 					if($_GET['id'] != 0 && $test_away != 1){
 						$iteration = 1;
@@ -260,14 +251,12 @@ if(!isset($_GET['id']))
 						$res_quest = $mysqli->query($sql_quest);
 						while($row_quest = $res_quest->fetch_assoc()){
 							if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru"){
-			                	printf("<tr><td colspan='3'>Вопрос №%s ( %s балл(-а/-ов)): %s </td></tr>",$iteration,$row_quest['cost'],$row_quest['name']);
-			                } else {
-			                	printf("<tr><td colspan='3'>Питання №%s ( %s бал(-и/-ів)): %s </td></tr>",$iteration,$row_quest['cost'],$row_quest['name']);
+								printf("<div class='test-block'>");
+			                	printf("<div class='test-title'><span class='test-question'>Питання №%s ( %s бал(-и/-ів)):</span> %s </div>",$iteration,$row_quest['cost'],$row_quest['name']);
 			                }
-							print("<br>$sql_quest</br>");
-							print("<tr>");
+							//print("<br>$sql_quest</br>");
 							if($row_quest['type']==1){
-								print("<td><ul style='list-style:none;'>");
+								print("<div class='test-body'>");
 			                    $qid = $row_quest['id_q'];
 			                    //var_dump($qid);
 			                        $arr_mix = Quest::mix_1_data($qid);
@@ -281,17 +270,19 @@ if(!isset($_GET['id']))
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
 			                    	/*$temp_val = rtrim($arr_mix['data'][$i-1],"</p>");
 			                    	print("<br>$temp_val<br>"); */
-			                    	
-			                        printf("<li class='bukva_%s'><input type='radio' class='radio' name='%s' value='%s'> <label>%s</label></li>",
-			                        	$abc[$i-1],$qid,$arr_mix['id'][$i-1],Quest::strip_conors($arr_mix['data'][$i-1]));
+			                  		/*----FIRST TEST TYPE----*/
+			                        printf("<div class='char char_%s'>
+			                        	<input id='answ-%s_%s' type='radio' class='radio' name='%s' value='%s'> 
+			                        	<label for='answ-%s_%s'><p class='test-answer'>%s</p></label>
+			                        	</div>",
+			                        	$abc[$i-1],$qid,$abc[$i-1],$qid,$arr_mix['id'][$i-1],$qid,$abc[$i-1],Quest::strip_conors($arr_mix['data'][$i-1]));
 			                    }
 			                  
-			                    print("</ul></td>");
-			                    print("<td></td>");
+			                    print("</div></div>");
 							}
+
 							if($row_quest['type']==2){
-								
-			                    print("<td><ul style='list-style:none;'>");
+			                    print("<div class='test-body'>");
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_1_data($qid);
 			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
@@ -300,73 +291,75 @@ if(!isset($_GET['id']))
 			                    //print("<br>$num<br>");
 			                    
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<li class='bukva_%s'><input type='checkbox' class='checkbox' name='%s%s'> <label>%s</label></li>",
-			                            $abc[$i-1],$qid,$arr_mix['id'][$i-1],Quest::strip_conors($arr_mix['data'][$i-1]));
+			                        printf("<div class='char char_%s'>
+			                        	<input id='answ-%s_%s' type='radio' class='radio' name='%s' value='%s'> 
+			                        	<label for='answ-%s_%s'>%s</label>
+			                        	</div>",
+			                        	$abc[$i-1],$qid,$abc[$i-1],$qid,$arr_mix['id'][$i-1],$qid,$abc[$i-1],Quest::strip_conors($arr_mix['data'][$i-1]));
 			                    }
-			                    print("</ul></td>");
-			                    print("<td></td>");
+			                    print("</div></div>");
 							}
+
 							if($row_quest['type']==3){
-								
+								print("<div class='test-body'>");
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_1_data($qid);
-
 			                    $sql = "SELECT * FROM mag_test_answs WHERE id_quest='$qid'";
 								$res = $mysqli->query($sql);
 								$num = $res->num_rows;
 			                    //print("<br>$num<br>");
-			                    print("<table><tr><td style='vertical-align: top;
-    min-width: 136px;
-    padding: 30px 10px 0;'><ul style='list-style:none;' class='test_ul_sootv'>");
+			                    print("<div class='test-matched-body'>");
 			                    /*
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<li  class='bukva_%s'><span>%s</span> %s</li>",$alphabet[$i-1],$arr_mix['data'][$i-1]);
+			                        printf("<li  class='char_%s'><span>%s</span> %s</li>",$alphabet[$i-1],$arr_mix['data'][$i-1]);
 			                    }
 			                    */
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<li  class='bukva_%s'>%s</li>",$abc[$i-1],$arr_mix['data'][$i-1]);
+			                        printf("<div class='test-matched-item'>
+			                        		<div class='char char_%s'></div>
+			                        		%s</div>",
+			                        		$abc[$i-1],$arr_mix['data'][$i-1]);
 			                    }
-
-			                    print("</ul></td>");
+			                    print("</div>");
 			                    /*print("<td><ul style='list-style:none;'>");
 			                    while($row = $res->fetch_assoc()){
 			                        printf("<li>%s</li>",$row['answer']);
 			                    }
 			                    print("</ul></td>");*/
-			                    print("<td style='vertical-align: top;
-    min-width: 200px;
-    padding: 0 10px;'>
-			                    <ul style='list-style:none;'>");
-			                        
-			                    print("<li>
-			                        <ul class='matchRadio'>");
-			                        printf("<li style='width:36px;'></li>");
-			                        
+									 //ПЕРЕДЕЛАННАЯ ВЕРСИЯ СООТВЕТСТВИЙ
+
+			                    print("<div class='test-matched-cellblock'>
+			                    	<table class='q-answer'><tbody><tr>");         
+			                    printf("<th></th>");
 			                        for($it = 0; $it < $num; $it++){
-			                            printf("<li>%s</li>",$alphabet[$it]);
+			                            printf("<th>%s</th>",$alphabet[$it]);
 			                        }
-			                        print("</ul>
-			                        <div style='clear:both;'></div>
-			                    </li>");
+			                        print("</tr>");
 			                        for($i = 1; $i <= $num; $i++){
-			                            print("<li>
-			                            <ul class='matchRadio'>");
-			                            printf("<li style='width:30px;'><span>%s</span></li>",$i);
+			                            print("<tr>");
+			                            printf("<th class='th-col'>%s</th>",$i);
 			                            for($it = 1; $it <= $num; $it++){
 											$val = $arr_mix['id'][$it-1];
 											$let = $abc[$it-1];
-			                                printf("<li><input type='radio' class='radio' name='%s%s' value='%s'><label></label></li>",$qid,$arr_mix['id'][$it-1],$i);
-			                            }
-			                            print("</ul>
-			                            <div style='clear:both;'></div>
-			                            </li>");
+			                                printf("<td>
+			                                		<label>
+			                                		<input type='radio' class='q-radio' name='%s%s' value='%s'>
+			                                		<span class='q-ans'></span></label>
+			                                		</td>",
+			                                		$qid,$i,$arr_mix['id'][$it-1]);
+			                           		}
+			                           	 print("</tr>");	
 			                        }
-			                    
-			                    print("</ul></td></tr></table>");
+			                    print("</tbody></table>");
+			                    print("</div></div></div>");
 							}
+
+
+
 							if($row_quest['type']==4){
-			                    print("<td><table><tr><td style='vertical-align: top;min-width: 200px;
-    padding: 0 10px;'><ul style='list-style:none;' class='test_ul_sootv'>");
+			                    print("<div class='test-body'>
+			                    	<div class='test-matched-body'>
+			                    	<div class='test-columns-block'>");
 			                    $qid = $row_quest['id_q'];
 			                    $arr_mix = Quest::mix_m_data($qid);
 			                    //var_dump($arr_mix);
@@ -381,62 +374,63 @@ if(!isset($_GET['id']))
 			                    $num_horiz = $res1->num_rows;
 
 			                    $num_el = 1;
-
+			                    	printf("<div class='test-column-item'> ");
 			                    while($row = $res->fetch_assoc()){
-			                        printf("<li class='bukva_a$num_el' >%s</li>",$row['answer']);
+			                        printf("<div class='test-matched-item'>
+			                        	<div class='char char_num$num_el'></div>%s</div>",$row['answer']);
 			                        $num_el++;
 			                    }
-			                                    
-			                                print("</ul></td>");
-							print("<td style='vertical-align: top;min-width: 200px;
-    padding: 0 10px;'><ul style='list-style:none;' class='test_ul_sootv'>");
-			                    
+			                    	print("</div>");
+			                    	printf("<div class='test-column-item'> ");
 			                    for($i = 1; $i <= count($arr_mix['data']); $i++) {
-			                        printf("<li class='bukva_%s'>%s</li>",$abc[$i-1],$arr_mix['data'][$i-1]);
+			                        printf("<div class='test-matched-item'>
+			                        	<div class='char char_%s'></div>%s</div>",$abc[$i-1],$arr_mix['data'][$i-1]);
 			                    }
-
-			                    print("</ul></td></tr></table>");
+			                    print("</div></div>");
 								
 								
-			                                print("<ul style='list-style:none;'>");
-			                                    
-			                                print("<li>
-			                                    <ul class='matchRadio'>");
-			                                    printf("<li style='width:6px;'></li>");
+			                                 print("<div class='test-matched-cellblock '>
+			                    					<table class='q-answer'><tbody><tr>");         
+			                   				 printf("<th></th>");
 			                                    
 			                                    for($it = 0; $it < $num_horiz; $it++){
-			                                        printf("<li>%s</li>",$alphabet[$it]);
+			                                        printf("<th>%s</th>",$alphabet[$it]);
 			                                    }
-			                                    print("</ul>
-			                                    <div style='clear:both;'></div>
-			                                </li>");
+			                                    print("</tr>");
+			                                    
 			                                    for($i = 1; $i <= $num; $i++){
-			                                        print("<li>
-			                                        <ul class='matchRadio class_sootvetst'>");
-			                                        printf("<li style='width:17px;margin-right: 14px;'><span>%s</span></li>",$i);
+			                                        print("<tr>");
+			                                        printf("<th class='th-col'>%s</li>",$i);
 			                                        for($it = 1; $it <= $num_horiz; $it++){
 			                                            $val = $arr_mix['id'][$it-1];
 			                                            $let = $abc[$it-1];
-			                                            print("<li><input type='radio' class='radio' name='$qid$i' value='$val' class='nomer_$i bukva_$let'><label></label></li>");
+			                                            print("<td>
+			                                					<label>
+			                                						<input type='radio' class='q-radio nomer_$i char_$let' name='$qid$i' value='$val'>
+			                                						<span class='q-ans'></span></label>
+			                                					</td>
+
+			                                            	");/*<li>
+			                                            	<input type='radio' class='radio' name='$qid$i' value='$val' class='nomer_$i char_$let'>
+			                                            	<label></label></li>*/
 			                                        }
-			                                        print("</ul>
-			                                        <div style='clear:both;'></div>
-			                                    </li>");
-			                                }
-			                                
-			                            print("</ul>");
-			                        
-
-			                    
-
-								 print("</td>");
+			                                        print("</tr>");
+			                                }                
+			                             print("</tbody></table>");
+			                    print("</div></div></div></div>");
 							}
+
+
 							if($row_quest['type']==5){
-								printf("<td><input type='text' name='%s'></td><td></td>",$row_quest['id_q']);
+								print("<div class='test-body'>");
+								printf("<div class='test-short-answer'>
+									<input type='text' name='%s'></div>",
+									$row_quest['id_q']);
 							}
-							print("</tr>");
 							$iteration++;
+							
 						}
+						print("</div>");
 					}
 					else{
 						if($test_away == 1) {
@@ -447,13 +441,10 @@ if(!isset($_GET['id']))
 						}
 					}
 					?>
-				</table>
 				
 				<?php if($flag_contr == 0 && $locked == 0): ?>
-				<div class="end">
+				<div class="test-body end">
 					<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
-						<input type="submit" name="sbm" value="Завершить тест">
-					<?php else: ?>
 						<input type="submit" name="sbm" value="Завершити тест">
 					<?php endif; ?>
 				</div>
@@ -477,7 +468,7 @@ if(!isset($_GET['id']))
 							}
 						?>
 					<?php else: ?>
-					<div class="end">
+					<div class="test-body end">
 						<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
 							<input type="submit" name="sbm" value="Завершить тест">
 						<?php else: ?>
@@ -551,6 +542,8 @@ if(!isset($_GET['id']))
 			</div>
 		</div>
 	</div>
+</div>
+</div>
 	<?php
 		/*unset($_SESSION['data_collection']);
 		unset($_SESSION['string_answs']);*/
