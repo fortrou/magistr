@@ -2,12 +2,11 @@
     $alphabet = array("А","Б","В","Г","Д","Е","Ё","Ж","З","И");
 ?>
 <div class='createTest'>
-    <div id="quest3" class="collapsed">
+    <div id="quest3" class="create-test-content">
         <form method='post' action="<?=$_SERVEr['REQUEST_URI']?>" enctype="multipart/form-data" >
             <?php
             require('choose_mark.php');
             ?>
-               
                        <p> <span class='testText'>Введите вопрос</span></p>
                         <textarea style="width: 960px; min-height: 200px;" type='text' name='quest' class='quest'><? print( $_SESSION['correct']['quest']); ?></textarea>
                 <script type='text/javascript'>

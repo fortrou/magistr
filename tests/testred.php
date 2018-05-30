@@ -32,7 +32,7 @@
             }
             $sql_d = sprintf("DELETE FROM mag_test_quest WHERE id_q='%s'",$row['id_q']);
             $res_d = $mysqli->query($sql_d);
-            $sql_del = sprintf("DELETE FROM mag_lesson_test WHERE id_test='%s'",$testId);
+            $sql_del = sprintf("DELETE FROM os_lesson_test WHERE id_test='%s'",$testId);
             $res_del = $mysqli->query($sql_del);
         }
 	}

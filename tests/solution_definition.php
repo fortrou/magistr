@@ -1,6 +1,6 @@
  <br><span class="testText">Введите подсказку к решению</span><br>
 <div class='tAnswer'  style="width:700px; margin-left:250px;">
-    <textarea name="descAnswer" cols="20" rows="20" placeholder="Поле ввода" style="width:500px;">
+    <textarea name="descAnswer" cols="20" rows="" placeholder="Поле ввода" style="width:500px;">
     </textarea>
 </div>
 

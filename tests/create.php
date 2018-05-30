@@ -13,7 +13,7 @@ $db = Database::getInstance();
 $mysqli = $db->getConnection();
 if(isset($_POST['createTest'])){
 	Test::createTest($_POST['tName'], 4);
-	/*$sql = sprintf("INSERT INTO mag_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
+	/*$sql = sprintf("INSERT INTO os_lesson_test(id_lesson,id_test,type) VALUES(%s,%s,%s)",
 		$_SESSION['lesson']['lesson_id'],$_SESSION['test']['id'],$_SESSION['lesson']['test_type']);
 	//print($sql);
 	$result = $mysqli->query($sql*/	
@@ -24,7 +24,7 @@ if(isset($_POST['createTest'])){
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Создать тест - Онлайн школа Альтернатива</title>
+		<title>Створити тест</title>
 		<meta name="description" content=" ">
 		<meta name="keywords" content=" ">
 		<?php
@@ -37,15 +37,15 @@ if(isset($_POST['createTest'])){
 		include ("../tpl_blocks/header-cabinet.php");
 	?>
 		<div class="content">
-		<div class="block0">
 			<div class="testes">
-		<form method='post' action='create.php' class='createTest'>    
-			<input type='text' name='tName' class='questForm' placeholder='Введите название теста' required><span class='testText'>Введите название теста</span><br>
-			<input type='submit' name='createTest' class='sbm' value='Создать'>
-		</form>
+				<form method='post' action='create.php' class='createTest'>    
+					<input type='text' name='tName' class='questForm' placeholder='Введіть назву тесту' required>
+					<span class='testText'>Введіть назву тесту</span>
+					<br>
+					<input type='submit' name='createTest' class='sbm' value='Створити'>
+				</form>
 			</div>
 		</div>
-	</div>
 	<?php
 		include ("../tpl_blocks/footer.php");
 	?>

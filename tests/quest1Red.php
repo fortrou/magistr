@@ -69,7 +69,7 @@ $mysqli = $db->getConnection();
 	<html lang="en">
 
   <head>
-	<title>Главная - ВнеШколы - образовательный портал</title>
+	<title></title>
    <?php require_once('../tpl_blocks/head.php'); ?>
   </head>
 
@@ -136,12 +136,8 @@ $mysqli = $db->getConnection();
 				                                
 				                            </li>",$i+1,$i,$value,$i,$i+1);
 				                        }
-				                        ?>
-				                        
+				                        ?>			                        
 				                    </ul>
-				                    
-				                
-				            
 				            <div class="clear"></div>
 				            <input type='submit' name='add_more' value='Добаить вариант ответа'><br>
 				            <p> <span class='testText'>Выберите правельный ответ</span></p>
@@ -152,7 +148,6 @@ $mysqli = $db->getConnection();
                                 printf("<td class='chk_yes_qes'><label>Ответ №%s:<input type='radio' name='id1' value='%s'></label></td>",$i+1,$i+1);
                                 ?>
                            </tr> 
-                                    
 				                            <?
 				                            //var_dump($_POST);
 				                                for($i = 0; $i < $num; $i++)
@@ -167,24 +162,14 @@ $mysqli = $db->getConnection();
 				                                    	</label></td>",$i+1,$i+1);
 				                                	}
 				                                
-				                                ?>
-				                            
-				                                             
-				                               
+				                                ?>				                            
                     </table><br>
 				            <?php
 				            	require_once('def_red.php');
-				            
-
-							
 				            ?>
-				        	
 				        </form>
 				    </div>
 				</div>		
 	<?php require_once('../tpl_blocks/footer.php'); ?>	
-
-
-
 	</body>
 </html>
