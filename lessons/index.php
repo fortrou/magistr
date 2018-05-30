@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	require ('../tpl_php/autoload.php');
-	if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../");
+	//if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../");
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection();
 	if ( isset($_POST['send']) )
