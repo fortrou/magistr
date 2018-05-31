@@ -91,7 +91,7 @@ while($row = $res_answs->fetch_assoc()){
     <html lang="en">
 
   <head>
-    <title>Главная - ВнеШколы - образовательный портал</title>
+    <title></title>
    <?php require_once('../tpl_blocks/head.php'); ?>
   </head>
 
@@ -111,7 +111,7 @@ while($row = $res_answs->fetch_assoc()){
                     $alphabet = array("А","Б","В","Г","Д","Е","Ё","Ж","З","И");
                 ?>
                 <div class='createTest' style='margin-top:20px;'>
-                    <div id="quest3" class="collapsed">
+                    <div id="quest3" class="create-test-content">
                         <form method='post' action='<?=$_SERVER['REQUEST_URI']?>' enctype="multipart/form-data">
                             <?php
                             require('r_c.php');
@@ -123,19 +123,19 @@ while($row = $res_answs->fetch_assoc()){
                                         <script type='text/javascript'>
                                         CKEDITOR.replace('quest');
                                     </script>
-                                        <span class='testText'>Введите вопрос</span><br>
+                                        <span class='testText'>Введіть питання</span><br>
                                     </li>
                                     
                                     <?
                                         for($i = 0; $i < $num; $i++){
                                             $tval = sprintf("answ%s",$i);
                                             $value = $_POST[$tval];
-                                            printf("<li><span class='testText'>%sй ответ</span>
+                                            printf("<li><span class='testText'>%s-а відповідь</span>
                                                 <textarea type='text' name='answ%s'  style='width: 960px; min-height: 200px;'>%s</textarea>
                                                 <script type='text/javascript'>
                                                     CKEDITOR.replace('answ%s');
                                                 </script>
-                                                <input type='submit' name='del%s' value='удалить ответ'>
+                                                <input type='submit' name='del%s' value='видалити відповідь'>
                                                 <br>
                                             </li>",$i+1,$i,$value,$i,$i+1);
                                         }
@@ -143,7 +143,7 @@ while($row = $res_answs->fetch_assoc()){
                                 </ul>
                                 
                             <div class="clear"></div>
-                            <input type='submit' name='add_more' value='Добаить вариант ответа'><br>
+                            <input type='submit' name='add_more' value='Додати варіант відповіді'><br>
 							
                                 <ul >
                                     <?php

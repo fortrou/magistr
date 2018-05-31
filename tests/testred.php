@@ -67,7 +67,7 @@
 <html>
 
   <head>
-	<title>Главная - ВнеШколы - образовательный портал</title>
+	<title></title>
    <?php require_once('../tpl_blocks/head.php'); ?>
   </head>
 
@@ -85,19 +85,19 @@
                         while($row = $res_t->fetch_assoc()){
                             switch ($row['type']) {
                                 case 1:
-                                    printf("<li><a href='quest1Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Удалить вопрос'></li>",$row['id_q'],$row['name'],$row['id_q']);
+                                    printf("<li><a href='quest1Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Видалити питання'></li>",$row['id_q'],$row['name'],$row['id_q']);
                                     break;
                                 case 2:
-                                    printf("<li><a href='quest2Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Удалить вопрос'></li>",$row['id_q'],$row['name'],$row['id_q']);
+                                    printf("<li><a href='quest2Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Видалити питання'></li>",$row['id_q'],$row['name'],$row['id_q']);
                                     break;
                                 case 3:
-                                    printf("<li><a href='quest3Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Удалить вопрос'></li>",$row['id_q'],$row['name'],$row['id_q']);
+                                    printf("<li><a href='quest3Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Видалити питання'></li>",$row['id_q'],$row['name'],$row['id_q']);
                                     break;
                                 case 4:
-                                    printf("<li><a href='quest4Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Удалить вопрос'></li>",$row['id_q'],$row['name'],$row['id_q']);
+                                    printf("<li><a href='quest4Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Видалити питання'></li>",$row['id_q'],$row['name'],$row['id_q']);
                                     break;
                                 case 5:
-                                    printf("<li><a href='quest5Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Удалить вопрос'></li>",$row['id_q'],$row['name'],$row['id_q']);
+                                    printf("<li><a href='quest5Red.php?qid=%s'>%s</a><input type='submit' name='del_q%s' value='Видалити питання'></li>",$row['id_q'],$row['name'],$row['id_q']);
                                     break;
 
                             }
@@ -114,17 +114,17 @@
                     printf("<input type='text' name='testName' value='%s'><br>",$rowTest['name']);
                     
                     //printf("<a href='addquest.php?tid=%s'>Добавить вопрос из уже существующих</a><br>",$rowTest['testId']);
-                    print("<a href='createq1.php'>Добавить новый вопрос</a><br>");
+                    print("<a href='createq1.php'>Додати нове питання</a><br>");
                 ?>
                 <br>
                 
-                <input type="submit" name="name_level" value="Сохранить изменения">
+                <input type="submit" name="name_level" value="Зберегти зміни">
                 <?php
-                    printf("<a href='/tests/completing.php?id=$testId'>Отменить редактирование</a>");
+                    printf("<a href='/tests/completing.php?id=$testId'>Скасувати редагування</a>");
                 ?>
             </form>
-            <form method='POST' action='<?=$_SERVER['REQUEST_URI']?>' onsubmit="return confirm('Вы действительно хотите удалить этот тест?')">
-                <input type="submit" name="delete" value="Удалить тест!">
+            <form method='POST' action='<?=$_SERVER['REQUEST_URI']?>' onsubmit="return confirm('Ви дійсно хочете видалити цей тест?')">
+                <input type="submit" name="delete" value="Видалити тест!">
             </form>
         </div></div></div>
 	<?php require_once('../tpl_blocks/footer.php'); ?>    

@@ -1,5 +1,5 @@
 <?php
-    $alphabet = array("А","Б","В","Г","Д","Е","Ё","Ж","З","И");
+    $alphabet = array("А","Б","В","Г","Ґ","Д","Е","Є","Ж","З");
 ?>
 <div class='createTest'>
     <div id="quest3" class="create-test-content">
@@ -7,7 +7,7 @@
             <?php
             require('choose_mark.php');
             ?>
-                       <p> <span class='testText'>Введите вопрос</span></p>
+                       <p> <span class='testText'>Введіть питання</span></p>
                         <textarea style="width: 960px; min-height: 200px;" type='text' name='quest' class='quest'><? print( $_SESSION['correct']['quest']); ?></textarea>
                 <script type='text/javascript'>
                 CKEDITOR.replace('quest');
@@ -18,7 +18,7 @@
                         for($i = 0; $i < $cnt; $i++){
                             $value = $_SESSION['correct'][$i];
                             printf("<li>
-							<span class='testText'>%sй ответ</span>
+							<span class='testText'>%s-а відповідь</span>
                                 <textarea style='width: 960px; min-height: 200px;' type='text' name='answ%s' class='answer'>%s</textarea>
                                 <script type='text/javascript'>
                                     CKEDITOR.replace('answ%s');
@@ -31,9 +31,9 @@
 					</ul>
                 
             <div class="clear"></div>
-            <input type='submit' name='add_more' value='Добавить вариант ответа'><br>
-            <input type='submit' name='del_last' value='Убрать последний добавленный вариант ответа'>
-			<p> <span class='testText'>Правильный ответ</span></p>
+            <input type='submit' name='add_more' value='Додати варіант відповіді'> 
+            <input type='submit' name='del_last' value='Прибрати останній доданий варіант відповіді'>
+			<p> <span class='testText'>Правильна відповідь</span></p>
                 <ul >
                       
                     <?php

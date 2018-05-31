@@ -101,7 +101,7 @@ $mysqli = $db->getConnection();
 			    	}*/
 			    ?>
 			    <div class='createTest' >
-				    <div id="quest1" class="collapsed">
+				    <div id="quest1" class="create-test-content">
 				        <form method='post' action='<?=$_SERVER['REQUEST_URI']?>' enctype="multipart/form-data" >
 				            <?php
 				                require_once('r_c.php');
@@ -112,7 +112,7 @@ $mysqli = $db->getConnection();
 				                //var_dump($_POST);
 				            ?>
 				            
-				                     <span class='testText'>Введите вопрос</span>
+				                     <span class='testText'>Введіть питання</span>
 				                    <textarea type='text' name='quest' class='answForm' style='width: 960px; min-height: 200px;'> <? print($question); ?></textarea>
 				                    <script type='text/javascript'>
 										CKEDITOR.replace('quest');
@@ -126,12 +126,12 @@ $mysqli = $db->getConnection();
 				                        	//print($tval);
 				                            $value = $_POST[$tval];
 				                            //print("<br>$value<br>");
-				                            printf("<li><span class='testText'>%sй ответ</span>
+				                            printf("<li><span class='testText'>%s-а відповідь</span>
 				                                <textarea type='text' name='answ%s' style='width: 960px; min-height: 200px;'>%s</textarea>
 				                                <script type='text/javascript'>
 				                                    CKEDITOR.replace('answ%s');
 				                                </script>
-				                                <input type='submit' name='del%s' value='удалить ответ'>
+				                                <input type='submit' name='del%s' value='видалити відповідь'>
 				                                <br>
 				                                
 				                            </li>",$i+1,$i,$value,$i,$i+1);
@@ -139,13 +139,13 @@ $mysqli = $db->getConnection();
 				                        ?>			                        
 				                    </ul>
 				            <div class="clear"></div>
-				            <input type='submit' name='add_more' value='Добаить вариант ответа'><br>
-				            <p> <span class='testText'>Выберите правельный ответ</span></p>
+				            <input type='submit' name='add_more' value='Додати варіант відповіді'><br>
+				            <p> <span class='testText'>Оберіть правильну відповідь</span></p>
 				    <table style='width:700px; padding: 10px ;border: 1px solid #1e9cb7;'>
 					<tr>
                             <?
                                 for($i = 0; $i < $cnt; $i++)
-                                printf("<td class='chk_yes_qes'><label>Ответ №%s:<input type='radio' name='id1' value='%s'></label></td>",$i+1,$i+1);
+                                printf("<td class='chk_yes_qes'><label>Відповідь №%s:<input type='radio' name='id1' value='%s'></label></td>",$i+1,$i+1);
                                 ?>
                            </tr> 
 				                            <?

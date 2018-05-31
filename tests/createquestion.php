@@ -220,7 +220,7 @@ $db = Database::getInstance();
                                 $sql = "SELECT * FROM mag_tests WHERE id='".$_SESSION['test']['id']."'";
                                 $res = $mysqli->query($sql);
                                 $row = $res->fetch_assoc();
-                                printf("<h2>Тип теста: %s [ %s ]</h2>",$row['name'],$row['lang']);
+                                printf("<h2>Тип тесту: %s [ %s ]</h2>",$row['name'],$row['lang']);
 
                         ?>
                         <h5 class="text-left">

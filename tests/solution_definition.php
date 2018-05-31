@@ -1,13 +1,11 @@
- <br><span class="testText">Введите подсказку к решению</span><br>
-<div class='tAnswer'  style="width:700px; margin-left:250px;">
-    <textarea name="descAnswer" cols="20" rows="" placeholder="Поле ввода" style="width:500px;">
+<div class="testText">Введіть підказку до розв'язання</div>
+<div class='tAnswer'>
+    <textarea name="descAnswer" cols="40" rows="" placeholder="Поле ввода" >
     </textarea>
 </div>
 
 <div class='createTest1'><br>
     <input type="file" name="doc" class="questForm">
-    <span style="    font-size: 18px;
-    line-height: 32px;
-    padding: 4px 0;" class="testText">Или прикрепите документ с объяснением решения</span><br><br>
-    <input type='submit' name='sbm' class='sbm' value='Создать'>
+    <span class="testText">Або додайте документ з поясненням розв'язування</span><br><br>
+    <input type='submit' name='sbm' class='sbm' value='Створити'>
 </div>

@@ -474,6 +474,7 @@ li.menu-cabinet-submenu:hover > ul {
 	text-align: center;
 	transition: 1s;
 	padding: 10px 10px;
+	outline: none;
 	cursor: pointer;
 }
 .button-small {
@@ -1382,9 +1383,10 @@ li.menu-cabinet-submenu:hover > ul {
 }
 
 .test-block {
-	border-bottom: 1px solid rgb(230,230,230);
+	border-bottom: 2px dotted rgb(66,139,220);
 	margin-bottom: 20px;
 	padding-bottom: 20px;
+	color: rgb(80,80,80);
 }
 .test-block label {
 	margin: 10px 0px;
@@ -1421,6 +1423,30 @@ li.menu-cabinet-submenu:hover > ul {
 	margin-left: 5px;
 }
 
+.training-title {
+	text-align: center;
+	font-size: 20px;
+	background: rgb(66,139,220);
+	color: rgb(255,255,255);
+	padding: 20px;
+	border-radius: 5px; 
+	margin: 20px;
+	margin-bottom: 0px;
+}
+.test-short-answer {
+	text-align: center;
+}
+.test-short-answer input {
+	outline: none;
+	padding: 5px; 
+	width: 100%;
+	max-width: 480px;
+}
+
+.testes-footer {
+	text-align: center;
+	margin-top: 20px;
+}
 
 /*-----MATCHES STYELS START-----*/
 .matchRadio li {
@@ -1640,6 +1666,7 @@ li.menu-cabinet-submenu:hover > ul {
 .test-column-item {
 	width: 50%;
 }
+
 
 /*-----НОВЫЕ СТИЛИ КОНЕЦ-----*/
 

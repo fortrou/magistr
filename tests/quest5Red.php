@@ -42,7 +42,7 @@ $mysqli = $db->getConnection();
 			    	
 			    ?>
 			    <div class='createTest' >
-				    <div id="quest1" class="collapsed">
+				    <div id="quest1" class="create-test-content">
 				        <form method='post' action='<?=$_SERVER['REQUEST_URI']?>' enctype="multipart/form-data" >
 				            <?php
 				                require_once('r_c.php');
@@ -58,14 +58,14 @@ $mysqli = $db->getConnection();
 				                $row_answer = $res_answer->fetch_assoc();
 				            ?>
 				            
-				            <p> <span class='testText'>Редактировать вопрос</span></p>
+				            <p> <span class='testText'>Редагувати питання</span></p>
 							<textarea type='text' name='quest' class='quest' style='width:960px; min-height: 200px;'><?php print($row["name"]); ?></textarea>
 							<script type='text/javascript'>
 								CKEDITOR.replace('quest');
 							</script><br>
 				 
-							<p> <span class='testText'>Редактировать ответ</span></p>
-							<input style="width: 900px;" type="text" name="answer" placeholder="Введите ответ" value="<?php print($row_answer["answer"]); ?>"></input>
+							<p> <span class='testText'>Редагувати відповідь</span></p>
+							<input style="width: 900px;" type="text" name="answer" placeholder="Введіть відповідь" value="<?php print($row_answer["answer"]); ?>"></input>
 				            <?php
 				            	require_once('def_red.php');
 				            ?>
