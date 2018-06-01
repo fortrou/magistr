@@ -463,6 +463,11 @@ li.menu-cabinet-submenu:hover > ul {
 	display: none;
 }
 
+.how-to-start .element-wrap-list .element-wrap img{
+	margin-bottom: 20px;
+	margin-top: 10px;
+}
+
 /*-----ELEMENTS-STYLE-END-----*/
 
 /*-----BTNS-STYLE-START-----*/
@@ -504,6 +509,13 @@ li.menu-cabinet-submenu:hover > ul {
 .button-width {
 	width: 100%;
 }
+.button-height-50 {
+	height:50px;
+}
+.button-null {
+	padding: 0;
+}
+
 .button-border {
 	border: 2px solid rgb(0,0,0);
 	background: rgba(255,255,255,0);
@@ -584,6 +596,7 @@ li.menu-cabinet-submenu:hover > ul {
     font-size: 40px;
     line-height: 50px;
     z-index: 9999;
+    cursor: pointer;
 }
 .close-button {
 	color: rgb(255,255,255);
@@ -592,6 +605,7 @@ li.menu-cabinet-submenu:hover > ul {
     display: block;
     margin-right: 15px;
     margin-top: 5px;
+    cursor: pointer;
 }
 .contact-form .close-button {
 	color: rgb(80,80,80);
@@ -600,110 +614,6 @@ li.menu-cabinet-submenu:hover > ul {
     display: block;
     margin-right: 15px;
     margin-top: 0px;
-}
-/*ПЕРЕДЕЛАТЬ СТИЛИ ПОД БЭМ, УНИФИЦИРОВАТЬ РАЗМЕРЫ ОТСТУПЫ ПОУБИРАТЬ ФИКСИРОВАННУЮ ШИРИНУ В РАЗМЕТКЕ*/
-.button-full-blue {
-	font-weight: 600;
-	font-size: 13px;
-	border: 2px solid rgb(66, 139, 220);
-	background: rgb(66, 139, 220);
-	text-align: center;
-	line-height: 2.7;
-	transition: 1s;
-	color: white;
-	height: 40px;
-}
-.button-full-blue:hover {
-	color: rgb(66, 139, 220);
-	background: rgba(255,255,255,0);
-}
-.button-full-blue--big {
-	font-size: 16px;
-	line-height: 50px;
-	height: 50px;
-	margin-top: 20px;
-	line-height: 3;
-}
-.button-border-blue {
-	font-weight: 600;
-	font-size: 13px;
-	border: 2px solid rgb(66, 139, 220);
-	color: rgb(66, 139, 220);
-	text-align: center;
-	line-height: 2.7;
-	background: rgba(255,255,255,0);
-	transition: 1s;
-	height: 40px;
-}
-.button-border-blue:hover {
-	color: white;
-	background: rgb(66, 139, 220);
-}
-.button-full-yellow {
-	font-weight: 600;
-	font-size: 13px;
-	border: 2px solid rgb(255, 179, 73);
-	background: rgb(255, 179, 73);
-	text-align: center;
-	line-height: 2;
-	margin-top: 5px;
-	transition: 1s;
-	color: white;
-	height: 30px;
-}
-.button-full-yellow:hover {
-	color: rgb(255, 180, 73);
-	background: rgb(80, 80, 80);
-}
-.button-border-yellow {
-	font-weight: 600;
-	font-size: 13px;
-	border: 2px solid rgb(255, 179, 73);
-	background: rgb(80, 80, 80);
-	color: rgb(255, 180, 73);
-	text-align: center;
-	line-height: 2;
-	margin-top: 5px;
-	transition: 1s;
-	height: 30px;
-}
-.button-border-yellow:hover {
-	color: rgb(255, 255, 255);
-	background: rgb(255, 179, 73);
-}
-.button-full-orange {
-	font-weight: 600;
-	font-size: 16px;
-	border-radius: 5px;
-	background: rgb(255, 179, 73);
-	text-align: center;
-	line-height: 3;
-	margin-top: 20px;
-	transition: 1s;
-	color: white;
-	height: 50px;
-	outline: 0;
-	border: 0;
-}
-.button-full-orange--two-lines {
-	line-height: 1.6;
-}
-.button-full-orange:hover {
-	color: rgb(255, 255, 255);
-	background: rgb(66, 139, 220);
-}
-.button-full-white {
-	font-weight: 600;
-	font-size: 16px;
-	border: 2px solid rgb(255, 255, 255);
-	background: rgb(255, 255, 255);
-	text-align: center;
-	line-height: 2;
-	transition: 1s;
-	color: rgb(85, 150, 223);
-	text-decoration: underline !important;
-	text-decoration-color: rgb(85, 150, 223);
-	height: 50px;
 }
 
 /*-----BTNS-STYLE-END-----*/
@@ -964,18 +874,8 @@ li.menu-cabinet-submenu:hover > ul {
 	font-size: 14px;
 	font-weight: 600;
 }
-.form-group {
-	padding: 10px 25px;
-	background-color: #dadbda;
-	border: 1px solid black;
-	border-radius: 5px;
-}
-.static-create {
-	margin: 20px auto;
-}
-.page-hat-text-admin {
-	margin: 10px 70px;
-}
+
+
 
 /*-----REGISTRATION-FORM-STYLE-START-----*/
 
@@ -1923,8 +1823,6 @@ li.test_q_true .checkbox:not(checked)+label:before {
     padding: 1px 0 1px 35px;
     margin: 3px 0;
 }
-
-
 .testes ul li p,
 .rez_teste ul li p {
     line-height: 15px;
@@ -1968,19 +1866,16 @@ select.create-test  {
     color: #494949;
     padding: 0 5px;
 }
-
 .create-test-content {
 	width: 100%;
 	max-width: 960px;
 	padding: 5px;
 }
-
 .create-test-formItem {
 	width: 100%;
 	max-width: 960px;
 	margin: 5px 0px;
 }
-
 /*-----TESTS-STYLE-END-----*/
 
 /*-----STATIC-PAGES-STYLE-START-----*/
@@ -2039,6 +1934,26 @@ table.static-list-table td.date {
 	font-size: 10px;
 	font-weight: 600;
 }
+
+table.static-list-table i {
+	font-size: 20px;
+}
+
+/*-----STYLE-FOR-CABINET-/static-----*/
+.static-form-group {
+	padding: 10px 25px;
+	background-color: rgb(230,230,230);
+	border: 1px solid rgb(220,220,220);
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+.static-create {
+	margin: 20px auto;
+}
+.page-hat-text-admin {
+	margin: 10px 70px;
+}
+
 
 /*-----STATIC-PAGES-STYLE-END-----*/
 .more-info-block {
@@ -2181,9 +2096,7 @@ table.static-list-table td.date {
 	.how-to-start .element-wrap-list .element-wrap {
 		width: 200px;
 	}
-	.how-to-start .element-wrap-list .element-wrap img{
-		margin-bottom: 20px;
-	}
+	
 	.how-to-learn .sub-section-element .element-wrap-list-arrowed .element-wrap {
 		width: 145px;
 	}
@@ -2251,6 +2164,9 @@ table.static-list-table td.date {
 	}
 	.form-item.form-item--photo > .form-item-tooltip {
 		display: block;
+	}
+	.question-block {
+		margin-bottom: 	30px;
 	}
 }
 @media only screen and (max-width: 600px) {
@@ -2391,6 +2307,13 @@ table.static-list-table td.date {
 	.how-to-learn .sub-section-element .element-wrap-list-arrowed .main-image--progress{
 		top: -50px;
 	}
+
+	.how-to-start .element-wrap-list .element-wrap .button {
+		display: block;
+		width: 200px;
+		margin: 0 auto;
+
+	}
 	.element-wrap-list-arrowed .element-wrap .main-image {
 		bottom: 0;
 	}
@@ -2400,6 +2323,7 @@ table.static-list-table td.date {
 	}
 	.question-block {
 		margin-top: -80px;
+
 	}
 	.question-block .element-wrap--question {
 		flex-direction: column;
@@ -2511,7 +2435,6 @@ table.static-list-table td.date {
 		width: 180px;
 		height: 72px;
 	}
-
 	.menu-create {
 		position: absolute;
 		top: 0;
@@ -2568,6 +2491,7 @@ table.static-list-table td.date {
 	.cards-button {
 		top: 15px;
 	}
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -2637,9 +2561,6 @@ table.static-list-table td.date {
 	.contact-form .contact-form-item .file-upload {
 		width: 100%;
 	}
-}
-
-@media only screen and (max-width: 320px) {
 
 	.menu-mobile-btn-main--active:after { 
 		left: 50px;
@@ -2656,6 +2577,11 @@ table.static-list-table td.date {
 	.menu-mobile-btn-start--active:before, .menu-mobile-btn-adv--active:before {
 		right: 45px;
 	}
+}
+
+@media only screen and (max-width: 320px) {
+
+	
 	.how-to-learn .element-wrap .step-element .main-image {
 		position: relative;
 	}

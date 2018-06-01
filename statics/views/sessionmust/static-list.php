@@ -12,18 +12,19 @@
 	<div class="row">
 		<div class="form-page-title">
 			<h1>
-				Список статических страниц и новостей
+				Список статичних сторінок та новин
 			</h1>
 		</div>
 		<div class="content text">
-			<h2 class="static-page-title-2">Страницы новостей</h2>
+			<a href="/statics/create" target="_blank" class="button button-full button-full--blue button-width">СТВОРИТИ СТОРІНКУ</a></br>
+			<h2 class="static-page-title-2">Сторінки новин</h2>
 			<table class="static-list-table">
 				<thead>
 					<tr>
-						<th>Название</th>
-						<th>Просм.</th>
+						<th>Назва</th>
+						<th>Див.</th>
 						<th>Ред.</th>
-						<th>Удалить</th>
+						<th>Видалити</th>
 						<th>Дата</th>
 					</tr>
 				</thead>
@@ -47,14 +48,14 @@
 					?>
 				</tbody>
 			</table>
-			<h2 class="static-page-title-2">Статические страницы</h2>
+			<h2 class="static-page-title-2">Статичні сторінки</h2>
 			<table class="static-list-table">
 				<thead>
 					<tr>
-						<th>Название</th>
-						<th>Просм.</th>
+						<th>Назва</th>
+						<th>Див.</th>
 						<th>Ред.</th>
-						<th>Удалить</th>
+						<th>Видалити</th>
 						<th>Дата</th>
 					</tr>
 				</thead>
