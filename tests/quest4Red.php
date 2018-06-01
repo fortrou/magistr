@@ -149,9 +149,9 @@ while($row = $res_matches->fetch_assoc()){
     <html lang="en">
 
   <head>
-    <title>Главная - ВнеШколы - образовательный портал</title>
+    <title></title>
     <?php require_once('../tpl_blocks/head.php'); ?>
-    <style>
+    <!-- <style>
         .matchRadio{
             list-style:none;
         }
@@ -163,7 +163,7 @@ while($row = $res_matches->fetch_assoc()){
             border:1px solid transparent;
             text-align:center;
         }
-   </style>
+       </style> -->
   </head>
 
   <body>
@@ -181,15 +181,15 @@ while($row = $res_matches->fetch_assoc()){
                     //print("<br>$cost<br>");
                 ?>
                 <?php
-                    $alphabet = array("А","Б","В","Г","Д","Е","Ё","Ж","З","И","Й","К");
+                    $alphabet = array("А","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І","Ї");
                 ?>
                 <div class='createTest' style='margin-top:20px;'>
-                    <div id="quest3" class="collapsed">
+                    <div id="quest3" class="create-test-content">
                         <form method='post' action='<?=$_SERVER['REQUEST_URI']?>' enctype="multipart/form-data">
                             <?php
                             require('r_c.php');
                             ?>
-                            <br> <span class='testText'>Введите вопрос</span>
+                            <br> <span class='testText'>Введіть питання</span>
                             <textarea type='text' name='quest' class='answForm' style='width:960px; min-height: 200px;'> <? print($question); ?></textarea>
                             <script type='text/javascript'>
                                         CKEDITOR.replace('quest');
@@ -198,7 +198,7 @@ while($row = $res_matches->fetch_assoc()){
                                 <br>
                                 <ul style='float:left;list-style:none;'>
                                     <li>
-                                        <h2>Варианты ответов</h2>
+                                        <h2>Варіанти відповідей</h2>
                                     </li>
                                     <?
                                         for($i = 0; $i < $num; $i++){
@@ -206,12 +206,12 @@ while($row = $res_matches->fetch_assoc()){
                                             //print("<br>$tval<br>");
                                             $value = $_POST[$tval];
                                             //print("<br>$value<br>");
-                                            printf("<li><span class='testText'>ответ №%s </span>
+                                            printf("<li><span class='testText'>відповідь №%s </span>
                                                 <textarea type='text' name='answ%s' style='width:470px; min-height: 200px;'>%s</textarea>
                                                 <script type='text/javascript'>
                                                     CKEDITOR.replace('answ%s');
                                                 </script>
-                                                <input type='submit' name='del%s' value='удалить ответ'>
+                                                <input type='submit' name='del%s' value='видалити відповідь'>
                                                 <br>
                                             </li>",$i+1,$i,$value,$i,$i+1);
                                         }
@@ -220,19 +220,19 @@ while($row = $res_matches->fetch_assoc()){
 
                                 <ul style='float:right;margin-right:20px;list-style:none;'>
                                     <li>
-                                        <h2>Варианты соответствий</h2>
+                                        <h2>Варіанти відповідностей</h2>
                                     </li>
                                     <?php
                                     
                                         for($i = 0; $i < $num_m; $i++){
                                             $tval = sprintf("match%s",$i);
                                             $value = $_POST[$tval];
-                                            printf("<li><span class='testText'>соответствие №%s </span>
+                                            printf("<li><span class='testText'>відповідність №%s </span>
                                                 <textarea type='text' name='match%s' style='width:470px; min-height: 200px;'>%s</textarea>
                                                 <script type='text/javascript'>
                                                     CKEDITOR.replace('match%s');
                                                 </script>
-                                                <input type='submit' name='delete%s' value='удалить ответ'>
+                                                <input type='submit' name='delete%s' value='видалити відповідь'>
                                                 <br>
                                                 
                                             </li>",$i+1,$i,$value,$i,$i+1);
@@ -259,7 +259,7 @@ while($row = $res_matches->fetch_assoc()){
                                             
                                             print("<li>
                                             <ul class='matchRadio'>");
-                                            printf("<li style='width:80px;'><span>Ответ №%s</span></li>",$i);
+                                            printf("<li style='width:80px;'><span>Відповідь №%s</span></li>",$i);
                                             for($it = 1; $it <= $num_m; $it++){
                                                 if($_POST[$matchv] == $it)
                                                     printf("<li><input type='radio' name='id%s' value='%s' checked></li>",$i,$it);
@@ -276,10 +276,10 @@ while($row = $res_matches->fetch_assoc()){
                             <table>
                                 <tr>
                                     <td>
-                                        <input type='submit' name='add_more' value='Добаить вариант ответа'><br>
+                                        <input type='submit' name='add_more' value='Додати варіант відповіді'><br>
                                     </td>
                                     <td>
-                                        <input type='submit' name='add_match' value='Добавить новый вариант соответствия'>
+                                        <input type='submit' name='add_match' value='Додати новий варіант відповідності'>
                                     </td>
                                 </tr>
                             </table>

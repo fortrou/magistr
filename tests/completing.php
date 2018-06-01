@@ -1,5 +1,5 @@
 <?php
-    $alphabet = array("А","Б","В","Г","Ґ","Д","Е","Є","Ж","З","И","І");
+    $alphabet = array("А","Б","В","Г","Д","Е","Є","Ж","З","И","І");
     $abc = array("a","b","c","d","e","f","g","h","i","j");
     session_start();
     require_once('../tpl_php/autoload.php');
@@ -126,7 +126,7 @@ if(!isset($_GET['id']))
 	<head>
 		<meta name="keywords" content="<?php print($keywords); ?>" />
 		<meta name="description" content="<?php print($desc); ?>" />
-	<title>Проходження теста: <?php print($row_test['tName']) ?> - </title>
+	<title>Проходження тесту: <?php print($row_test['tName']) ?> - </title>
 	<?php require_once('../tpl_blocks/head.php'); ?>
 	</head>
 
@@ -193,18 +193,16 @@ if(!isset($_GET['id']))
 				<!--<h1>Тренировочный тест</h1>-->
 				<?php if($flag_test == 4): ?>
 				<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] =="ru"): ?>
-					<h2>Этот тест является тренировочным, 
-						его можно проходить любое количество раз. 
-						Оценка за данный тест не учитывается при 
-						расчете тематических оценок и не влияет 
-						на оценки в табеле и на аттестат</h2>
+					<div class="training-title">
+						Цей тест є тренувальним і його можна проходити будь-яку кількість разів
+					</div>
 				<?php else: ?>
-					<h2>Це тренувальний тест, 
+					<!-- <h2>Це тренувальний тест, 
 						його можна проходити будь-яку 
 						кількість разів. Оцінка за даний 
 						тест не враховується при розрахунку 
 						тематичних оцінок і не впливає на 
-						оцінки в табелі та на атестат</h2>
+						оцінки в табелі та на атестат</h2> -->
 				<?php endif; ?>
 				<?php endif; ?>
 				<div class="names">
@@ -405,9 +403,10 @@ if(!isset($_GET['id']))
 			                                            $val = $arr_mix['id'][$it-1];
 			                                            $let = $abc[$it-1];
 			                                            print("<td>
-			                                					<label>
-			                                						<input type='radio' class='q-radio nomer_$i char_$let' name='$qid$i' value='$val'>
-			                                						<span class='q-ans'></span></label>
+			                                						<label>
+			                                							<input type='radio' class='q-radio nomer_$i char_$let' name='$qid$i' value='$val'>
+			                                							<span class='q-ans'></span>
+			                                						</label>
 			                                					</td>
 
 			                                            	");/*<li>
@@ -419,7 +418,6 @@ if(!isset($_GET['id']))
 			                             print("</tbody></table>");
 			                    print("</div></div></div></div>");
 							}
-
 
 							if($row_quest['type']==5){
 								print("<div class='test-body'>");
@@ -434,18 +432,18 @@ if(!isset($_GET['id']))
 					}
 					else{
 						if($test_away == 1) {
-							print('<h1>Вы уже проходите другой тест, завершите его попробуйте пройти снова. 
+							print('<h1>Ви вже виконуєте інший тест, завершіть його та спробуйте знову. 
 								<br> <a href="../schedule/calendar.php">Перейти в календарь</a></h1>');
 						} else {
-							print("данного теста не существует");
+							print("цього тесту не існує");
 						}
 					}
 					?>
 				
 				<?php if($flag_contr == 0 && $locked == 0): ?>
-				<div class="test-body end">
+				<div class="testes-footer">
 					<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
-						<input type="submit" name="sbm" value="Завершити тест">
+						<input type="submit" name="sbm" value="Завершити тест" class="button button-full button-full--blue button-big button-wide">
 					<?php endif; ?>
 				</div>
 				<?php else: ?>
@@ -468,11 +466,11 @@ if(!isset($_GET['id']))
 							}
 						?>
 					<?php else: ?>
-					<div class="test-body end">
+					<div class="testes-footer">
 						<?php if(!isset($_COOKIE['lang']) || $_COOKIE['lang'] == "ru"): ?>
-							<input type="submit" name="sbm" value="Завершить тест">
+							<input type="submit" name="sbm" value="Завершить тест" class="button button-full button-full--blue button-big button-wide">
 						<?php else: ?>
-							<input type="submit" name="sbm" value="Завершити тест">
+							<input type="submit" name="sbm" value="Завершити тест" class="button button-full button-full--blue button-big button-wide">
 						<?php endif; ?>
 					</div>
 					<?php endif; ?>
@@ -535,7 +533,7 @@ if(!isset($_GET['id']))
 						}
 						$("input[name = sbm]").click(function(){
 								$("input[name = sbm]").css("display","none");
-								$(".end").append("<img width='50px' height='50px' src='../tpl_img/loading-01.gif'>");
+								$(".testes-footer").append("<img src='../tpl_img/preloader.gif'>");
 							})
 				</script>
 				

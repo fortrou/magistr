@@ -555,7 +555,7 @@ if(isset($_SESSION['data'])){
 
   <head>
     <meta name="keywords" content="<?php print($keywords); ?>" />
-    <title>Результат теста - ВнеШколы - образовательный портал</title>
+    <title>Результат тесту </title>
    <?php require_once('../tpl_blocks/head.php'); ?>
    <style>
         #subj_list{
@@ -610,7 +610,7 @@ if(isset($_SESSION['data'])){
                     $row_test_data = $res_test_data->fetch_assoc();
                     printf("<h3 class='fio_print' style='display:none;'>%s %s %s</h3>
                         <h2 class='fio_print' style='display:none;'>%s</h2>
-                        <h2 class='fio_print' style='display:none;'>Тип теста: %s</h2>",
+                        <h2 class='fio_print' style='display:none;'>Тип тесту: %s</h2>",
                         $_SESSION['data']['surname'],$_SESSION['data']['name'],$_SESSION['data']['patronymic'],$row_class['class_name'], $row_test_data['name']);
                 }
         ?>
@@ -715,7 +715,7 @@ if(isset($_SESSION['data'])){
                      не влияет на оценки в табеле и на аттестат</h3>");
                 } else {
                     print("<h3>Це тренувальний тест, його можна проходити будь-яку кількість 
-                        разів. Оцінка за даний тест не враховується при розрахунку тематичних оцінок і 
+                        разів. Оцінка за цей тест не враховується при розрахунку тематичних оцінок і 
                         не впливає на оцінки в табелі та на атестат</h3>");
                 }
             }

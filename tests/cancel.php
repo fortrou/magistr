@@ -38,7 +38,6 @@
 	<body>
 		<?php require_once('../tpl_blocks/header-cabinet.php'); ?>
 		<div class="content">
-		<div class="block0">
 			<div class="testes">
 			<?php
 			//var_dump($_SESSION);
@@ -84,7 +83,7 @@
 			<form method='post' action='cancel.php' class='createTest'>
                     <?php
                         for ($i = 1; $i <= $cnt; $i++) {
-                            printf("%d бал(-а) = <input type='text' name='%d' placeholder='бал'><br>", $i, $i);
+                            printf("%d бал(-и) = <input type='text' name='%d' placeholder='бал'><br>", $i, $i);
                         }
                     ?>
                     <input type='submit' name='sbm' class='sbm' value='Створити'>
