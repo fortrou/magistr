@@ -114,16 +114,16 @@
 					<div class="content">
 						<ul class="menu-elements mobile-menu-elements">
 							<li data-rel-section="1">
-								<div id="m-btn-main" class="menu-mobile-btn-main"></div>
+								<div class="menu-mobile-btn menu-mobile-btn-main"></div>
 							</li>
 							<li data-rel-section="2">
-								<div id="m-btn-start" class="menu-mobile-btn-start"></div>
+								<div class="menu-mobile-btn menu-mobile-btn-start"></div>
 							</li>
 							<li data-rel-section="3">
-								<div id="m-btn-learn" class="menu-mobile-btn-learn"></div>
+								<div class="menu-mobile-btn menu-mobile-btn-learn"></div>
 							</li>
 							<li data-rel-section="4">
-								<div id="m-btn-adv" class="menu-mobile-btn-adv"></div>
+								<div class="menu-mobile-btn menu-mobile-btn-adv"></div>
 							</li>
 						</ul>
 						<div class="clear"></div>

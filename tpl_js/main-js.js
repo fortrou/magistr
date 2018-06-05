@@ -106,6 +106,17 @@ $(document).ready(function(){
    		 });
  	 });
 
+	 //CHECKBOX 
+	
+	 	$('input[name="check-all"]').change(function(){
+        var checkboxes = $(this).closest('form').find(':checkbox');
+        if($(this).prop('checked')) {
+          checkboxes.prop('checked', true);
+        } else {
+          checkboxes.prop('checked', false);
+        }
+    });
+
 	//FORM PHOTO PREVIEW
 	$("a.submitter").click(function(evt) {
 		evt.preventDefault();
@@ -128,8 +139,8 @@ $(document).ready(function(){
                     var reader = new FileReader();
                     reader.readAsDataURL(that);
                     reader.onloadend = function () {
-						$("input[name = user_avatar]").css("height", "50px");
-                        var elements = '<img width="150" height="200" src="' + this.result +'" />';
+						$("input[name = user_avatar]").css("height", "40px");
+                        var elements = '<img width="150" height="150" src="' + this.result +'" />';
                         $('.form-item--photo .loaded-photo').empty().append(elements);
                     }
                 }

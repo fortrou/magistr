@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Менеджер курсов - Онлайн Школа</title>
+    <title>Менеджер курсов</title>
 	<?php
 		include ("../tpl_blocks/head.php");
 	?>
@@ -14,7 +14,7 @@
 </head>
 <body>
 	<?php
-		include ("../tpl_blocks/header.php");
+		include ("../tpl_blocks/header-cabinet.php");
 	?>
     <div class="content">
     	<?php /*meta-block*/ ?>

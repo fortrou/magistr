@@ -1,6 +1,7 @@
 $(function() {
 
-$('#m-btn-main').click(function() {	
+
+/*$('#m-btn-main').click(function() {	
 	$('#m-btn-main').toggleClass('menu-mobile-btn-main menu-mobile-btn-main--active');
 	$('#m-btn-start').removeClass('menu-mobile-btn-start--active').addClass('menu-mobile-btn-start');	
 	$('#m-btn-learn').removeClass('menu-mobile-btn-learn--active').addClass('menu-mobile-btn-learn');
@@ -26,6 +27,6 @@ $('#m-btn-adv').click(function() {
 	$('#m-btn-start').removeClass('menu-mobile-btn-start--active').addClass('menu-mobile-btn-start');	
 	$('#m-btn-main').removeClass('menu-mobile-btn-main--active').addClass('menu-mobile-btn-main');
 	$('#m-btn-learn').removeClass('menu-mobile-btn-learn--active').addClass('menu-mobile-btn-learn');		
-})
+})*/
 
 });
