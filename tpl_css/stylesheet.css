@@ -249,7 +249,7 @@ p {
 .menu-profile-element.menu-cabinet-submenu ul {
 	display: none;
  	position: absolute;
-  	width: 200px;
+  	width: 209px;
  	top: 55px;
  	background: rgb(66,129,220);
  	font-size: 12px;
@@ -2371,7 +2371,7 @@ table.static-list-table i {
     height: 35px;
     display: block;
     width: 170px;
-    line-height: 1px;
+    line-height: 35px;
     padding-top: 0px;
     border-radius: 25px;
     color: black;
@@ -2594,6 +2594,10 @@ a.oplata_ssilkas {
 .up_type {
     color: #1e9cb7;
     cursor: pointer;
+}
+
+.course-manager [type="checkbox"]:checked, .course-manager [type="checkbox"]:not(:checked) {
+	position: static;
 }
 /*-----CHATS-----*/
 .online_chat {
@@ -3198,7 +3202,6 @@ p.cat_small_hat {
 		display: flex;
 		justify-content: space-around;
 	}
-
 	.contact-form .contact-form-item .file-upload {
 		width: 180px;
 		height: 72px;
@@ -3259,7 +3262,9 @@ p.cat_small_hat {
 	.cards-button {
 		top: 15px;
 	}
-
+	.menu-profile-element.menu-cabinet-submenu ul {
+		width: 192px;
+	}
 }
 
 @media only screen and (max-width: 480px) {

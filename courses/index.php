@@ -1,5 +1,7 @@
 <?php
+
 	//session_start();
+	session_start();
 	//if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../index.php");
 	require_once("../tpl_php/autoload.php");
 ?>
