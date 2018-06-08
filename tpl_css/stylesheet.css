@@ -805,7 +805,6 @@ li.menu-cabinet-submenu:hover > ul {
 	border: 1px solid rgb(80,80,80);
 	resize: none;
 }
-
 .contact-form .contact-form-item.contact-form-item--buttons {
 	display: flex;
 	justify-content: space-evenly;
@@ -875,10 +874,7 @@ li.menu-cabinet-submenu:hover > ul {
 	font-weight: 600;
 }
 
-
-
 /*-----REGISTRATION-FORM-STYLE-START-----*/
-
 
 .form {
 	width: 480px;
@@ -929,7 +925,6 @@ li.menu-cabinet-submenu:hover > ul {
 	position: absolute;
 	z-index: -1;
 }
-
 .form-item-title {
 	display: block;
 	font-size: 14px;
@@ -975,7 +970,6 @@ li.menu-cabinet-submenu:hover > ul {
     height:  auto;
     max-width:  150px;
     max-height: 150px;
-
 }
 
 /*-----REGISTRATION-FORM-STYLE-END-----*/
@@ -1011,7 +1005,6 @@ li.menu-cabinet-submenu:hover > ul {
 .profile-form .form-item--changeable input {
 	border: 1px solid rgb(66,139,220);
 }
-
 .profile-form .form-item textarea, 
 .profile-form .form-item textarea:disabled {
 	background: rgb(255,255,255);
@@ -1030,11 +1023,9 @@ li.menu-cabinet-submenu:hover > ul {
 	background: rgba(255,255,255,1);
 	padding-left: 5px;
 }
-
 .profile-form.profile-form-email-post .form-item input {
 	width: auto;
 }
-
 .profile-form.profile-form-pay .form-item.form-item--btn {
 	width:100%;
 	max-width: 100%;
@@ -1134,7 +1125,6 @@ li.menu-cabinet-submenu:hover > ul {
 .course-block.payed-course .course-element .course-pay-button {
 	background: rgb(66,139,220);
 }
-
 .course-block.unpayed-course .course-element .course-pay-button {
 	background: rgb(255,180,73);
 }
@@ -1291,7 +1281,6 @@ li.menu-cabinet-submenu:hover > ul {
 .testes ul li {
     display: flex;
 }
-
 .test-block {
 	border-bottom: 2px dotted rgb(66,139,220);
 	margin-bottom: 20px;
@@ -1332,7 +1321,6 @@ li.menu-cabinet-submenu:hover > ul {
 	margin-top: -3px;
 	margin-left: 5px;
 }
-
 .training-title {
 	text-align: center;
 	font-size: 20px;
@@ -1413,7 +1401,6 @@ li.menu-cabinet-submenu:hover > ul {
 	z-index: 10;
     color: rgb(80,80,80);
 }
-
 .q-radio {
 	position: absolute;
 	margin-left: -2000px;
@@ -1438,7 +1425,6 @@ li.menu-cabinet-submenu:hover > ul {
 	z-index: 10;
     border: 2px solid rgb(80,80,80);
 }
-
 .q-answer input[type="radio"]:checked+span:after {
 	content: '\00D7';
     position: absolute;
@@ -1451,7 +1437,6 @@ li.menu-cabinet-submenu:hover > ul {
 	z-index: 10;
     color: rgb(80,80,80);
 }
-
 .q-answer input[type="radio"]:checked+span,
 .q-answer input[type="radio"]+span, 
 .q-answer input[type="radio"]:not(checked)+span {
@@ -1464,7 +1449,6 @@ li.menu-cabinet-submenu:hover > ul {
 	cursor: pointer;
 	border: 1px solid rgb(200,200,200);
 }
-
 .char .radio+label:after, 
 .char .radio:not(checked)+label:after,
 .test-matched-item .char:after {
@@ -1504,6 +1488,30 @@ li.menu-cabinet-submenu:hover > ul {
     content: 'Д';
 }
 
+.char_f .radio+label:after,
+.char_f .radio:not(checked)+label:after,
+.test-matched-item .char_f:after {
+    content: 'Е';
+}
+
+.char_g .radio+label:after,
+.char_g .radio:not(checked)+label:after,
+.test-matched-item .char_g:after {
+    content: 'Є';
+}
+
+.char_h .radio+label:after,
+.char_h .radio:not(checked)+label:after,
+.test-matched-item .char_h:after {
+    content: 'Ж';
+}
+
+.char_j .radio+label:after,
+.char_j .radio:not(checked)+label:after,
+.test-matched-item .char_j:after {
+    content: 'З';
+}
+
 .char_num1:after{
 	content: '1';
 }
@@ -1524,6 +1532,15 @@ li.menu-cabinet-submenu:hover > ul {
 }
 .char_num7:after{
 	content: '7';
+}
+.char_num8:after{
+	content: '8';
+}
+.char_num9:after{
+	content: '9';
+}
+.char_num10:after{
+	content: '10';
 }
 
 .char .radio:checked+label:before {
