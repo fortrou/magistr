@@ -164,25 +164,10 @@
 ?>
 
 	<form action="<?=$_SERVER['REQUEST_URI']?>" method="post">
-		<?php if($flags[0] != 1): ?>
-			<input type='submit' name='simpt' value='Создать тренировочный тест[rus]'><br>
-		<?php endif; ?>
-		<?php if($flags[2] != 1 && $row_linfo['same_lang']!=1): ?>
-			<input type='submit' name='simptu' value='Создать тренировочный тест[ukr]'><br>
-		<?php else: ?>
-			<input type='submit' name='simptu' value='Создать тренировочный тест[ukr]' style="display:none;" disabled><br>
-		<?php endif; ?>
-		<?php if($flags[1] != 1): ?>
-			<input type='submit' name='hardt' value='Создать тестовое ДЗ[rus]'><br>
-		<?php endif; ?>
-		<?php if($flags[3] != 1 && $row_linfo['same_lang']!=1): ?>
-			<input type='submit' name='hardtu' value='Создать тестовое ДЗ[ukr]'><br>
-		<?php else: ?>
-			<input type='submit' name='hardtu' value='Создать тестовое ДЗ[ukr]' style="display:none;" disabled><br>
-		<?php endif; ?>
-		<?php if($flags[4] != 1): ?>
-		<input type='submit' name='hwtext' value='Создать творческое ДЗ'><br>
-		<?php endif; ?>
+	<input type='submit' name='simptu' value='Создать тренировочный тест[ukr]'><br>
+	<input type='submit' name='hardtu' value='Создать тестовое ДЗ[ukr]'><br>
+	<input type='submit' name='hwtext' value='Создать творческое ДЗ'><br>
+		
 		
 		<input type='submit' name='skip' value='Пропустить'>
 	</form>

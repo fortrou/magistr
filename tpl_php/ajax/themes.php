@@ -39,10 +39,7 @@
 											<td rowspan='1'>Тема %s</td>
 											<td>%s</td>
 										</tr>
-										<tr>
-											<td></td><td>%s</td>
-										</tr>
-									</table></li>",$row['id'],$row['id'],$row['course_name_ru'],$row['course_name_ua']);
+									</table></li>",$row['id'],$row['id'],$row['course_name_ua']);
 			}
 			print_r(json_encode($result));
 		}
@@ -94,7 +91,7 @@
 			$courses_array = array(
 								    0 => array(
 								    			0 => 0,
-								    			1 => "Основная школа | Основна школа",
+								    			1 => "Нет курса",
 								    			2 => ""
 								    		  )
 								  );
@@ -105,7 +102,7 @@
 					while($row_courses = $res_courses->fetch_assoc()) {
 						$courses_array[$row_courses['id']] = array(
 												  0 => $row_courses['id'],
-												  1 => $row_courses['course_name_ru'] . " | " . $row_courses['course_name_ua'],
+												  1 => $row_courses['course_name_ua'],
 												  2 => ""
 												);
 					}
@@ -123,7 +120,7 @@
 				if($res->num_rows != 0) {
 					$row = $res->fetch_assoc();
 					foreach ($row as $key => $value) {
-						if(in_array($key, array("theme_course","theme_class","theme_subject"))) continue;
+						if(in_array($key, array("theme_course","theme_subject"))) continue;
 						$result[$key] = $value;
 					}
 					$courses_array[$row['theme_course']][2] = 'selected';
@@ -132,20 +129,8 @@
 						else $selected = "";
 						$courses_list .= sprintf("<option value='%s'$selected>%s</option>", $value[0], $value[1]);
 					}
-					$sql_classes = "SELECT * FROM os_class_manager WHERE is_opened=0";
-					$res_classes = $mysqli->query($sql_classes);
-					if($res_classes->num_rows != 0) {
-						/*if($row['theme_class'] == 0) $selected = " selected";
-						else $selected = "";
-						$classes_list  .= "<option value='0'$selected>Класс не выбран</option>";*/
-						while($row_classes = $res_classes->fetch_assoc()) {
-							if(in_array($row_classes['id'], $theme_classes)/*$row['theme_class'] == $row_classes['id']*/) $selected = " selected";
-							else $selected = "";
-							$classes_list  .= sprintf("<option value='%s'$selected>Класс: %s</option>",
-							$row_classes['id'],$row_classes['class_name']);
-						}
-					}
-					$sql_subjects = "SELECT * FROM os_subjects WHERE name_ru <> '' AND name_ua <> ''";
+					
+					$sql_subjects = "SELECT * FROM os_subjects WHERE name_ua <> ''";
 					$res_subjects = $mysqli->query($sql_subjects);
 					if($res_classes->num_rows != 0) {
 						if($row['theme_subject'] == 0) $selected = " selected";
