@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../index.php");
+	//if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../index.php");
 	require_once("../tpl_php/autoload.php");
 ?>
 <!DOCTYPE html>
@@ -46,16 +46,13 @@
 	        	</div>
 				<br>
 	            <div class="course-name">
-	            	<h3>Название курса</h3><br>
-	                <label>Русское: <input type="text" name="theme_name_ru" id="name" oninput="save_course_text(this.value,'theme_name_ru')" data-rel="" value=""></label>
-	                <label>Украинское: <input type="text" name="theme_name_ua" id="name" oninput="save_course_text(this.value,'theme_name_ua')" data-rel="" value=""></label>
+	                <label>Название темы: <input type="text" name="theme_name_ua" id="name" oninput="save_course_text(this.value,'theme_name_ua')" data-rel="" value=""></label>
 	            </div>
 				<br>
 	        </div>
 	        <div class="course-manager-body">
 	        	<select name="courses"  class="theme-select" onchange="save_theme_filter('courses', 'theme_course', 3)"></select>
 	            <select name="subjects" class="theme-select" onchange="save_theme_filter('subjects', 'theme_subject', 1)"></select><br>
-	        	<select name="classes" id="classes" class="theme-select" onchange="save_theme_filter('classes', 'theme_class', 2)" multiple></select>
 	            </div>
 		    </div>
 		</div>

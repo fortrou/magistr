@@ -1,7 +1,7 @@
 <?php 
 	session_start();
 	require ('../tpl_php/autoload.php');
-	if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../");
+	//if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../");
 	$db = Database::getInstance();
 	$mysqli = $db->getConnection();
 	if ( isset($_POST['send']) )
@@ -10,7 +10,7 @@
 
 		try 
 		{
-			$_POST['lesson_year'] = get_currentYearNum() ? get_currentYearNum() : 1;
+			$_POST['lesson_year'] =  1;
 			if(isset($_POST['same_lang'])){
 				$_POST['date_ua'] = $_POST['date_ru'];
 				$_POST['title_ua'] = $_POST['title_ru'];
@@ -32,15 +32,11 @@
 			//var_dump($_POST);
 			$id = Lesson::Create($_POST);
 			if ( $id ){
-				$classList = "";
-				foreach ($_POST['class'] as $value) {
-					$classList .= $value . ", ";
-				}
 				$where_array = array();
 				$where_array[] = "id_course=" . $_POST['course'];
 				$where_array[] = "payment_end_date>=" . Date("Y-m-d");
 				$classList = rtrim($classList, ", ");
-				$sql_pre = "SELECT id FROM os_users WHERE class IN($classList) ";
+				/*$sql_pre = "SELECT id FROM os_users WHERE class IN($classList) ";
 				if($_POST['course'] != 0) {
 					if(count($where_array)) {
 						$where_string = "";
@@ -51,22 +47,22 @@
 					}
 					$sql_pre .= " AND id IN(SELECT DISTINCT id_user FROM os_courses_students WHERE $where_string GROUP BY id_course, id_user HAVING MAX(id))";
 				}
-				$res_pre = $mysqli->query($sql_pre);
-				$sql_l = sprintf("SELECT id FROM os_lessons WHERE title_ua='%s' AND title_ru='%s' ORDER BY id DESC LIMIT 1",
+				$res_pre = $mysqli->query($sql_pre);*/
+				$sql_l = sprintf("SELECT id FROM os_lessons WHERE id = $id ORDER BY id DESC LIMIT 1",
 					$_POST['title_ua'],$_POST['title_ru']);
 				$res_l = $mysqli->query($sql_l);
 				$row_l = $res_l->fetch_assoc();
-				while($row_pre = $res_pre->fetch_assoc()){
+				/*while($row_pre = $res_pre->fetch_assoc()){
 					$sql_s = "SELECT * FROM os_subjects WHERE id='".$_POST['subject']."'";
 					$res_s = $mysqli->query($sql_s);
-					$row_s = $res_s->fetch_assoc();
+					$row_s = $res_s->fetch_assoc();*/
 					/*$sql = sprintf("INSERT INTO os_events(text_ua,text_ru,link,id_user,date_e,type,read_status) 
 						VALUES('Був створений новий онлайн-урок з предмету <<%s>>. Назва: %s. Дата проведення: %s ',
 						'Был добавлен новый урок по предмету <<%s>>. Название: %s. Дата проведения: %s ','%s',%s,now(),2,0)",
 					$row_s['name_ru'],$_POST['title_ua'],$_POST['date_ua'],$row_s['name_ua'],
 					$_POST['title_ru'],$_POST['date_ru'],"http://online-shkola.com.ua/schedule/calendar.php",$row_pre['id']);
 					$res = $mysqli->query($sql);*/
-					if($_POST['control'] == 0){
+					/*if($_POST['control'] == 0){
 						$sql_j = sprintf("INSERT INTO os_journal(id_s,id_l,date_ru,date_ua,status,id_subj, course, theme) VALUES(%s,%s,'%s','%s',1,%s,%s,%s)",
 							$row_pre['id'],$row_l['id'],$_POST['date_ru'],$_POST['date_ua'],$_POST['subject'],$_POST['course'],$_POST['theme']);
 					}
@@ -77,7 +73,7 @@
 					$res_j = $mysqli->query($sql_j);
 					//print("<br>$sql_j<br>");
 
-				}
+				}*/
 
 				header("Location: stage2.php?id=" . $id);
 			}
@@ -128,10 +124,10 @@
 				$res = $mysqli->query($sql);
 			?>
 			<select id="course_list" class="select-width-200" name="course" data-filter="lesson-create">
-				<option value="0">Онлайн-школа</option>
+				<option value="0">Нет курса</option>
 				<?php
 					while ($row = $res->fetch_assoc()) {
-						printf("<option value='%s'>%s</option>",$row['id'],$row['course_name_ru']);
+						printf("<option value='%s'>%s</option>",$row['id'],$row['course_name_ua']);
 					}
 				?>
 			</select>
@@ -144,22 +140,10 @@
 			<select id="theme_list" class="select-width-200" name="theme">
 			<option value="0">Без темы</option>
 				<?php
-					while ($row = $res->fetch_assoc()) {
-						printf("<option value='%s'>%s</option>",$row['id'],$row['theme_name_ru']);
-					}
-				?>
-			</select>
-						</td>
-						<td>
-							<p style="text-align: start;margin-left: 30px;">Класс</p>
-			<?php
-				$sql = "SELECT * FROM os_class_manager";
-				$res = $mysqli->query($sql);
-			?>
-			<select id="class" class='multiple-class' name="class[]" multiple data-filter="lesson-create">
-				<?php
-					while ($row = $res->fetch_assoc()) {
-						printf("<option value='%s'>%s</option>",$row['id'],$row['class_name']);
+					if($res->num_rows != 0) {
+						while ($row = $res->fetch_assoc()) {
+							printf("<option value='%s'>%s</option>",$row['id'],$row['theme_name_ua']);
+						}
 					}
 				?>
 			</select>
@@ -176,10 +160,6 @@
 		</td>
 		<td>
 			<p>Учитель</p>
-			RU
-			<select id="teacher_ru" name="teacher_ru" class="select-width-200">
-				<option>--</option>
-			</select><br>
 			UA
 			<select id="teacher_ua" name="teacher_ua" class="select-width-200">
 				<option>--</option>
@@ -190,30 +170,16 @@
 
 			</td>
 			<td>
-
-			<p>Дата проведения(RU)</p>
-			<input name="date_ru" type="datetime-local" required ></input>
-			<p>Дата проведения(UA)</p>
-			<input name="date_ua" type="datetime-local" ></input>
-			</td>
-			<td>
-			<p>Название урока</p>
-			<input name="title_ru" required="" placeholder="RU">
-			<input name="title_ua" placeholder="UA">
-
-
-
-			<p>Ссылка на видео-трансляцию</p>
-			<input name="video_ru" required="" placeholder="RU">
-			<input name="video_ua" placeholder="UA">
+				<p>Дата проведения(UA)</p>
+				<input name="date_ua" type="datetime-local" ></input>
+				<p>Название урока</p>
+				<input name="title_ua" placeholder="UA">
+				<p>Ссылка на видео-трансляцию</p>
+				<input name="video_ua" placeholder="UA">
 			</td>
 		</tr>
 		</table>
 		<p>Дополнительные ссылки</p>
-		<textarea name="links_ru" id="" required="" cols="100" rows="10" >RU</textarea>
-		<script type='text/javascript'>
-				CKEDITOR.replace('links_ru');
-			</script>
 
 		<textarea name="links_ua" id="" cols="100" rows="10" >UA</textarea>
 		<script type='text/javascript'>

@@ -77,9 +77,6 @@ function load_theme(id) {
 				if(data['course']['theme_course']) {
 					$('select[name = courses]').empty().append(data['course']['theme_course']);
 				}
-				if(data['course']['theme_class']) {
-					$('select[name = classes]').empty().append(data['course']['theme_class']);
-				}
 				if(data['course']['theme_subject']) {
 					$('select[name = subjects]').empty().append(data['course']['theme_subject']);
 				}
