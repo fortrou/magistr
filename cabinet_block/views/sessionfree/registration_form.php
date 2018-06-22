@@ -118,8 +118,9 @@
 								Фото
 							</label>
 							<div class="loaded-photo"></div>
-	   						<input id="photo" name="user_avatar" type="file" accept="image/*,image/jpeg,,image/jpg,image/png,image/bmp" required />
-  							<div class="form-item-tooltip ">
+	   						<input id="photo" name="user_avatar" type="file" class="hide-input" accept="image/*,image/jpeg,,image/jpg,image/png,image/bmp" required />
+	   						<label for="photo" class="button button-big button-full button-full--blue"><span>Обрати фото</span></label>
+  							<div class="form-item-tooltip">
 								Завантажте фото об'ємом до 5МБ. Підтримуються формати .jpeg, .jpg, .png, .bmp
 							</div>
 						</div>

@@ -118,12 +118,12 @@
 			</div>
 			<ul class="menu-create-block">
 				<li class="menu-create-element">
-					<a href="">
+					<a href="lessons/index.php">
 						Створити онлайн-урок
 					</a>
 				</li>
 				<li class="menu-create-element">
-					<a href="">
+					<a href="statics/create">
 						Додати новину
 					</a>
 				</li>
@@ -143,7 +143,7 @@
 					</a>
 				</li>
 				<li class="menu-create-element">
-					<a href="">
+					<a href="courses/index.php">
 						Курси
 					</a>
 				</li>

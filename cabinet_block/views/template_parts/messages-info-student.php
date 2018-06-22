@@ -8,7 +8,7 @@
 							</div>
 							<form action="" method="post" id="">
 								<div class="form-item">
-									<input id="check-all" name="check-all" type="checkbox" class="checkbox">
+									<input id="check-all" name="check-all" type="checkbox" class="checkbox" >
 									<label for="check-all" class="checkbox-title">
 										Обрати все
 									</label>

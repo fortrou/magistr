@@ -8,7 +8,7 @@
 					<div class="main-wrapper">
 						<div class="main sub-section" data-section="1">
 							<div class="sub-section-element">
-								<div class="info-block col-md-12 ">
+								<div class="info-block col-md-12">
 									<div>
 										<span class="text-semibold text-magistr">Онлайн-центр</span><span class="text-magistr"> "МАГІСТР</span><span class="text-zno">ЗНО"</span> готує до вступу до магістратури за спеціальністю <span class="text-magistr">"ПРАВО"</span>.
 									</div>
@@ -55,7 +55,7 @@
 								<div class="cards-footer">	
 									<a href="" 
 										class="button button-big button-rounded button-full button-full--blue cards-button">
-										ПРИДБАЙ ПОВНИЙ КОМПЛЕКТ КУРСІВ ВСЬОГО ЗА 2900
+										ПРИДБАЙ ПОВНИЙ КОМПЛЕКТ КУРСІВ УСЬОГО ЗА 2900
 									</a>
 								</div>
 								<div class="more-info-block">
@@ -76,30 +76,24 @@
 								<div class="element-wrap-list elements-block col-md-12 col-sm-12 col-xs-12">
 									<div class="element-wrap element-width-200">
 										<img src="/tpl_img/register.png" class="main-image" alt="">
-										<div>
 											<a href="" 
-												class="block-display button-full-orange element-width-200">
+												class="button button-full button-full--orange button-big button-width">
 												ЗАРЕЄСТРУВАТИСЯ
-											</a>
-										</div>
+											</a>			
 									</div>
 									<div class="element-wrap element-width-200">
 										<img src="/tpl_img/contract.png" class="main-image" alt="">
-										<div>
 											<a href=""  
-												class="block-display button-full-orange button-full-orange--two-lines element-width-200">
+												class="button button-full button-full--orange button-big button-width button-null button-height-50">
 												ОЗНАЙОМИТИСЯ З ДОГОВОРОМ
 											</a>
-										</div>
 									</div>
 									<div class="element-wrap element-width-200">
 										<img src="/tpl_img/pay.png" class="main-image" alt="">
-										<div>
 											<a href="" 
-												class="block-display button-full-orange  element-width-200">
+												class="button button-full button-full--orange button-big button-width">
 												СПЛАТИТИ
 											</a>
-										</div>
 									</div>
 								</div>
 								<div class="col-xl-12 offset-xl-4 col-lg-12 offset-lg-4 col-md-12 offset-md-0">

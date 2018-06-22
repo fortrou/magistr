@@ -1,4 +1,6 @@
 <?php
+
+	//session_start();
 	session_start();
 	//if(!isset($_SESSION['data']) || $_SESSION['data']['level'] != 4) header("Location: ../index.php");
 	require_once("../tpl_php/autoload.php");
@@ -6,7 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Менеджер курсов - Онлайн Школа</title>
+    <title>Менеджер курсов</title>
 	<?php
 		include ("../tpl_blocks/head.php");
 	?>
@@ -14,7 +16,7 @@
 </head>
 <body>
 	<?php
-		include ("../tpl_blocks/header.php");
+		include ("../tpl_blocks/header-cabinet.php");
 	?>
     <div class="content">
     	<?php /*meta-block*/ ?>
